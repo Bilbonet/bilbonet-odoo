@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+        <record id="view_move_inherit_picking_cancel_form" model="ir.ui.view">
+            <field name="name">view.move.inherit.picking.cancel.form</field>
+            <field name="model">stock.move</field>
+            <field name="inherit_id" ref="stock.view_move_form"/>
+            <field name="arch" type="xml">
+                <field name="state" position="before">
+                    <button name="action_cancel_draft" states="cancel" string="Set To Draft" type="object" />
+                </field>
+            </field>
+        </record>
+
+        <record id="action_cancel_move" model="ir.actions.act_window">
+            <field name="name">Delete/Cancel Move</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">stock.move.cancel</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+            <field name="binding_model_id" ref="stock.model_stock_move" />
+            <field name="groups_id" eval="[(4, ref('stock_picking_cancel_extended.group_picking_cancel'))]"/>
+        </record>
+
+       <!--Wizard For stock move-->
+        <record id="view_order_merge_form_new_1" model="ir.ui.view">
+            <field name="model">stock.move.cancel</field>
+            <field name="arch" type="xml">
+                <form string="Stock Move Options">
+                    <sheet>
+                        <group string="Delete Stock Move">
+                            <p>- Delete related quants movements. </p><br/>
+                            <p>- Delete selected stock moves. </p><br/>
+                            <field name="delete_move"/>
+                        </group>
+                        <group string="Cancel Stock Move">
+                            <p>- Delete related quants movements. </p><br/>
+                            <p>- Cancel selected stock moves and related picking. </p><br/>
+                            <field name="cancel_move"/>
+                        </group>
+                    </sheet>
+                    <footer>
+                        <button name="remove_move" type="object" string="Delete Move" class="oe_highlight"
+                                attrs="{'invisible': [('cancel_move', '=', True)]}"/>
+                        <button name="action_cancel" type="object" string="Cancel Move" class="oe_highlight"
+                                attrs="{'invisible': [('delete_move', '=', True)]}"/>
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+</odoo>
