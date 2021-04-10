@@ -9,6 +9,7 @@ class SaleLineInfoTags(models.Model):
     _description = "Tags in sale order line"
 
     name = fields.Char(required=True)
+    active = fields.Boolean(default=True)
     color = fields.Integer(string='Color Index', default=10)
 
     _sql_constraints = [
