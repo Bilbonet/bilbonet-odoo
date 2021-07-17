@@ -1,0 +1,184 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* stock_picking_cancel_extended
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-07-17 18:11+0000\n"
+"PO-Revision-Date: 2021-07-17 18:11+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: stock_picking_cancel_extended
+#: model:res.groups,name:stock_picking_cancel_extended.group_picking_cancel
+msgid "(Picking - Stock Move) Cancel"
+msgstr ""
+
+#. module: stock_picking_cancel_extended
+#: model_terms:ir.ui.view,arch_db:stock_picking_cancel_extended.view_order_merge_form_new_1
+msgid "- Cancel selected stock moves and related picking."
+msgstr "- Cancelar el picking y los movimientos de stock relacionados."
+
+#. module: stock_picking_cancel_extended
+#: model_terms:ir.ui.view,arch_db:stock_picking_cancel_extended.view_order_merge_form_new_1
+msgid "- Delete related quants movements."
+msgstr "- Eliminar los quants relacionados."
+
+#. module: stock_picking_cancel_extended
+#: model_terms:ir.ui.view,arch_db:stock_picking_cancel_extended.view_order_merge_form_new_1
+msgid "- Delete selected stock moves."
+msgstr "- Eliminar los movimientos de stock seleccionados."
+
+#. module: stock_picking_cancel_extended
+#: model_terms:ir.ui.view,arch_db:stock_picking_cancel_extended.view_order_merge_form_new_1
+#: model_terms:ir.ui.view,arch_db:stock_picking_cancel_extended.view_picking_inherit_picking_cancel_form_cancel
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: stock_picking_cancel_extended
+#: model_terms:ir.ui.view,arch_db:stock_picking_cancel_extended.view_order_merge_form_new_1
+msgid "Cancel Move"
+msgstr "Cancelar Movimiento"
+
+#. module: stock_picking_cancel_extended
+#: model_terms:ir.ui.view,arch_db:stock_picking_cancel_extended.view_order_merge_form_new_1
+msgid "Cancel Stock Move"
+msgstr "Cancelar Movimiento Stock"
+
+#. module: stock_picking_cancel_extended
+#: model:ir.model.fields,field_description:stock_picking_cancel_extended.field_stock_move_cancel__cancel_move
+msgid "Cancel selected stock moves and delete related quants movements."
+msgstr "Cancelar los movimientos de stock seleccionados y los quants relacionados."
+
+#. module: stock_picking_cancel_extended
+#: model:ir.model.fields,field_description:stock_picking_cancel_extended.field_stock_move_cancel__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: stock_picking_cancel_extended
+#: model:ir.model.fields,field_description:stock_picking_cancel_extended.field_stock_move_cancel__create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: stock_picking_cancel_extended
+#: model_terms:ir.ui.view,arch_db:stock_picking_cancel_extended.view_order_merge_form_new_1
+msgid "Delete Move"
+msgstr "Eliminar Movimiento"
+
+#. module: stock_picking_cancel_extended
+#: model_terms:ir.ui.view,arch_db:stock_picking_cancel_extended.view_order_merge_form_new_1
+msgid "Delete Stock Move"
+msgstr "Eliminar Movimiento Stock"
+
+#. module: stock_picking_cancel_extended
+#: model:ir.model.fields,field_description:stock_picking_cancel_extended.field_stock_move_cancel__delete_move
+msgid "Delete selected stock moves and related quants movements."
+msgstr "Eliminar los movimientos de stock seleccionados y los quants relacionados."
+
+#. module: stock_picking_cancel_extended
+#: model:ir.actions.act_window,name:stock_picking_cancel_extended.action_cancel_move
+msgid "Delete/Cancel Move"
+msgstr "Eliminar/Cancelar Movimiento"
+
+#. module: stock_picking_cancel_extended
+#: model:ir.model.fields,field_description:stock_picking_cancel_extended.field_stock_move_cancel__display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: stock_picking_cancel_extended
+#: model:ir.model.fields,field_description:stock_picking_cancel_extended.field_stock_move_cancel__id
+msgid "ID"
+msgstr ""
+
+#. module: stock_picking_cancel_extended
+#: code:addons/stock_picking_cancel_extended/models/stock.py:460
+#, python-format
+msgid "It is not possible to reserve more products of %s than you have in stock."
+msgstr "No es posible reservar mas producto de %s del que tienes en stock."
+
+#. module: stock_picking_cancel_extended
+#: code:addons/stock_picking_cancel_extended/models/stock.py:467
+#, python-format
+msgid "It is not possible to unreserve more products of %s than you have in stock."
+msgstr "No es posible des-reservar mas producto de %s del que tienes en stock."
+
+#. module: stock_picking_cancel_extended
+#: model:ir.model.fields,field_description:stock_picking_cancel_extended.field_stock_move_cancel____last_update
+msgid "Last Modified on"
+msgstr "Última modificación en"
+
+#. module: stock_picking_cancel_extended
+#: model:ir.model.fields,field_description:stock_picking_cancel_extended.field_stock_move_cancel__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: stock_picking_cancel_extended
+#: model:ir.model.fields,field_description:stock_picking_cancel_extended.field_stock_move_cancel__write_date
+msgid "Last Updated on"
+msgstr "Última actualización el"
+
+#. module: stock_picking_cancel_extended
+#: code:addons/stock_picking_cancel_extended/models/stock.py:208
+#, python-format
+msgid "Picking '%s' has been set in draft state."
+msgstr "Picking '%s' ha sido establecido en estado borrador."
+
+#. module: stock_picking_cancel_extended
+#: model:ir.model,name:stock_picking_cancel_extended.model_stock_move_line
+msgid "Product Moves (Stock Move Line)"
+msgstr "Movimientos de Producto (Stock Move Line)"
+
+#. module: stock_picking_cancel_extended
+#: model:ir.model,name:stock_picking_cancel_extended.model_stock_quant
+msgid "Quants"
+msgstr "Quants"
+
+#. module: stock_picking_cancel_extended
+#: model_terms:ir.ui.view,arch_db:stock_picking_cancel_extended.view_move_inherit_picking_cancel_form
+#: model_terms:ir.ui.view,arch_db:stock_picking_cancel_extended.view_picking_inherit_picking_cancel_form_cancel
+msgid "Set To Draft"
+msgstr "Establecer en borrador"
+
+#. module: stock_picking_cancel_extended
+#: model:ir.model,name:stock_picking_cancel_extended.model_stock_move
+msgid "Stock Move"
+msgstr "Movimiento de existencias"
+
+#. module: stock_picking_cancel_extended
+#: model_terms:ir.ui.view,arch_db:stock_picking_cancel_extended.view_order_merge_form_new_1
+msgid "Stock Move Options"
+msgstr "Opciones Movimiento de existencias"
+
+#. module: stock_picking_cancel_extended
+#: model:ir.model,name:stock_picking_cancel_extended.model_stock_move_cancel
+msgid "Stock move cancel"
+msgstr "Cancelar movimiento existencias"
+
+#. module: stock_picking_cancel_extended
+#: model:ir.model,name:stock_picking_cancel_extended.model_stock_picking
+msgid "Transfer"
+msgstr "Transferir"
+
+#. module: stock_picking_cancel_extended
+#: code:addons/stock_picking_cancel_extended/models/stock.py:501
+#, python-format
+msgid "You can not delete product moves if the picking is done. You can only correct the done quantities."
+msgstr "No puede eliminar movimientos de producto si el picking esta realizado. Solo puede corregir las cantidades realizadas."
+
+#. module: stock_picking_cancel_extended
+#: code:addons/stock_picking_cancel_extended/models/stock.py:279
+#, python-format
+msgid "You cannot unreserve a stock move that has been set to 'Done'."
+msgstr "No puede des-reservar un movimiento de existencias que ha sido establecido a 'Realizado'."
+
+#. module: stock_picking_cancel_extended
+#: model_terms:ir.ui.view,arch_db:stock_picking_cancel_extended.view_order_merge_form_new_1
+msgid "or"
+msgstr "o"
+
