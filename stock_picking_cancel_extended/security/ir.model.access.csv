@@ -1,3 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-quant_stock_picking_cancel_admin,quant.stock.picking.cancel_admin,model_stock_quant,stock_picking_cancel_extended.group_picking_cancel,1,1,1,1
-
