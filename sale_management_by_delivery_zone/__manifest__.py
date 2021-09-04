@@ -11,7 +11,7 @@
     'website': 'https://www.bilbonet.net',
     'depends': ['sale', 'partner_delivery_zone'],
     'data': [
-
+        'views/sale_by_delivery_zone_views.xml'
     ],
     'installable': True,
     'auto_install': False,
