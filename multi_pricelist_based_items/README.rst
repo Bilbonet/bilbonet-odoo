@@ -1,6 +1,6 @@
-==============================================
-Personalizaciones relacionadas con los precios
-==============================================
+================
+Multi Pricelists
+================
 
 .. |badge1| image:: https://img.shields.io/badge/maturity-Beta-yellow.png
     :target: https://odoo-community.org/page/development-status
@@ -10,30 +10,34 @@ Personalizaciones relacionadas con los precios
     :alt: License: AGPL-3
 
 |badge1| |badge2|
+
+
+This module adds to the pricelist the possibility of calculating prices based on other price lists and in a specific sequence.
+
+By default, Odoo orders the price lists based on some fields of the price list:
+
+    * [applied_on, min_quantity desc, categ_id desc, id desc]
+
+We can't set a specific order .
+
+You can click these links for more information.
+
 https://groups.google.com/g/openerp-spain-users/c/bAFFgs6LFlw
 
 https://github.com/odoo/odoo/pull/45281/files
 
-Este módulo son personalizaciones de Odoo para Conifres relacionadas con los precios.
+Usage
+=====
+A price list can be based on another price list for the prices calc.
+For example, we have three price lists:
+    * Public: Price list with general with all prices
+    * Discounts: Some products with a specific discount.
+    * Offers: Ofertas flash para productos específicos con precios muy bajos.
 
-Listas de precios
-=================
-Una lista de precios se puede basar en otras listas de precios para sus cálculos.
-Por ejemplo tenemos tres listas de precios:
-* Publica: Tarifa general con todos los precios.
-* Descuentos: Ciertos artículos tienen un descuento.
-* Ofertas: Ofertas puntuales de artículos que están más rebajados.
+We can create a fourth price list with which include these three price lists (Public / Discount / Offers)
+and set the specific sequence for reckoning the prices.
 
-Creamos una cuarta tarifa para cientos clientes que aglutina estas tres tarifas (Ofertas > Descuentos > Publica).
-Necesitamos establecer la prioridad con la que se calculan los precios en la tarifa. Es decir, preferimos que
-calcule primero el precios en la tarifa “Ofertas” antes que en la tarifa “Publica”.
-
-Tal como se ordenan las tarifas por defecto no podemos decidir este orden::
-
-    [applied_on, min_quantity desc, categ_id desc, id desc].
-
-Añadimos la posibilidad de decidir el orden en las definiciones de las tarifas.
-
+If the same product is in the three price lists, we need that the system chooses the price in the first price list of the list.
 
 Credits
 =======
