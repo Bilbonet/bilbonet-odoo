@@ -1,6 +1,6 @@
-================
-Multi Pricelists
-================
+============================
+Multi Pricelists Based Items
+============================
 
 .. |badge1| image:: https://img.shields.io/badge/maturity-Beta-yellow.png
     :target: https://odoo-community.org/page/development-status
