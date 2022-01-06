@@ -510,13 +510,18 @@ class stock_move_line(models.Model):
                             raise
             else:
                 if ml.product_id.type == 'product' and not ml.location_id.should_bypass_reservation() and not float_is_zero(ml.product_qty, precision_digits=precision):
-                    quant = self.env['stock.quant']._update_reserved_quantity(ml.product_id, ml.location_id, -ml.product_qty, lot_id=ml.lot_id,
+                    self.env['stock.quant']._update_reserved_quantity(ml.product_id, ml.location_id, -ml.product_qty, lot_id=ml.lot_id,
                                                                        package_id=ml.package_id, owner_id=ml.owner_id, strict=True)
+
         moves = self.mapped('move_id')
         if self.user_has_groups('stock_picking_cancel_extended.group_picking_cancel') == False:
             res = super(stock_move_line, self).unlink()
         else:
+            for ml in self:
+                if ml.state in ('draft'):
+                    super(stock_move_line, ml).unlink()
             res = True
+
         if moves:
             moves._recompute_state()
         return res
