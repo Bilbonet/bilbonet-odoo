@@ -518,7 +518,7 @@ class stock_move_line(models.Model):
             res = super(stock_move_line, self).unlink()
         else:
             for ml in self:
-                if ml.state in ('draft'):
+                if ml.state in (False, 'draft'):
                     super(stock_move_line, ml).unlink()
             res = True
 
