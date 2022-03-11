@@ -86,7 +86,8 @@ odoo picking cancel Reverse order reverse picking reverse delivery reverse shipm
         "security/picking_security.xml",
         "security/ir.model.access.csv",
         "views/stock_view.xml",
-        "views/stock_move_view.xml"
+        "views/stock_move_view.xml",
+        "views/stock_quant_views.xml"
     ],
     'live_test_url':'https://www.youtube.com/watch?v=ebUnHk_eStc&feature=youtu.be',
     "test": [],
