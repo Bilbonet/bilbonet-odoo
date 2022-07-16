@@ -60,14 +60,20 @@
                 <filter string="Sales Orders" name="sales" domain="[('state','in',('sale','done'))]"/>
                 <separator/>
                 <filter string="Today Sales" name="today_sales"
-                        domain="[('date_order','&lt;=', (datetime.date.today()).strftime('%Y-%m-%d')),
-                                ('date_order','&gt;=',(datetime.date.today()).strftime('%Y-%m-%d'))]"/>
+                        domain="[
+                                ('date_order','&gt;=', datetime.datetime.combine(context_today(), datetime.time(0,0,0)).to_utc()),
+                                ('date_order','&lt;=', datetime.datetime.combine(context_today(), datetime.time(23,59,59)).to_utc())
+                            ]"/>
                 <filter string="Tomorrow Sales" name="tomorrow_sales"
-                        domain="[('date_order','&gt;=', ((context_today()+datetime.timedelta(days=0)).strftime('%Y-%m-%d 23:59:59'))),
-                                ('date_order','&lt;=', ((context_today()+datetime.timedelta(days=1)).strftime('%Y-%m-%d 23:59:59')))]"/>
+                        domain="[
+                                ('date_order','&gt;=', datetime.datetime.combine(context_today()+datetime.timedelta(days=1), datetime.time(0,0,0)).to_utc()),
+                                ('date_order','&lt;=', datetime.datetime.combine(context_today()+datetime.timedelta(days=1), datetime.time(23,59,59)).to_utc())
+                            ]"/>
                 <filter string="Yesterday Sales" name="yesterday_sales"
-                        domain="[('date_order','&gt;=', ((context_today()-datetime.timedelta(days=1)).strftime('%Y-%m-%d 00:00:00'))),
-                                ('date_order','&lt;=', ((context_today()+datetime.timedelta(days=0)).strftime('%Y-%m-%d 00:00:00')))]"/>
+                        domain="[
+                                ('date_order','&gt;=', datetime.datetime.combine(context_today()-datetime.timedelta(days=1), datetime.time(0,0,0)).to_utc()),
+                                ('date_order','&lt;=', datetime.datetime.combine(context_today()-datetime.timedelta(days=1), datetime.time(23,59,59)).to_utc())
+                            ]"/>
                 <separator/>
                 <filter string="Order Date" name="order_date" date="date_order"/>
             </search>
