@@ -8,8 +8,7 @@
         <field name="arch" type="xml">
             <kanban default_group_by="delivery_zone_id" class="o_kanban_small_column"
                     group_create="0" group_delete="0" group_edit="0"
-                    create="false" delete="false"
-                    default_order="sequence">
+                    create="false" delete="false">
                 <field name="delivery_zone_id"/>
                 <field name="partner_id"/>
                 <field name="activity_ids"/>
