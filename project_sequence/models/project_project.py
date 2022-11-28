@@ -8,7 +8,8 @@ class ProjectProject(models.Model):
     _inherit = 'project.project'
 
     code = fields.Char(
-        string='Code',
+        string='Code', 
+        copy=False,
     )
 
     @api.model
