@@ -1,6 +1,6 @@
-###############################################################################
-# For copyright and license notices, see __manifest__.py file in root directory
-###############################################################################
+# Copyright 2022 Trey, Kilobytes de Soluciones <www.trey.es>
+# Copyright 2022 Jesus Remiro <bilbonet@gmail.com>
+# License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 from odoo import api, fields, models
 
 
