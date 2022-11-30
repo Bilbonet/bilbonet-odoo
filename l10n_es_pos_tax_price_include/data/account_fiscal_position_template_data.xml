@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<!-- Copyright 2022 Bilbonet - Jesus Ramiro
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+
+    <record id="fp_nacional_ip" model="account.fiscal.position.template">
+        <field name="name">Régimen Nacional (Impuesto incluido en precio)</field>
+        <field name="chart_template_id" ref="l10n_es.account_chart_template_common"/>
+        <field name="country_id" ref="base.es"/>
+    </record>
+
+    <!-- ************************************************************* -->
+    <!-- Fiscal Position Tax Templates -->
+    <!-- ************************************************************* -->
+
+    <record id="fptt_nacional_s_iva21b_ip" model="account.fiscal.position.tax.template">
+        <field name="position_id" ref="fp_nacional_ip"/>
+        <field name="tax_src_id" ref="l10n_es.account_tax_template_s_iva21b"/>
+        <field name="tax_dest_id" ref="account_tax_template_s_iva21b_ip"/>
+    </record>
+    <record id="fptt_nacional_s_iva21s_ip" model="account.fiscal.position.tax.template">
+        <field name="position_id" ref="fp_nacional_ip"/>
+        <field name="tax_src_id" ref="l10n_es.account_tax_template_s_iva21s"/>
+        <field name="tax_dest_id" ref="account_tax_template_s_iva21s_ip"/>
+    </record>
+    <record id="fptt_nacional_s_iva10b_ip" model="account.fiscal.position.tax.template">
+        <field name="position_id" ref="fp_nacional_ip"/>
+        <field name="tax_src_id" ref="l10n_es.account_tax_template_s_iva10b"/>
+        <field name="tax_dest_id" ref="account_tax_template_s_iva10b_ip"/>
+    </record>
+    <record id="fptt_nacional_s_iva10s_ip" model="account.fiscal.position.tax.template">
+        <field name="position_id" ref="fp_nacional_ip"/>
+        <field name="tax_src_id" ref="l10n_es.account_tax_template_s_iva10s"/>
+        <field name="tax_dest_id" ref="account_tax_template_s_iva10s_ip"/>
+    </record>
+    <record id="fptt_nacional_s_iva4b_ip" model="account.fiscal.position.tax.template">
+        <field name="position_id" ref="fp_nacional_ip"/>
+        <field name="tax_src_id" ref="l10n_es.account_tax_template_s_iva4b"/>
+        <field name="tax_dest_id" ref="account_tax_template_s_iva4b_ip"/>
+    </record>
+    <record id="fptt_nacional_s_iva4s_ip" model="account.fiscal.position.tax.template">
+        <field name="position_id" ref="fp_nacional_ip"/>
+        <field name="tax_src_id" ref="l10n_es.account_tax_template_s_iva4s"/>
+        <field name="tax_dest_id" ref="account_tax_template_s_iva4s_ip"/>
+    </record>
+</odoo>
