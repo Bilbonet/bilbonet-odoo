@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2019 Tecnativa - Ernesto Tejeda
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <record id="account_invoice_line_description_extend_view_form" model="ir.ui.view">
+        <field name="name">account.invoice.line.description.extend.view.form</field>
+        <field name="model">account.invoice.line.description.extend</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="product_id" readonly="1" />
+                </group>
+                <group string="Extended Description">
+                    <field name="ex_descript" nolabel="1" widget="html" class="oe-bordered-editor" 
+                        options="{'style-inline': true, 'codeview': true, 'safe': True}"/>
+                </group>
+                <footer>
+                    <button
+                        name="action_save_description"
+                        type="object"
+                        string="Save Description"
+                        class="oe_highlight"
+                    />
+                    <button special="cancel" string="Close" />
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="account_invoice_line_description_extend_action" model="ir.actions.act_window">
+        <field name="name">Line description extended</field>
+        <field name="res_model">account.invoice.line.description.extend</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+</odoo>
