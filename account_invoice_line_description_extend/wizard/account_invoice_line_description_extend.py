@@ -36,3 +36,6 @@ class AccounInvoiceLineDescriptionExtend(models.TransientModel):
         self.ensure_one()
         self.account_move_line_id.ex_descript = self.ex_descript
     
+    def action_delete_description(self):
+        self.ensure_one()
+        self.account_move_line_id.ex_descript = ''

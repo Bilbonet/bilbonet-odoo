@@ -1,0 +1,100 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* account_invoice_line_description_extend
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-01-17 16:13+0000\n"
+"PO-Revision-Date: 2023-01-17 17:25+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"X-Generator: Poedit 3.2.2\n"
+
+#. module: account_invoice_line_description_extend
+#: model:ir.model,name:account_invoice_line_description_extend.model_account_invoice_line_description_extend
+msgid "Account Invoice line description extend"
+msgstr "Descripción extendida en las líneas de factura"
+
+#. module: account_invoice_line_description_extend
+#: model:ir.model.fields,field_description:account_invoice_line_description_extend.field_account_invoice_line_description_extend__account_move_line_id
+msgid "Account invoice line"
+msgstr "Línea de factura"
+
+#. module: account_invoice_line_description_extend
+#: model_terms:ir.ui.view,arch_db:account_invoice_line_description_extend.account_invoice_line_description_extend_view_form
+msgid "Close"
+msgstr "Cerrar"
+
+#. module: account_invoice_line_description_extend
+#: model:ir.model.fields,field_description:account_invoice_line_description_extend.field_account_invoice_line_description_extend__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: account_invoice_line_description_extend
+#: model:ir.model.fields,field_description:account_invoice_line_description_extend.field_account_invoice_line_description_extend__create_date
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: account_invoice_line_description_extend
+#: model_terms:ir.ui.view,arch_db:account_invoice_line_description_extend.account_invoice_line_description_extend_view_form
+msgid "Delete Description"
+msgstr "Borrar Descrpción"
+
+#. module: account_invoice_line_description_extend
+#: model:ir.model.fields,field_description:account_invoice_line_description_extend.field_account_invoice_line_description_extend__display_name
+msgid "Display Name"
+msgstr "Nombre a Mostrar"
+
+#. module: account_invoice_line_description_extend
+#: model:ir.model.fields,field_description:account_invoice_line_description_extend.field_account_invoice_line_description_extend__ex_descript
+#: model:ir.model.fields,field_description:account_invoice_line_description_extend.field_account_move_line__ex_descript
+#: model_terms:ir.ui.view,arch_db:account_invoice_line_description_extend.account_invoice_line_description_extend_view_form
+msgid "Extended Description"
+msgstr "Descripción Extendida"
+
+#. module: account_invoice_line_description_extend
+#: model:ir.model.fields,field_description:account_invoice_line_description_extend.field_account_invoice_line_description_extend__id
+msgid "ID"
+msgstr ""
+
+#. module: account_invoice_line_description_extend
+#: model:ir.model,name:account_invoice_line_description_extend.model_account_move_line
+msgid "Journal Item"
+msgstr "Apunte contable"
+
+#. module: account_invoice_line_description_extend
+#: model:ir.model.fields,field_description:account_invoice_line_description_extend.field_account_invoice_line_description_extend____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: account_invoice_line_description_extend
+#: model:ir.model.fields,field_description:account_invoice_line_description_extend.field_account_invoice_line_description_extend__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: account_invoice_line_description_extend
+#: model:ir.model.fields,field_description:account_invoice_line_description_extend.field_account_invoice_line_description_extend__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: account_invoice_line_description_extend
+#: model:ir.actions.act_window,name:account_invoice_line_description_extend.account_invoice_line_description_extend_action
+msgid "Line description extended"
+msgstr "Descripción extendida de línea"
+
+#. module: account_invoice_line_description_extend
+#: model:ir.model.fields,field_description:account_invoice_line_description_extend.field_account_invoice_line_description_extend__product_id
+msgid "Product"
+msgstr "Producto"
+
+#. module: account_invoice_line_description_extend
+#: model_terms:ir.ui.view,arch_db:account_invoice_line_description_extend.account_invoice_line_description_extend_view_form
+msgid "Save Description"
+msgstr "Guarda Descripción"
