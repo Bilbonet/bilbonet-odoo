@@ -7,17 +7,8 @@ from odoo import api, fields, models
 class ProjectProject(models.Model):
     _inherit = 'project.project'
 
-    code = fields.Char(
-        string='Code', 
-        copy=False,
-    )
-
-    @api.model
-    def create(self, vals):
-        if 'code' not in vals:
-            vals['code'] = self.env['ir.sequence'].next_by_code(
-                'project.sequence')
-        return super().create(vals)
+    code = fields.Char(string='Project Code', 
+        required=True, copy=False)
 
     _sql_constraints = [
         (
@@ -26,6 +17,13 @@ class ProjectProject(models.Model):
             "A Project with the same code already exists for this company!",
         )
     ]
+
+    @api.model
+    def create(self, vals):
+        if 'code' not in vals or vals.get('code', False) == False:
+            vals['code'] = self.env['ir.sequence'].next_by_code(
+                'project.sequence')
+        return super().create(vals)
 
     def write(self, vals):
         res = super(ProjectProject, self).write(vals) if vals else True
