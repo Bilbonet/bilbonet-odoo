@@ -27,7 +27,7 @@
         <field name="inherit_id" ref="project.edit_project"/>
         <field name="arch" type="xml">
             <xpath expr="//field[@name='name']" position="before">
-                <field name="code" attrs="{'invisible': [('code','=', False)]}" class="mr16"/>
+                <field name="code" attrs="{'invisible': [('code','=', '/')]}" class="mr16"/>
             </xpath>
         </field>
     </record>
