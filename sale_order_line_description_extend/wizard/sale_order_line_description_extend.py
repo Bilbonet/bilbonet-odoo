@@ -36,3 +36,7 @@ class SaleOrderLinePriceHistory(models.TransientModel):
         self.ensure_one()
         self.sale_order_line_id.ex_descript = self.ex_descript
     
+    def action_delete_description(self):
+        self.ensure_one()
+        self.sale_order_line_id.ex_descript = ''
+    

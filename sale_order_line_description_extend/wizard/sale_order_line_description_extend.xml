@@ -22,6 +22,12 @@
                         class="oe_highlight"
                     />
                     <button special="cancel" string="Close" />
+                    <button
+                        name="action_delete_description"
+                        type="object"
+                        string="Delete Description"
+                        class="btn btn-warning"
+                    />
                 </footer>
             </form>
         </field>
