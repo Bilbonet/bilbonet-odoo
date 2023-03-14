@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <menuitem
+        parent="account.account_reports_management_menu"
+        action="action_advisory_report_wizard"
+        id="menu_advisory_report_wizard"
+        sequence="50"
+    />
+
+    <!-- <menuitem
+        parent="account_financial_report.menu_oca_reports"
+        action="action_advisory_report_wizard"
+        id="menu_advisory_report_wizard"
+        sequence="50"
+    /> -->
+
+</odoo>
