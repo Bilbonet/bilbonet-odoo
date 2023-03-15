@@ -1,0 +1,196 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* account_invoice_report_advisory
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-03-15 20:09+0000\n"
+"PO-Revision-Date: 2023-03-15 20:09+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: account_invoice_report_advisory
+#: model:ir.actions.act_window,name:account_invoice_report_advisory.action_advisory_report_wizard
+#: model:ir.actions.report,name:account_invoice_report_advisory.action_print_report_advisory_html
+#: model:ir.actions.report,name:account_invoice_report_advisory.action_print_report_advisory_qweb
+#: model:ir.model,name:account_invoice_report_advisory.model_report_account_invoice_report_advisory_advisory_report
+#: model:ir.ui.menu,name:account_invoice_report_advisory.menu_advisory_report_wizard
+msgid "Advisory Report"
+msgstr ""
+
+#. module: account_invoice_report_advisory
+#: model_terms:ir.ui.view,arch_db:account_invoice_report_advisory.report_advisory_report_base
+msgid "Advisory Report -"
+msgstr ""
+
+#. module: account_invoice_report_advisory
+#: model:ir.model,name:account_invoice_report_advisory.model_advisory_report_wizard
+msgid "Advisory Report Wizard"
+msgstr ""
+
+#. module: account_invoice_report_advisory
+#: model:ir.actions.report,name:account_invoice_report_advisory.action_report_advisory_xlsx
+msgid "Advisory Report XLSX"
+msgstr ""
+
+#. module: account_invoice_report_advisory
+#: model:ir.model.fields.selection,name:account_invoice_report_advisory.selection__advisory_report_wizard__target_move__all
+msgid "All Entries"
+msgstr ""
+
+#. module: account_invoice_report_advisory
+#: model:ir.model.fields.selection,name:account_invoice_report_advisory.selection__advisory_report_wizard__target_move__posted
+msgid "All Posted Entries"
+msgstr ""
+
+#. module: account_invoice_report_advisory
+#: model_terms:ir.ui.view,arch_db:account_invoice_report_advisory.report_advisory_report_filters
+msgid "Based On"
+msgstr ""
+
+#. module: account_invoice_report_advisory
+#: model_terms:ir.ui.view,arch_db:account_invoice_report_advisory.advisory_report_wizard
+msgid "Cancel"
+msgstr ""
+
+#. module: account_invoice_report_advisory
+#: model:ir.model.fields,field_description:account_invoice_report_advisory.field_advisory_report_wizard__company_id
+msgid "Company"
+msgstr ""
+
+#. module: account_invoice_report_advisory
+#: model:ir.model.fields,field_description:account_invoice_report_advisory.field_advisory_report_wizard__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: account_invoice_report_advisory
+#: model:ir.model.fields,field_description:account_invoice_report_advisory.field_advisory_report_wizard__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: account_invoice_report_advisory
+#: model_terms:ir.ui.view,arch_db:account_invoice_report_advisory.report_advisory_report_filters
+msgid "Date From"
+msgstr ""
+
+#. module: account_invoice_report_advisory
+#: model_terms:ir.ui.view,arch_db:account_invoice_report_advisory.report_advisory_report_filters
+msgid "Date To"
+msgstr ""
+
+#. module: account_invoice_report_advisory
+#: model:ir.model.fields,field_description:account_invoice_report_advisory.field_advisory_report_wizard__date_range_id
+msgid "Date range"
+msgstr ""
+
+#. module: account_invoice_report_advisory
+#: model:ir.model.fields,field_description:account_invoice_report_advisory.field_advisory_report_wizard__display_name
+#: model:ir.model.fields,field_description:account_invoice_report_advisory.field_report_account_invoice_report_advisory_advisory_report__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: account_invoice_report_advisory
+#: model:ir.model.fields,field_description:account_invoice_report_advisory.field_advisory_report_wizard__date_to
+msgid "End Date"
+msgstr ""
+
+#. module: account_invoice_report_advisory
+#: model_terms:ir.ui.view,arch_db:account_invoice_report_advisory.advisory_report_wizard
+msgid "Export PDF"
+msgstr ""
+
+#. module: account_invoice_report_advisory
+#: model_terms:ir.ui.view,arch_db:account_invoice_report_advisory.advisory_report_wizard
+msgid "Export XLSX"
+msgstr ""
+
+#. module: account_invoice_report_advisory
+#: model:ir.model.fields,field_description:account_invoice_report_advisory.field_advisory_report_wizard__id
+#: model:ir.model.fields,field_description:account_invoice_report_advisory.field_report_account_invoice_report_advisory_advisory_report__id
+msgid "ID"
+msgstr ""
+
+#. module: account_invoice_report_advisory
+#: model_terms:ir.ui.view,arch_db:account_invoice_report_advisory.report_advisory_report_base
+msgid "Invoice"
+msgstr ""
+
+#. module: account_invoice_report_advisory
+#: model:ir.model.fields,field_description:account_invoice_report_advisory.field_advisory_report_wizard__journal_ids
+#: model_terms:ir.ui.view,arch_db:account_invoice_report_advisory.advisory_report_wizard
+msgid "Journals"
+msgstr ""
+
+#. module: account_invoice_report_advisory
+#: model:ir.model.fields,field_description:account_invoice_report_advisory.field_advisory_report_wizard____last_update
+#: model:ir.model.fields,field_description:account_invoice_report_advisory.field_report_account_invoice_report_advisory_advisory_report____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: account_invoice_report_advisory
+#: model:ir.model.fields,field_description:account_invoice_report_advisory.field_advisory_report_wizard__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: account_invoice_report_advisory
+#: model:ir.model.fields,field_description:account_invoice_report_advisory.field_advisory_report_wizard__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: account_invoice_report_advisory
+#: model_terms:ir.ui.view,arch_db:account_invoice_report_advisory.report_advisory_report_base
+msgid "Net"
+msgstr ""
+
+#. module: account_invoice_report_advisory
+#: model_terms:ir.ui.view,arch_db:account_invoice_report_advisory.report_advisory_report_base
+msgid "Partner"
+msgstr ""
+
+#. module: account_invoice_report_advisory
+#: model:ir.model.fields,field_description:account_invoice_report_advisory.field_advisory_report_wizard__date_from
+msgid "Start Date"
+msgstr ""
+
+#. module: account_invoice_report_advisory
+#: model:ir.model.fields,field_description:account_invoice_report_advisory.field_advisory_report_wizard__target_move
+msgid "Target Moves"
+msgstr ""
+
+#. module: account_invoice_report_advisory
+#: model_terms:ir.ui.view,arch_db:account_invoice_report_advisory.report_advisory_report_base
+msgid "Tax"
+msgstr ""
+
+#. module: account_invoice_report_advisory
+#: code:addons/account_invoice_report_advisory/wizard/advisory_report_wizard.py:0
+#, python-format
+msgid ""
+"The Company in the Vat Report Wizard and in Date Range must be the same."
+msgstr ""
+
+#. module: account_invoice_report_advisory
+#: model_terms:ir.ui.view,arch_db:account_invoice_report_advisory.report_advisory_report_base
+msgid "Total"
+msgstr ""
+
+#. module: account_invoice_report_advisory
+#: model_terms:ir.ui.view,arch_db:account_invoice_report_advisory.advisory_report_wizard
+msgid "VAT Report Options"
+msgstr ""
+
+#. module: account_invoice_report_advisory
+#: model_terms:ir.ui.view,arch_db:account_invoice_report_advisory.advisory_report_wizard
+msgid "View"
+msgstr ""
+
+#. module: account_invoice_report_advisory
+#: model_terms:ir.ui.view,arch_db:account_invoice_report_advisory.advisory_report_wizard
+msgid "or"
+msgstr ""
