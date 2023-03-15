@@ -12,20 +12,19 @@ class AdvisoryReportWizard(models.TransientModel):
     _inherit = "account_financial_report_abstract_wizard"
 
     date_range_id = fields.Many2one(comodel_name="date.range", string="Date range")
-    date_from = fields.Date("Start Date", required=True, default=date(2023, 1, 1))
-    date_to = fields.Date("End Date", required=True, default=fields.Date.context_today)
-    based_on = fields.Selection(
-        [("taxtags", "Tax Tags"), ("taxgroups", "Tax Groups")],
-        string="Based On",
-        required=True,
-        default="taxtags",
-    )
-    tax_detail = fields.Boolean("Detail Taxes")
+    date_from = fields.Date("Start Date", required=True)
+    date_to = fields.Date("End Date", required=True)
     target_move = fields.Selection(
         [("posted", "All Posted Entries"), ("all", "All Entries")],
         string="Target Moves",
         required=True,
         default="posted",
+    )
+    journal_ids = fields.Many2many(
+        comodel_name="account.journal", 
+        string="Journals", 
+        domain="[('company_id', '=', company_id), ('type', 'in', ['sale', 'purchase'])]",
+        required=False
     )
 
     @api.onchange("company_id")
@@ -70,7 +69,7 @@ class AdvisoryReportWizard(models.TransientModel):
 
     def _print_report(self, report_type):
         self.ensure_one()
-        data = self._prepare_vat_report()
+        data = self._prepare_advisory_report()
         if report_type == "xlsx":
             report_name = "a_f_r.report_advisory_report_xlsx"
         else:
@@ -84,16 +83,23 @@ class AdvisoryReportWizard(models.TransientModel):
             .report_action(self, data=data)
         )
 
-    def _prepare_vat_report(self):
+    def _prepare_advisory_report(self):
         self.ensure_one()
+        journals = self.journal_ids
+        if not journals:
+            journals = self.env["account.journal"].search(
+                [
+                    ("company_id", "=", self.company_id.id),
+                    ("type", "in", ("sale", "purchase"))
+                ]
+            )        
         return {
             "wizard_id": self.id,
             "company_id": self.company_id.id,
             "date_from": self.date_from,
             "date_to": self.date_to,
-            "based_on": self.based_on,
             "only_posted_moves": self.target_move == "posted",
-            "tax_detail": self.tax_detail,
+            "journal_ids": journals.ids,
             "account_financial_report_lang": self.env.lang,
         }
 

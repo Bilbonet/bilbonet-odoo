@@ -17,14 +17,14 @@
         <field name="report_file">account_invoice_report_advisory.advisory_report</field>
     </record>
    <!-- XLSX REPORTS -->
-    <!-- <record id="action_report_vat_report_xlsx" model="ir.actions.report">
-        <field name="name">VAT Report XLSX</field>
-        <field name="model">vat.report.wizard</field>
+    <record id="action_report_advisory_xlsx" model="ir.actions.report">
+        <field name="name">Advisory Report XLSX</field>
+        <field name="model">advisory.report.wizard</field>
         <field name="type">ir.actions.report</field>
-        <field name="report_name">a_f_r.report_vat_report_xlsx</field>
+        <field name="report_name">a_f_r.report_advisory_report_xlsx</field>
         <field name="report_type">xlsx</field>
-        <field name="report_file">report_vat_report</field>
-    </record> -->
+        <field name="report_file">report_advisory_report</field>
+    </record>
 
     <template id="advisory_report">
         <t t-call="web.html_container">
@@ -57,164 +57,95 @@
             <div class="act_as_table data_table" style="width: 100%;">
                 <!-- Display table headers for lines -->
                 <div class="act_as_thead">
-                    <div class="act_as_row labels">
-                        <!--## code-->
-                        <div class="act_as_cell first_column" style="width: 5%;">
-                            Code
-                        </div>
-                        <!--## name-->
-                        <div class="act_as_cell" style="width: 65%;">Name</div>
-                        <!--## net-->
-                        <div class="act_as_cell" style="width: 15%;">Net</div>
-                        <!--## tax-->
-                        <div class="act_as_cell" style="width: 15%;">Tax</div>
+                    <div class="act_as_row" style="font-size:1.6em; background-color:white; font-weight: bold;">
+                        <div class="act_as_cell first_column left" style="width: 20%;">Invoice</div>
+                        <div class="act_as_cell left" style="width: 50%;"> Partner</div>
+                        <div class="act_as_cell right" style="width: 10%;">Net</div>
+                        <div class="act_as_cell right" style="width: 10%;">Tax</div>
+                        <div class="act_as_cell right" style="width: 10%;">Total</div>
                     </div>
                 </div>
-                <t t-foreach="vat_report" t-as="tag_or_group">
-                    <div class="act_as_row lines" style="font-weight: bold;">
+                <t t-foreach="adv_report" t-as="move">
+                    <!--## Invoice-->
+                    <div class="act_as_row labels" style="font-weight: bold;">
                         <div
                             class="act_as_cell left oe_tooltip_string"
-                            style="width: 5%;"
+                            style="padding-left: 10px;width: 20%;"
+                        >
+                            <t t-att-style="style" t-raw="move['date']" /> | 
+                            <t t-att-style="style" t-raw="move['name']" /> 
+                        </div>
+                        <div
+                            class="act_as_cell left oe_tooltip_string"
+                            style="padding-left: 10px;width: 50%;"
                         >
                             <span
                                 t-att-res-id="res_id"
                                 t-att-res-model="res_model"
                                 view-type="form"
                             >
-                                <t t-att-style="style" t-raw="tag_or_group['code']" />
+                                <t t-att-style="style" t-raw="move['vat']" /> | 
+                                <t t-att-style="style" t-raw="move['partner_name']" />
                             </span>
                         </div>
-                        <div
-                            class="act_as_cell left oe_tooltip_string"
-                            style="width: 65%;"
-                        >
-                            <span
-                                t-att-res-id="res_id"
-                                t-att-res-model="res_model"
-                                view-type="form"
-                            >
-                                <t t-att-style="style" t-raw="tag_or_group['name']" />
-                            </span>
-                        </div>
-                        <div class="act_as_cell amount" style="width: 15%;">
+                        <div class="act_as_cell amount" style="width: 10%;">
                             <t
                                 t-att-style="style"
-                                t-raw="tag_or_group['net']"
+                                t-raw="move['net']"
                                 t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}"
                             />
                         </div>
-                        <div class="act_as_cell amount" style="width: 15%;">
+                        <div class="act_as_cell amount" style="width: 10%;">
                             <t
                                 t-att-style="style"
-                                t-raw="tag_or_group['tax']"
+                                t-raw="move['tax']"
+                                t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}"
+                            />
+                        </div>
+                        <div class="act_as_cell amount" style="width: 10%;">
+                            <t
+                                t-att-style="style"
+                                t-raw="move['total']"
                                 t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}"
                             />
                         </div>
                     </div>
-                    <t t-if="tax_detail">
-                        <t t-foreach="tag_or_group['taxes']" t-as="tax">
-                            <div class="act_as_row lines">
-                                <div class="act_as_cell" style="width: 5%;" />
-                                <div
-                                    class="act_as_cell left oe_tooltip_string"
-                                    style="padding-left: 20px; width: 65%;"
+                    <!--## Tax Lines-->
+                    <t t-foreach="move['taxes']" t-as="tax">
+                        <div class="act_as_row lines">
+                            <div class="act_as_cell" style="width: 10%;" />
+                            <div
+                                class="act_as_cell right oe_tooltip_string"
+                                style="padding-left: 20px; width: 65%;"
+                            >
+                                <span
+                                    t-att-res-id="tax['id']"
+                                    t-att-res-model="res_model"
+                                    view-type="form"
                                 >
-                                    <span
-                                        t-att-res-id="tax['id']"
-                                        t-att-res-model="res_model"
-                                        view-type="form"
-                                    >
-                                        <t t-att-style="style" t-raw="tax['name']" />
-                                    </span>
-                                </div>
-                                <div class="act_as_cell amount" style="width: 15%;">
-                                    <t
-                                        t-set="domain"
-                                        t-value="[('tax_ids', 'in', tax['id']),
-                                                ('date', '&gt;=', date_from),
-                                                ('date', '&lt;=', date_to),
-                                                ('tax_exigible', '=', True)]"
-                                    />
-                                    <span
-                                        t-att-domain="domain"
-                                        res-model="account.move.line"
-                                    >
-                                        <t
-                                            t-att-style="style"
-                                            t-raw="tax['net']"
-                                            t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}"
-                                        />
-                                    </span>
-                                </div>
-                                <div class="act_as_cell amount" style="width: 15%;">
-                                    <t
-                                        t-set="domain"
-                                        t-value="[('tax_line_id', '=', tax['id']),
-                                                ('date', '&gt;=', date_from),
-                                                ('date', '&lt;=', date_to),
-                                                ('tax_exigible', '=', True)]"
-                                    />
-                                    <span
-                                        t-att-domain="domain"
-                                        res-model="account.move.line"
-                                    >
-                                        <t
-                                            t-att-style="style"
-                                            t-raw="tax['tax']"
-                                            t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}"
-                                        />
-                                    </span>
-                                </div>
+                                    <t t-att-style="style" t-raw="tax['name']" />
+                                </span>
                             </div>
-                        </t>
+                            <div class="act_as_cell amount" style="width: 10%;">
+                                    <t
+                                        t-att-style="style"
+                                        t-raw="tax['net']"
+                                        t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}"
+                                    />
+                            </div>
+                            <div class="act_as_cell amount" style="width: 10%;">
+                                    <t
+                                        t-att-style="style"
+                                        t-raw="tax['tax']"
+                                        t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}"
+                                    />
+                            </div>
+                            <div class="act_as_cell" style="width: 10%;" />
+                        </div>
                     </t>
+                    <!--##END: Tax Lines-->
                 </t>
             </div>
-
-            <t t-foreach="adv_report" t-as="move">
-                <div class="act_as_row lines" style="font-weight: bold;">
-                    <div
-                        class="act_as_cell left oe_tooltip_string"
-                        style="width: 5%;"
-                    >
-                    </div>
-                    <div
-                        class="act_as_cell left oe_tooltip_string"
-                        style="width: 65%;"
-                    >
-                        <span
-                            t-att-res-id="res_id"
-                            t-att-res-model="res_model"
-                            view-type="form"
-                        >
-                            <t t-att-style="style" t-raw="move['name']" />
-                        </span>
-                    </div>
-                    <div class="act_as_cell amount" style="width: 10%;">
-                        <t
-                            t-att-style="style"
-                            t-raw="move['net']"
-                            t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}"
-                        />
-                    </div>
-                    <div class="act_as_cell amount" style="width: 10%;">
-                        <t
-                            t-att-style="style"
-                            t-raw="move['tax']"
-                            t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}"
-                        />
-                    </div>
-                    <div class="act_as_cell amount" style="width: 10%;">
-                        <t
-                            t-att-style="style"
-                            t-raw="move['total']"
-                            t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}"
-                        />
-                    </div>
-
-                </div>
-            </t>
-
         </div>
     </template>
     <template id="account_invoice_report_advisory.report_advisory_report_filters">

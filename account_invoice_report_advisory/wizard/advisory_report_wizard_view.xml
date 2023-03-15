@@ -2,7 +2,7 @@
 <odoo>
     <record id="advisory_report_wizard" model="ir.ui.view">
         <field name="name">advisory_report_wizard_view</field>
-        <field name="model">vat.report.wizard</field>
+        <field name="model">advisory.report.wizard</field>
         <field name="arch" type="xml">
             <form string="VAT Report Options">
                 <group name="main_info">
@@ -21,8 +21,10 @@
                 </group>
                 <group name="other_filters">
                     <field name="target_move" widget="radio" />
-                    <field name="based_on" widget="radio" />
-                    <field name="tax_detail" />
+                </group>
+                <separator string="Journals" />
+                <group>
+                    <field name="journal_ids" widget="many2many_tags" />
                 </group>
                 <footer>
                     <button
