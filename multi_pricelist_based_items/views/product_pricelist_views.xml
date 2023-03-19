@@ -2,7 +2,6 @@
 <!-- Copyright 2021 Jesus Ramiro <jesus@bilbonet.net>
      License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl.html).-->
 <odoo>
-
     <record id="product_pricelist_view_conifres_custom" model="ir.ui.view">
         <field name="name">product.pricelist.form conifres.custom</field>
         <field name="model">product.pricelist</field>

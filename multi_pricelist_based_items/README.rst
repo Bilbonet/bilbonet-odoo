@@ -29,6 +29,7 @@ https://github.com/odoo/odoo/pull/45281/files
 Usage
 =====
 A price list can be based on another price list for the prices calc.
+
 For example, we have three price lists:
     * Public: Price list with general with all prices
     * Discounts: Some products with a specific discount.

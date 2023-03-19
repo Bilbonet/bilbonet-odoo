@@ -29,4 +29,3 @@ msgstr ""
 #: model:ir.model.fields,field_description:multi_pricelist_based_items.field_product_pricelist_item__sequence
 msgid "Sequence"
 msgstr ""
-
