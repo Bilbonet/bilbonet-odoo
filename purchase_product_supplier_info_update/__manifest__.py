@@ -10,7 +10,7 @@
     "development_status": "Beta",
     "maintainers": ["Bilbonet"],
     'website': 'https://www.bilbonet.net',
-    "depends": ["purchase_last_price_info"],
+    "depends": ["product", "purchase"],
     "data": [],
     "installable": True,
 }
