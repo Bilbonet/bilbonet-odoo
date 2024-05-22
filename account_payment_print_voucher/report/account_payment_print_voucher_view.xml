@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
-<!-- Copyright 2018 Jesus Ramiro <jesus@bilbonet.net>
+<!-- Copyright 2023 Jesus Ramiro <jesus@bilbonet.net>
      License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl.html).-->
 <odoo>
-    <record id="account_pyment_rpint_voucher_action" model="ir.actions.report">
+    <record id="account_pyment_print_voucher_action" model="ir.actions.report">
         <field name="name">Print Voucher</field>
         <field name="model">account.move.line</field>
         <field name="report_type">qweb-pdf</field>
@@ -12,7 +12,7 @@
         <field name="attachment">'(' + object.move_id.name + ')_' + (object.partner_id.name or '').replace(' ', '-') + '.pdf'</field>
         <field name="binding_model_id" ref="account.model_account_move_line"/>
         <field name="binding_type">report</field>
-        <!-- <field name="paperformat_id" ref="tsm_base.tsm_paper_format_report"/> -->
+        <field name="paperformat_id" ref="account_payment_print_voucher.paperformat_payment_voucher3"/>
         <field name="groups_id" eval="[(4, ref('account.group_account_invoice'))]"/>
     </record>
 
@@ -20,7 +20,7 @@
         <t t-call="web.html_container">
             <t t-foreach="docs" t-as="o">
                 <t t-set="lang" t-value="o.partner_id.lang"/>
-                <t t-call="web.external_layout">
+                <t t-call="account_payment_print_voucher.payment_voucher_layout">
                     <t t-set="o" t-value="o.with_context(lang=lang)" />
                     <div class="container">
                         <div class="row">
@@ -80,10 +80,25 @@
                         </div>
 
                         <div class="row mt32 mb32" id="amounts_info">
-                            <div class="col-auto col-3 mw-100 mb-2">
-                                <strong>Amount:</strong>
+                            <div class="col-auto col-3 mw-100 mb-2"
+                                t-if="o.debit != 0">
+                                <strong>Amount Debit:</strong>
                                 <span style="font-size:1.4em;" 
                                       t-field="o.debit" 
+                                      t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                            </div>
+                            <div class="col-auto col-3 mw-100 mb-2 text-danger"
+                                t-if="o.credit != 0">
+                                <strong>Amount Credit: -</strong>
+                                <span style="font-size:1.4em;" 
+                                      t-field="o.credit" 
+                                      t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                            </div>
+                            <div class="col-auto col-3 mw-100 mb-2"
+                                t-if="o.amount_residual != 0 and o.debit != o.amount_residual">
+                                <strong>Amount Residual:</strong>
+                                <span style="font-size:1.4em;" 
+                                      t-field="o.amount_residual" 
                                       t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
                             </div>
                         </div>

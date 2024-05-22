@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 15.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-03 17:58+0000\n"
-"PO-Revision-Date: 2024-01-03 19:01+0100\n"
+"POT-Creation-Date: 2024-05-22 11:43+0000\n"
+"PO-Revision-Date: 2024-05-22 13:51+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: es\n"
@@ -15,12 +15,12 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.4.2\n"
+"X-Generator: Poedit 3.4.4\n"
 
 #. module: account_payment_print_voucher
-#: model:ir.actions.report,print_report_name:account_payment_print_voucher.account_pyment_rpint_voucher_action
+#: model:ir.actions.report,print_report_name:account_payment_print_voucher.account_pyment_print_voucher_action
 msgid "'(' + object.move_id.name + ')_' + object.partner_id.name.replace(' ', '-')"
-msgstr ""
+msgstr "'(' + object.move_id.name + ')_' + object.partner_id.name.replace(' ', '-')"
 
 #. module: account_payment_print_voucher
 #: model_terms:ir.ui.view,arch_db:account_payment_print_voucher.account_payment_document
@@ -28,6 +28,8 @@ msgid ""
 "<br/>\n"
 "                                    NIF:"
 msgstr ""
+"<br/>\n"
+"                                    NIF:"
 
 #. module: account_payment_print_voucher
 #: model_terms:ir.ui.view,arch_db:account_payment_print_voucher.account_payment_document
@@ -35,11 +37,23 @@ msgid ""
 "<br/>\n"
 "                                    Telf.:"
 msgstr ""
+"<br/>\n"
+"                                    Telf.:"
 
 #. module: account_payment_print_voucher
 #: model_terms:ir.ui.view,arch_db:account_payment_print_voucher.account_payment_document
-msgid "<strong>Amount:</strong>"
-msgstr "<strong>Cantidad:</strong>"
+msgid "<strong>Amount Credit: -</strong>"
+msgstr "<strong>Cantidad a Credito: -</strong>"
+
+#. module: account_payment_print_voucher
+#: model_terms:ir.ui.view,arch_db:account_payment_print_voucher.account_payment_document
+msgid "<strong>Amount Debit:</strong>"
+msgstr "<strong>Cantidad Debida:</strong>"
+
+#. module: account_payment_print_voucher
+#: model_terms:ir.ui.view,arch_db:account_payment_print_voucher.account_payment_document
+msgid "<strong>Amount Residual:</strong>"
+msgstr "<strong>Cantidad Restante:</strong>"
 
 #. module: account_payment_print_voucher
 #: model_terms:ir.ui.view,arch_db:account_payment_print_voucher.account_payment_document
@@ -57,6 +71,11 @@ msgid "<strong>Maturity Date:</strong>"
 msgstr "<strong>Fecha Vencimiento:</strong>"
 
 #. module: account_payment_print_voucher
-#: model:ir.actions.report,name:account_payment_print_voucher.account_pyment_rpint_voucher_action
+#: model_terms:ir.ui.view,arch_db:account_payment_print_voucher.payment_voucher_layout
+msgid "Logo"
+msgstr "Logo"
+
+#. module: account_payment_print_voucher
+#: model:ir.actions.report,name:account_payment_print_voucher.account_pyment_print_voucher_action
 msgid "Print Voucher"
 msgstr "Imprimir Comprobante"
