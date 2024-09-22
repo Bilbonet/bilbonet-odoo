@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!-- Copyright 2024 Jesus Ramiro <jesus@bilbonet.net>
+     License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl.html).-->
+<odoo>
+
+    <record id="customer_product_discount_tree_view" model="ir.ui.view">
+        <field name="name">customer.product.discount.tree.view</field>
+        <field name="model">customer.product.discount</field>
+        <field name="arch" type="xml">
+            <tree string="Fixed Discounts" multi_edit="1" editable="bottom">
+                <field name="sequence" widget="handle"/>
+                <field name="product_id" readonly="1" optional="hide"
+                    groups="product.group_product_variant"
+                    domain="[('product_tmpl_id', '=?', context.get('default_product_tmpl_id', False))]"
+                    options="{'no_quick_create': True, 'no_create_edit' : True}"/>
+                <field name="product_tmpl_id" string="Product"/>
+                <field name="min_qty"/>
+                <!-- <field name="product_uom" groups="uom.group_uom"/> -->
+                <field name="date_start"/>
+                <field name="date_end"/>
+                <field name="discount"/>
+                <field name="discount2"/>
+                <field name="discount3" optional="hide"/>
+                <field name="discounting_type" optional="hide"/>
+                <field name="company_id" readonly="1" groups="base.group_multi_company"/>
+            </tree>
+        </field>
+    </record>
+
+</odoo>

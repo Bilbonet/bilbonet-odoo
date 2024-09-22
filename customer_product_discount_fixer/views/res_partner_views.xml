@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!-- Copyright 2024 Jesus Ramiro <jesus@bilbonet.net>
+     License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl.html).-->
+<odoo>
+
+    <record id="view_partner_form_product_discount_fixed" model="ir.ui.view">
+        <field name="name">res.partner.form product discount fixed</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='sales_purchases']" position="after">
+                <page name='product_discounts_fixed' string="Product Discounts" 
+                attrs="{'invisible': [('parent_id', '!=', False)]}">
+                    <field name="discount_ids" nolabel="1"
+                    context="{'tree_view_ref':'customer_product_discount_fixer.customer_product_discount_tree_view'}"/>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
