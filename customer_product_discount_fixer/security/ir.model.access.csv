@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_customer_product_discount_user,customer.product.discount.user,model_customer_product_discount,base.group_user,1,0,0,0
+access_customer_product_discount_manager,customer.product.discount.manager,model_customer_product_discount,base.group_system,1,1,1,1
