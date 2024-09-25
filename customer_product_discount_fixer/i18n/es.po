@@ -1,0 +1,218 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* customer_product_discount_fixer
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-09-22 19:01+0000\n"
+"PO-Revision-Date: 2024-09-23 11:28+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.5\n"
+
+#. module: customer_product_discount_fixer
+#: model:ir.model.fields.selection,name:customer_product_discount_fixer.selection__customer_product_discount__discounting_type__additive
+msgid "Additive"
+msgstr "Aditivo"
+
+#. module: customer_product_discount_fixer
+#: model:ir.model.fields,help:customer_product_discount_fixer.field_customer_product_discount__sequence
+msgid "Assigns the priority to the list of customer product discount."
+msgstr ""
+"Asigna la prioridad a la lista de descuentos de productos del cliente."
+
+#. module: customer_product_discount_fixer
+#: model:ir.model.fields,field_description:customer_product_discount_fixer.field_customer_product_discount__company_id
+msgid "Company"
+msgstr "Compañia"
+
+#. module: customer_product_discount_fixer
+#: model:ir.model,name:customer_product_discount_fixer.model_res_partner
+msgid "Contact"
+msgstr "Contacto"
+
+#. module: customer_product_discount_fixer
+#: model:ir.model.fields,field_description:customer_product_discount_fixer.field_customer_product_discount__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: customer_product_discount_fixer
+#: model:ir.model.fields,field_description:customer_product_discount_fixer.field_customer_product_discount__create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: customer_product_discount_fixer
+#: model:ir.model.fields,field_description:customer_product_discount_fixer.field_customer_product_discount__partner_id
+msgid "Customer"
+msgstr "Cliente"
+
+#. module: customer_product_discount_fixer
+#: model:ir.model,name:customer_product_discount_fixer.model_customer_product_discount
+#: model:ir.model.fields,field_description:customer_product_discount_fixer.field_res_partner__discount_ids
+#: model:ir.model.fields,field_description:customer_product_discount_fixer.field_res_users__discount_ids
+msgid "Customer Product Discount Fixed"
+msgstr "Cliente Producto Descuento Fijo"
+
+#. module: customer_product_discount_fixer
+#: model:ir.model.fields,help:customer_product_discount_fixer.field_customer_product_discount__partner_id
+msgid "Customer for this fixed discounts"
+msgstr "Cliente para este descuento fijo"
+
+#. module: customer_product_discount_fixer
+#: model:ir.model.fields,help:customer_product_discount_fixer.field_res_partner__discount_ids
+#: model:ir.model.fields,help:customer_product_discount_fixer.field_res_users__discount_ids
+msgid "Define fixed discounts for products in this customer."
+msgstr "Define descuento fijos para productos es este cliente."
+
+#. module: customer_product_discount_fixer
+#: model:ir.model.fields,field_description:customer_product_discount_fixer.field_customer_product_discount__discount
+msgid "Discount (%)"
+msgstr "Descuento (%)"
+
+#. module: customer_product_discount_fixer
+#: model:ir.model.fields,field_description:customer_product_discount_fixer.field_customer_product_discount__discount2
+msgid "Discount 2 (%)"
+msgstr "Descuento 2 (%)"
+
+#. module: customer_product_discount_fixer
+#: model:ir.model.fields,field_description:customer_product_discount_fixer.field_customer_product_discount__discount3
+msgid "Discount 3 (%)"
+msgstr "Descuento 3 (%)"
+
+#. module: customer_product_discount_fixer
+#: model:ir.model.fields,field_description:customer_product_discount_fixer.field_customer_product_discount__discounting_type
+msgid "Discounting type"
+msgstr "Tipo Descuento"
+
+#. module: customer_product_discount_fixer
+#: model:ir.model.fields,field_description:customer_product_discount_fixer.field_customer_product_discount__display_name
+#: model:ir.model.fields,field_description:customer_product_discount_fixer.field_res_partner__display_name
+#: model:ir.model.fields,field_description:customer_product_discount_fixer.field_sale_order_line__display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: customer_product_discount_fixer
+#: model:ir.model.fields,field_description:customer_product_discount_fixer.field_customer_product_discount__date_end
+msgid "End Date"
+msgstr "Fecha Fin"
+
+#. module: customer_product_discount_fixer
+#: model:ir.model.fields,help:customer_product_discount_fixer.field_customer_product_discount__date_end
+msgid "End date for these discounts"
+msgstr "Fechas fin para estos descuentos"
+
+#. module: customer_product_discount_fixer
+#: model_terms:ir.ui.view,arch_db:customer_product_discount_fixer.customer_product_discount_tree_view
+msgid "Fixed Discounts"
+msgstr "Descuentos Fijos"
+
+#. module: customer_product_discount_fixer
+#: model:ir.model.fields,field_description:customer_product_discount_fixer.field_customer_product_discount__id
+#: model:ir.model.fields,field_description:customer_product_discount_fixer.field_res_partner__id
+#: model:ir.model.fields,field_description:customer_product_discount_fixer.field_sale_order_line__id
+msgid "ID"
+msgstr ""
+
+#. module: customer_product_discount_fixer
+#: model:ir.model.fields,help:customer_product_discount_fixer.field_customer_product_discount__product_id
+msgid "If not set, discounts will apply to all variants of this product."
+msgstr ""
+"Si no se especifica los descuentos se aplicarán a todas las variantes de "
+"este producto."
+
+#. module: customer_product_discount_fixer
+#: model:ir.model.fields,field_description:customer_product_discount_fixer.field_customer_product_discount____last_update
+#: model:ir.model.fields,field_description:customer_product_discount_fixer.field_res_partner____last_update
+#: model:ir.model.fields,field_description:customer_product_discount_fixer.field_sale_order_line____last_update
+msgid "Last Modified on"
+msgstr "Última modificación el"
+
+#. module: customer_product_discount_fixer
+#: model:ir.model.fields,field_description:customer_product_discount_fixer.field_customer_product_discount__write_uid
+msgid "Last Updated by"
+msgstr "Ultima actualización por"
+
+#. module: customer_product_discount_fixer
+#: model:ir.model.fields,field_description:customer_product_discount_fixer.field_customer_product_discount__write_date
+msgid "Last Updated on"
+msgstr "Ultima actualización el"
+
+#. module: customer_product_discount_fixer
+#: model:ir.model.fields,field_description:customer_product_discount_fixer.field_customer_product_discount__min_qty
+msgid "Min. Quantity"
+msgstr "Cantidad Minima"
+
+#. module: customer_product_discount_fixer
+#: model:ir.model.fields.selection,name:customer_product_discount_fixer.selection__customer_product_discount__discounting_type__multiplicative
+msgid "Multiplicative"
+msgstr "Multiplicativo"
+
+#. module: customer_product_discount_fixer
+#: model_terms:ir.ui.view,arch_db:customer_product_discount_fixer.customer_product_discount_tree_view
+msgid "Product"
+msgstr "Producto"
+
+#. module: customer_product_discount_fixer
+#: model_terms:ir.ui.view,arch_db:customer_product_discount_fixer.view_partner_form_product_discount_fixed
+msgid "Product Discounts"
+msgstr "Descuentos Producto"
+
+#. module: customer_product_discount_fixer
+#: model:ir.model.fields,field_description:customer_product_discount_fixer.field_customer_product_discount__product_tmpl_id
+msgid "Product Template"
+msgstr "Plantilla Producto"
+
+#. module: customer_product_discount_fixer
+#: model:ir.model.fields,field_description:customer_product_discount_fixer.field_customer_product_discount__product_id
+msgid "Product Variant"
+msgstr "Variante Producto"
+
+#. module: customer_product_discount_fixer
+#: model:ir.model,name:customer_product_discount_fixer.model_sale_order_line
+msgid "Sales Order Line"
+msgstr "Línea de pedido de venta"
+
+#. module: customer_product_discount_fixer
+#: model:ir.model.fields,field_description:customer_product_discount_fixer.field_customer_product_discount__sequence
+msgid "Sequence"
+msgstr "Secuencia"
+
+#. module: customer_product_discount_fixer
+#: model:ir.model.fields,help:customer_product_discount_fixer.field_customer_product_discount__discounting_type
+msgid ""
+"Specifies whether discounts should be additive or multiplicative.\n"
+"Additive discounts are summed first and then applied.\n"
+"Multiplicative discounts are applied sequentially.\n"
+"Multiplicative discounts are default"
+msgstr ""
+"Especifica si los descuentos deben ser aditivos o multiplicativos.\n"
+"Descuentos aditivos son sumados primero y luego aplicados.\n"
+"Descuentos multiplicativos son aplicados secuencialmente.\n"
+"Descuentos multiplicativos son por defecto"
+
+#. module: customer_product_discount_fixer
+#: model:ir.model.fields,field_description:customer_product_discount_fixer.field_customer_product_discount__date_start
+msgid "Start Date"
+msgstr "Fecha Comienzo"
+
+#. module: customer_product_discount_fixer
+#: model:ir.model.fields,help:customer_product_discount_fixer.field_customer_product_discount__date_start
+msgid "Start date for these discounts"
+msgstr "Fecha comienzo de estos descuentos"
+
+#. module: customer_product_discount_fixer
+#: model:ir.model.fields,help:customer_product_discount_fixer.field_customer_product_discount__min_qty
+msgid ""
+"The quantity to sale to this customer to benefit the discounts, expressed "
+"in the sale Product Unit of Measure if not any, in the default unit of "
+"measure of the product otherwise."
+msgstr ""
+"La cantidad mínima a vender a este cliente para beneficiarse de los "
+"descuentos."
