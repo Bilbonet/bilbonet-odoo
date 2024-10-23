@@ -12,7 +12,7 @@
     "maintainers": [
         "bilbonet",
     ],
-    "depends": ["sale_triple_discount"],
+    "depends": ["product", "sale_triple_discount"],
     "data": [
         "security/ir.model.access.csv",
         "views/res_partner_views.xml",
