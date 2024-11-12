@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2024 Jesus Ramiro <jesus@bilbonet.net>
+     License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl.html).-->
+<odoo>
+    <record id="stock_picking_batch_form" model="ir.ui.view">
+        <field name="model">stock.picking.batch</field>
+        <field name="inherit_id" ref="stock_picking_batch.stock_picking_batch_form" />
+        <field name="arch" type="xml">
+            <field name="scheduled_date" position="after">
+                <field name="delivery_zone_id"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="stock_picking_batch_tree" model="ir.ui.view">
+        <field name="model">stock.picking.batch</field>
+        <field name="inherit_id" ref="stock_picking_batch.stock_picking_batch_tree" />
+        <field name="arch" type="xml">
+            <field name="picking_type_id" position="after">
+                <field name="delivery_zone_id" optional="show" />
+            </field>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="stock_picking_batch_filter">
+        <field name="model">stock.picking.batch</field>
+        <field name="inherit_id" ref="stock_picking_batch.stock_picking_batch_filter" />
+        <field name="arch" type="xml">
+            <field name="user_id" position="after">
+                <field name="delivery_zone_id" />
+            </field>
+            <filter name="state" position="after">
+                    <filter
+                    name="delivery_zone_id"
+                    string="Delivery Zone"
+                    context="{'group_by':'delivery_zone_id'}"
+                />
+            </filter>
+        </field>
+    </record>
+</odoo>
