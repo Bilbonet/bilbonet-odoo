@@ -36,8 +36,8 @@
                                     <span t-field="o.company_id.zip" />
                                     <span t-field="o.company_id.city" /> -
                                     <span t-field="o.company_id.state_id" /><br/>
-                                    Telf.: <span t-field="o.company_id.phone" /><br/>
-                                    NIF: <span t-esc="o.company_id.vat.replace(' ','\N{NO-BREAK SPACE}')"/>
+                                    Phone: <span t-field="o.company_id.phone" /><br/>
+                                    VAT: <span t-esc="o.company_id.vat.replace(' ','\N{NO-BREAK SPACE}')"/>
                                 </div>
                             </div>
                             <div class="col-1"/>
@@ -51,6 +51,13 @@
                                     <span style="color:gray !important;" t-field="o.partner_id.zip" />
                                     <span style="color:gray !important;" t-field="o.partner_id.city" /> -
                                     <span style="color:gray !important;" t-field="o.partner_id.state_id" /><br/>
+                                    <t t-if="o.partner_id.phone or o.partner_id.mobile">
+                                        <span style="color:gray !important;" t-field="o.partner_id.phone"/>
+                                        <t t-if="o.partner_id.phone and o.partner_id.mobile">
+                                            <span style="color:gray !important;"> / </span>
+                                        </t>
+                                        <spaun style="color:gray !important;" t-field="o.partner_id.mobile"/><br/>
+                                    </t>
                                     <span style="color:gray !important;" t-field="o.partner_id.vat" /><br/>
                                 </div>
                             </div>
@@ -77,6 +84,14 @@
                                     <span t-field="o.date_maturity" t-options='{"format": "dd/MM/y"}'/>
                                 </p>
                             </div>
+
+                            <div class="col-auto col-3 mw-100 mb-2" t-if="o.partner_id.ref">
+                                <strong>Partner Ref:</strong>
+                                <p class="m-0">
+                                    <span t-field="o.partner_id.ref"/>
+                                </p>
+                            </div>
+
                         </div>
 
                         <div class="row mt32 mb32" id="amounts_info">
