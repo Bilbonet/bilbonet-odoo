@@ -1,13 +1,10 @@
 To use this module, you need to:
 
-- Go to *App* > Menu > Menu item
+- Go to Employees > Configuration > Timesheet Employee Cost
 
-  *insert screenshot!*
+- Create an employee cost.
 
-- In “Contact” form, add a value to field *xyz* > save
+- In Timesheet form, you can select this cost to calculate the amount analytic.
 
-  *insert screenshot!*
 
-- The value of *xyz* is now displayed in the list view.
-
-  *insert screenshot!*
+If you do not select any cost, the cost will come from the employee form.
