@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2024 Jesus Ramiro <jesus@bilbonet.net>
+     License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl.html).-->
+<odoo>
+  <record id="account_analytic_line_tree" model="ir.ui.view">
+      <field name="model">account.analytic.line</field>
+      <field name="inherit_id" ref="hr_timesheet.hr_timesheet_line_tree" />
+      <field name="arch" type="xml">
+          <field name="name" position="after">
+              <field name="employee_cost"  options=" {'no_create': True, 'no_create_edit':True}" optional="show" />
+          </field>
+      </field>
+  </record>
+</odoo>
