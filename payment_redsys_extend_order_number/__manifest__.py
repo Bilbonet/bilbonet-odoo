@@ -8,7 +8,7 @@
     "category": "Payment Acquirer",
     "website": "https://github.com/bilbonet/bilbonet-odoo/tree/14.0/payment_redsys_extend_order_number",
     "author": "Jesus Ramiro, Bilbonet",
-    "maintainers": ["bilbopnet"],
+    "maintainers": ["bilbonet"],
     "license": "AGPL-3",
     "application": False,
     "installable": True,
