@@ -9,5 +9,19 @@ Al instalar este módulo, se actualizan al estado **error** las facturas ticketb
 - Las facuras ticketbai del POS en estado **error** se pueden cancelar y recrear para volver a realizar el envío.
 
 
+### Respuesta factura ticketbai ya registrada
+- El envío de las facturas ticketbai puede recibir las siguientes contestcioes:
+  - TicketBai (Invoice)
+      - 005: Invoice already registered -> mark as sent.
+  - AnulaTicketBai (Cancellation)
+      - 011: Invoice already registered -> mark as sent.
+
+En estos casos la factura se marca como enviada. Corregimso esto y marcamos la factura como error para que un responsable revise si la facturaq esta realmente registrada o se trata de un error de la aplicación que esta repitiendo números.
+
+
 # Mejoras
-- En la vista formualario de las facturas Ticketbay, muestra la orden del POS enlazada con la factura ticketbai.
+
+### Vista formulario facturas ticketba
+- Muestrar la orden del POS enlazada con la factura ticketbai.
+- Las facturas en estado error añadimos los botones para solo cambiar nel estado a "enviada" o "cancelada".
+- Mostramos la respues del envío.

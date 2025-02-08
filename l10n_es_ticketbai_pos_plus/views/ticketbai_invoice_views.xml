@@ -4,14 +4,56 @@
 <odoo>
     <record id="tbai_invoice_form" model="ir.ui.view">
         <field name="model">tbai.invoice</field>
-        <field name="inherit_id" ref="l10n_es_ticketbai.tbai_invoice_form"/> 
+        <field name="inherit_id" ref="l10n_es_ticketbai.tbai_invoice_form"/>
         <field name="arch" type="xml">
+            <xpath expr="//button[@name='cancel_and_recreate']" position="after">
+                <button name="mark_as_sent" string="Mark as Sent" type="object" states="error" groups="account.group_account_manager"/>
+                <button name="cancel" string="Mark as Cancel" type="object" states="error" groups="account.group_account_manager"/>
+            </xpath>
             <field name="invoice_id" position="attributes">
                 <attribute name="attrs">{'invisible': [('invoice_id', '=', False)]}</attribute>
             </field>
             <field name="invoice_id" position="after">
                 <field name="pos_order_id" readonly="1" attrs="{'invisible': [('pos_order_id', '=', False)]}"/>
             </field>
+            <xpath expr="//group[@name='qr']" position="after">
+                <group name="tbai_response" string="Response" states="error" attrs="{'invisible': [('tbai_response_ids', '=', [])]}">
+                    <field name="tbai_response_ids" nolabel="1" options="{'no_create_edit': True}">
+                        <form>
+                            <header>
+                                <field name="state" widget="statusbar" readonly="1"/>
+                            </header>
+                            <sheet>
+                                <group name="tbai_response_main_group">
+                                    <field name="xml" filename="xml_fname" readonly="1"/>
+                                    <field name="xml_fname" invisible="1" class="oe_inline oe_right"/>
+                                </group>
+                                <group name="tbai_response_messages_group" string="Messages">
+                                    <field name="tbai_response_message_ids" nolabel="1" readonly="1">
+                                        <form>
+                                            <group>
+                                                <field name="tbai_response_id" invisible="1"/>
+                                                <field name="code" readonly="1"/>
+                                                <field name="description" readonly="1"/>
+                                            </group>
+                                        </form>
+                                        <tree create="false" delete="false">
+                                            <field name="tbai_response_id" invisible="1"/>
+                                            <field name="code" readonly="1"/>
+                                            <field name="description" readonly="1"/>
+                                        </tree>
+                                    </field>
+                                </group>
+                            </sheet>
+                        </form>
+                        <tree create="false" delete="false">
+                            <field name="create_date"/>
+                            <field name="tbai_response_message_ids" widget="many2many_tags"/>
+                            <field name="state"/>
+                        </tree>
+                    </field>
+                </group>
+            </xpath>
         </field>
     </record>
 </odoo>
