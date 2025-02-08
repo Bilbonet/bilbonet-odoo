@@ -17,7 +17,7 @@
                 <field name="pos_order_id" readonly="1" attrs="{'invisible': [('pos_order_id', '=', False)]}"/>
             </field>
             <xpath expr="//group[@name='qr']" position="after">
-                <group name="tbai_response" string="Response" states="error" attrs="{'invisible': [('tbai_response_ids', '=', [])]}">
+                <group name="tbai_response" string="Response" attrs="{'invisible': [('tbai_response_ids', '=', [])]}">
                     <field name="tbai_response_ids" nolabel="1" options="{'no_create_edit': True}">
                         <form>
                             <header>
