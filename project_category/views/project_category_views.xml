@@ -46,6 +46,7 @@
             </form>
         </field>
     </record>
+
     <record id="project_category_search" model="ir.ui.view">
         <field name="model">project.category</field>
         <field name="inherit_id" eval="False" />
@@ -66,11 +67,13 @@
             </search>
         </field>
     </record>
+
     <record id="action_project_category" model="ir.actions.act_window">
         <field name="name">Project Categories</field>
         <field name="res_model">project.category</field>
         <field name="view_mode">tree,form</field>
     </record>
+    
     <menuitem
         name="Project Categories"
         id="project_category_menu"
