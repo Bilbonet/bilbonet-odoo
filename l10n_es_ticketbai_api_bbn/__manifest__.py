@@ -3,7 +3,7 @@
 {
     "name": "TicketBAI - API BBN",
     "summary": "Corrección de errores y mejoras en el módulo de TicketBAI API",
-    "version": "14.0.1.0.0",
+    "version": "15.0.1.0.0",
     "development_status": "Alpha",
     "category": "Accounting & Finance",
     "website": "https://github.com/bilbonet/bilbonet-odoo/tree/14.0/l10n_es_ticketbai_pos_plus",
