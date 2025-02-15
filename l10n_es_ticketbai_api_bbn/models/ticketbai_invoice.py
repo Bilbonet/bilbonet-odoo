@@ -24,21 +24,6 @@ TBAI_REJECTED_MAX_RETRIES = 5
 class TicketBAIInvoice(models.Model):
     _inherit = "tbai.invoice"
 
-    def cancel_and_recreate(self):
-        """
-        Cancels and recreates invoices that are in an error state and have a POS order ID.
-
-        Process of cancel is set by the inherited function, due to this we
-        can't t cancel here or call the function before recreate the pos invoice.
-        """
-        for record in self.sudo().filtered(
-            lambda x: x.state == TicketBaiInvoiceState.error.value and x.pos_order_id
-        ):
-            if TicketBaiSchema.TicketBai.value == record.schema and record.pos_order_id:
-                record.pos_order_id._tbai_build_invoice()
-
-        return super().cancel_and_recreate()
-
     @api.model
     def send_pending_invoices(self):
         """

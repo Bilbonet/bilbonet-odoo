@@ -1,7 +1,7 @@
 # Copyright 2025 Jesus Ramiro <jesus@bilbonet.net>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 {
-    "name": "TicketBAI - Point of Sale Plus",
+    "name": "TicketBAI - POS BBN",
     "summary": "Corrección de errores y mejoras en el módulo de TicketBAI para TPV",
     "version": "14.0.1.0.0",
     "development_status": "Alpha",
