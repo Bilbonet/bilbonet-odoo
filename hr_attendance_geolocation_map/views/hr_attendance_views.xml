@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2025 Jesus Ramiro <jesus@bilbonet.net>
+     License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl.html).-->
+<odoo>
+    <record id="hr_attendance_view_form" model="ir.ui.view">
+        <field name="model">hr.attendance</field>
+        <field name="inherit_id" ref="hr_attendance_geolocation.hr_attendance_view_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//form/sheet//group[@name='locations']//field[@name='check_in_longitude_text']" position="after">
+                <field name="check_in_map_link" invisible="1" /><br/>
+                <button name="action_check_in_map_link" 
+                    type="object" 
+                    string=""
+                    icon="fa-map-marker"
+                    class="bg-success"
+                    attrs="{'invisible': [('check_in_map_link', '=', False)]}"
+                />
+            </xpath>
+            <xpath expr="//form/sheet//group[@name='locations']//field[@name='check_out_longitude_text']" position="after">
+                <field name="check_out_map_link" invisible="1" /><br/>
+                <button name="action_check_out_map_link" 
+                    type="object" 
+                    string=""
+                    icon="fa-map-marker"
+                    class="bg-warning"
+                    attrs="{'invisible': [('check_out_map_link', '=', False)]}"
+                />
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_attendance_tree" model="ir.ui.view">
+        <field name="model">hr.attendance</field>
+        <field name="inherit_id" ref="hr_attendance_geolocation.view_attendance_tree" />
+        <field name="arch" type="xml">
+            <field name="check_in_latitude_text" position="before">
+                <field name="check_in_map_link" invisible="1" />
+                <button name="action_check_in_map_link" 
+                    type="object" 
+                    string=""
+                    icon="fa-map-marker"
+                    class="bg-success"
+                    attrs="{'invisible': [('check_in_map_link', '=', False)]}"
+                />
+            </field>
+            <field name="check_out_latitude_text" position="before">
+                <field name="check_out_map_link" invisible="1" />
+                <button name="action_check_out_map_link" 
+                    type="object" 
+                    string=""
+                    icon="fa-map-marker"
+                    class="bg-warning"
+                    attrs="{'invisible': [('check_out_map_link', '=', False)]}"
+                />
+            </field>
+        </field>
+    </record>
+</odoo>
