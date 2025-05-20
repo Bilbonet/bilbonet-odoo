@@ -1,7 +1,7 @@
 # Copyright (C) 2025 Jesus Remiro <bilbonet@gmail.com>
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 
-from odoo import _, fields, models
+from odoo import _, api, fields, models
 
 
 class HrAttendance(models.Model):
@@ -18,6 +18,7 @@ class HrAttendance(models.Model):
         store=True,
     )
     
+    @api.depends('check_in_latitude', 'check_in_longitude')
     def _compute_check_in_map_link(self):
         for record in self:
             if record.check_in_latitude and record.check_in_longitude:
@@ -27,6 +28,7 @@ class HrAttendance(models.Model):
             else:
                 record.check_in_map_link = False
 
+    @api.depends('check_out_latitude', 'check_out_longitude')
     def _compute_check_out_map_link(self):
         for record in self:
             if record.check_out_latitude and record.check_out_longitude:
@@ -53,3 +55,8 @@ class HrAttendance(models.Model):
                 "url": self.check_out_map_link,
                 "target": "_blank",
             }
+
+    def action_recompute_map_links(self):
+        for rec in self:
+            rec._compute_check_in_map_link()
+            rec._compute_check_out_map_link()
