@@ -4,18 +4,12 @@ import logging
 
 from odoo import api, models
 
-from odoo.addons.l10n_es_ticketbai_api.models.ticketbai_invoice import (
-    RefundCode,
-    RefundType,
-    SiNoType,
-    TicketBaiInvoiceState,
-)
-from odoo.addons.l10n_es_ticketbai_api.ticketbai.xml_schema import TicketBaiSchema
 from odoo.addons.l10n_es_ticketbai_api.models.ticketbai_response import (
     TicketBaiCancellationResponseCode as CancellationResponseCode,
     TicketBaiInvoiceResponseCode as InvoiceResponseCode,
     TicketBaiResponseState as ResponseState,
 )
+from odoo.addons.l10n_es_ticketbai_api.ticketbai.xml_schema import TicketBaiSchema
 
 _logger = logging.getLogger(__name__)
 TBAI_REJECTED_MAX_RETRIES = 5

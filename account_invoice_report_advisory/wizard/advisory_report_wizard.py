@@ -3,7 +3,6 @@
 
 from odoo import _, api, fields, models
 from odoo.exceptions import ValidationError
-from datetime import date
 
 
 class AdvisoryReportWizard(models.TransientModel):
@@ -21,10 +20,10 @@ class AdvisoryReportWizard(models.TransientModel):
         default="posted",
     )
     journal_ids = fields.Many2many(
-        comodel_name="account.journal", 
-        string="Journals", 
+        comodel_name="account.journal",
+        string="Journals",
         domain="[('company_id', '=', company_id), ('type', 'in', ['sale', 'purchase'])]",
-        required=False
+        required=False,
     )
 
     @api.onchange("company_id")
@@ -90,9 +89,9 @@ class AdvisoryReportWizard(models.TransientModel):
             journals = self.env["account.journal"].search(
                 [
                     ("company_id", "=", self.company_id.id),
-                    ("type", "in", ("sale", "purchase"))
+                    ("type", "in", ("sale", "purchase")),
                 ]
-            )        
+            )
         return {
             "wizard_id": self.id,
             "company_id": self.company_id.id,

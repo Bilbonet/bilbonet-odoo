@@ -6,7 +6,7 @@
     "version": "14.0.1.0.0",
     "development_status": "Alpha",
     "category": "Payment Acquirer",
-    "website": "https://github.com/bilbonet/bilbonet-odoo/tree/14.0/payment_redsys_extend_order_number",
+    "website": "https://github.com/Bilbonet/bilbonet-odoo",
     "author": "Jesus Ramiro, Bilbonet",
     "maintainers": ["bilbonet"],
     "license": "AGPL-3",

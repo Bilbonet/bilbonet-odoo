@@ -1,6 +1,6 @@
 # Copyright 2024 bilbonet.net - Jesus Ramiro
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
-from odoo import api, fields, models
+from odoo import api, models
 
 
 class SaleOrderLine(models.Model):
@@ -13,7 +13,7 @@ class SaleOrderLine(models.Model):
         more discount fields to the saleorder lines
         """
         res = super(SaleOrderLine, self).product_id_change()
-        if res != None and self.product_id and self.order_id.partner_id:
+        if res is not None and self.product_id and self.order_id.partner_id:
             self._get_product_discounts()
         return res
 

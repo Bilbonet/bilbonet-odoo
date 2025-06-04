@@ -5,7 +5,11 @@ from odoo import fields, models
 
 class PartnerDeliveryZone(models.Model):
     _inherit = "partner.delivery.zone"
-    _order = 'sequence'
+    _order = "sequence"
 
-    sequence = fields.Integer(string='Sequence', index=True, default=10,
-        help="Gives the sequence order when displaying a list of Zones.")
+    sequence = fields.Integer(
+        string="Sequence",
+        index=True,
+        default=10,
+        help="Gives the sequence order when displaying a list of Zones.",
+    )

@@ -49,7 +49,9 @@ class AdvisoryReport(models.AbstractModel):
         return tax_data
 
     @api.model
-    def _get_tax_report_domain(self, company_id, date_from, date_to, only_posted_moves, journal_ids):
+    def _get_tax_report_domain(
+        self, company_id, date_from, date_to, only_posted_moves, journal_ids
+    ):
         domain = [
             ("company_id", "=", company_id),
             ("date", ">=", date_from),
@@ -65,7 +67,9 @@ class AdvisoryReport(models.AbstractModel):
         return domain
 
     @api.model
-    def _get_net_report_domain(self, company_id, date_from, date_to, only_posted_moves, journal_ids):
+    def _get_net_report_domain(
+        self, company_id, date_from, date_to, only_posted_moves, journal_ids
+    ):
         domain = [
             ("company_id", "=", company_id),
             ("date", ">=", date_from),
@@ -90,7 +94,7 @@ class AdvisoryReport(models.AbstractModel):
         tax_move_lines = self.env["account.move.line"].search_read(
             domain=tax_domain,
             fields=ml_fields,
-            order='journal_id, move_id desc',
+            order="journal_id, move_id desc",
         )
 
         net_domain = self._get_net_report_domain(
@@ -99,7 +103,7 @@ class AdvisoryReport(models.AbstractModel):
         taxed_move_lines = self.env["account.move.line"].search_read(
             domain=net_domain,
             fields=ml_fields,
-            order='journal_id, move_id desc',
+            order="journal_id, move_id desc",
         )
         taxed_move_lines = list(filter(lambda d: d["tax_ids"], taxed_move_lines))
 
@@ -169,18 +173,18 @@ class AdvisoryReport(models.AbstractModel):
         for move_id in adv_report.keys():
             adv_report[move_id]["name"] = move_group_data[move_id]["name"]
             adv_report[move_id]["date"] = move_group_data[move_id]["date"]
-            adv_report[move_id]["partner_name"] = move_group_data[move_id]["partner_name"]
+            adv_report[move_id]["partner_name"] = move_group_data[move_id][
+                "partner_name"
+            ]
             adv_report[move_id]["vat"] = move_group_data[move_id]["vat"]
             adv_report[move_id]["net"] = move_group_data[move_id]["net"]
             adv_report[move_id]["tax"] = move_group_data[move_id]["tax"]
             adv_report[move_id]["total"] = move_group_data[move_id]["total"]
-            #Tax Lines
+            # Tax Lines
             adv_report[move_id]["taxes"] = []
             for tax_id in adv_report[move_id]:
                 if isinstance(tax_id, int):
-                    adv_report[move_id]["taxes"].append(
-                        adv_report[move_id][tax_id]
-                    )
+                    adv_report[move_id]["taxes"].append(adv_report[move_id][tax_id])
             adv_report_list.append(adv_report[move_id])
 
         return adv_report_list
@@ -196,9 +200,7 @@ class AdvisoryReport(models.AbstractModel):
         vat_report_data, tax_data = self._get_vat_report_data(
             company_id, date_from, date_to, only_posted_moves, journal_ids
         )
-        adv_report = self._get_advisor_report_data(
-                vat_report_data, tax_data
-            )
+        adv_report = self._get_advisor_report_data(vat_report_data, tax_data)
 
         return {
             "doc_ids": [wizard_id],

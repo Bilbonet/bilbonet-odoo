@@ -72,13 +72,13 @@ Contributors
 Maintainers
 -----------
 
-.. |maintainer-bilbopnet| image:: https://github.com/bilbopnet.png?size=40px
-    :target: https://github.com/bilbopnet
-    :alt: bilbopnet
+.. |maintainer-bilbonet| image:: https://github.com/bilbonet.png?size=40px
+    :target: https://github.com/bilbonet
+    :alt: bilbonet
 
 Current maintainer:
 
-|maintainer-bilbopnet| 
+|maintainer-bilbonet| 
 
 This module is part of the `Bilbonet/bilbonet-odoo <https://github.com/Bilbonet/bilbonet-odoo/tree/14.0/payment_redsys_extend_order_number>`_ project on GitHub.
 

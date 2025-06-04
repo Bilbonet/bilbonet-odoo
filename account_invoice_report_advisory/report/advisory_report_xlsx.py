@@ -31,10 +31,6 @@ class VATReportXslx(models.AbstractModel):
         return [
             [_("Date from"), report.date_from.strftime("%d/%m/%Y")],
             [_("Date to"), report.date_to.strftime("%d/%m/%Y")],
-            # [
-            #     _("Based on"),
-            #     _("Tax Tags") if report.based_on == "taxtags" else _("Tax Groups"),
-            # ],
         ]
 
     def _get_col_count_filter_name(self):
@@ -48,14 +44,8 @@ class VATReportXslx(models.AbstractModel):
             "report.account_invoice_report_advisory.advisory_report"
         ]._get_report_values(report, data)
         vat_report = res_data["adv_report"]
-        #! tax_detail = res_data["tax_detail"]
-        # For each tax_tag tax_group
+
         self.write_array_header(report_data)
         for tag_or_group in vat_report:
             # Write taxtag line
             self.write_line_from_dict(tag_or_group, report_data)
-
-            # For each tax if detail taxes
-            # if tax_detail:
-            #     for tax in tag_or_group["taxes"]:
-            #         self.write_line_from_dict(tax, report_data)
