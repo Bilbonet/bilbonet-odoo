@@ -27,6 +27,14 @@
                 <attribute name="states"></attribute>
             </button>
 
+            <xpath expr="//group[@name='invoice']" position="before">
+                <div class="oe_title">
+                    <h1 class="mt0">
+                        <field name="name" readonly="True"/>
+                    </h1>
+                </div>
+            </xpath>
+
             <field name="invoice_id" position="attributes">
                 <attribute name="attrs">{'invisible': [('invoice_id', '=', False)]}</attribute>
             </field>
