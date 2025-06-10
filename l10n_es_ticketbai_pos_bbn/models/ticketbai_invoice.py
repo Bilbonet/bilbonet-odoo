@@ -27,11 +27,11 @@ class TicketBAIInvoice(models.Model):
         for record in self:
             record.is_duplicated = False
             if record.pos_order_id and record.state == "error":
-                count = self.env["pos.order"].search_count(
-                    [("l10n_es_unique_id", "=", record.name)]
+                # Get the last response and check if the response code is "005"
+                last_response = record.tbai_response_ids.sorted('id', reverse=True)[:1]
+                record.is_duplicated = any(
+                    msg.code == "005" for msg in last_response.tbai_response_message_ids
                 )
-                if count > 1:
-                    record.is_duplicated = True
 
     def renumber_pos_invoice(self):
         """
@@ -42,6 +42,7 @@ class TicketBAIInvoice(models.Model):
             pos_order = self.name + "R"
             self.pos_order_id.write({"l10n_es_unique_id": pos_order})
             self.name = pos_order
+            self.cancel_and_recreate()
 
     def cancel_and_recreate(self):
         """
