@@ -13,6 +13,7 @@
     "application": False,
     "installable": True,
     "depends": [
+        "l10n_es_ticketbai_api", 
         "l10n_es_ticketbai_pos",
     ],
     "data": [

@@ -24,13 +24,17 @@ Se añaden dos nuevos botones:
 
 
 ### Renumerar Facturas Duplicadas
-Cuando tenemos un numero de factura duplicada, en el formulario de factutra Ticketbai disponemos de un nuevo botón **Renumerar Factura**.
-Este boton cambia el número de factura, añadiendo una **R** al final. De esta manera corregimos la repetición y podemos retramitar en envío de la factura.
+En ocasiones las ventas de TPV enumeran mal las facturas Ticketbai o incluso numeran bien las factura pero numeran mal la factura en el envío. Por esta razon en ocasiones se dan numeros de factura duplicados.
 
+Cuando tenemos un numero de factura duplicada, en el envío obtenemos la respuesta [005 - Registro duplicado].
 
+En el formulario de factutra Ticketbai disponemos de un nuevo botón **Renumerar Factura**. Este boton cambia el número de factura, añadiendo una **R** al final. De esta manera corregimos la repetición. 
+
+El propio botón de renumerar, cancela el envío y genera un nuevo envío con la nueva numeración.
 
 # Mejoras
 
 ### Vista formulario facturas ticketbai
+- Mostramos el campo **nombre**. 
 - Al acceder a la vista formulario de la Factura Ticketbai ahora muestrar la orden del POS enlazada con la factura Ticketbai.
 
