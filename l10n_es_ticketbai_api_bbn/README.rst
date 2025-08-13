@@ -29,13 +29,13 @@ TicketBAI - API BBN
 Este módulo añade las siguientes mejoras en el módulo Ticketbai API:
 
 Correcciones
-============
+------------
 
 Respuesta factura ticketbai ya registrada
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 - El envío de las facturas ticketbai puede recibir las siguientes
-  contestcioes:
+  contestacioes:
 
   - TicketBai (Invoice)
 
@@ -45,10 +45,10 @@ Respuesta factura ticketbai ya registrada
 
     - 011: Invoice already registered -> mark as sent.
 
-En estos casos la factura se marca como enviada. Corregimso esto y
-marcamos la factura como error para que un responsable revise si la
-facturaq esta realmente registrada o se trata de un error de la
-aplicación que esta repitiendo números.
+En estos casos la factura se marca como enviada. Corregimos esto y
+marcamos la factura como error, para que un responsable revise si la
+factura esta realmente registrada, o se trata de un error de la
+aplicación y esta repitiendo números.
 
 .. IMPORTANT::
    This is an alpha version, the data model and design can change at any time without warning.
@@ -59,6 +59,36 @@ aplicación que esta repitiendo números.
 
 .. contents::
    :local:
+
+Use Cases / Context
+===================
+
+Working with TicketeBAI
+
+Installation
+============
+
+No additional installation steps are required.
+
+Configuration
+=============
+
+No extra configuration is needed for standard usage.
+
+Usage
+=====
+
+There is no usage aclaration.
+
+Known issues / Roadmap
+======================
+
+There are no future improvments in sight
+
+Changelog
+=========
+
+What's your history
 
 Bug Tracker
 ===========
@@ -76,13 +106,19 @@ Credits
 Authors
 -------
 
-* Jesus Ramiro
-* Bilbonet
+* Jesus Ramiro (Bilbonet)
 
 Contributors
 ------------
 
 - Jesus Ramiro jesus@bilbonet.net
+
+Other credits
+-------------
+
+The development of this module has been financially supported by:
+
+- Euskalmushing, S.L.
 
 Maintainers
 -----------
