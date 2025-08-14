@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright 2025 Bilbonet
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <record id="tbai_invoice_form" model="ir.ui.view">
+        <field name="model">tbai.invoice</field>
+        <field name="inherit_id" ref="l10n_es_ticketbai.tbai_invoice_form" />
+        <field name="arch" type="xml">
+            <button name="cancel_and_recreate" position="after">
+                <field name="is_duplicated" invisible="1" />
+                    <button
+                    name="renumber_pos_invoice"
+                    string="Renumber POS Invoice"
+                    type="object"
+                    attrs="{'invisible': ['|',
+                            ('state', '!=', 'error'),
+                            ('is_duplicated', '=', False)
+                        ]}"
+                    class="btn-primary"
+                    groups="account.group_account_manager"
+                />
+            </button>
+            <button name="cancel_and_recreate" position="attributes">
+                <attribute name="attrs">{'invisible': ['|',
+                        ('state', '!=', 'error'),
+                        ('is_duplicated', '=', True),
+                ]}</attribute>
+                <attribute name="states" />
+            </button>
+
+            <xpath expr="//group[@name='invoice']" position="before">
+                <div class="oe_title">
+                    <h1 class="mt0">
+                        <field name="name" readonly="True" />
+                    </h1>
+                </div>
+            </xpath>
+
+            <field name="invoice_id" position="attributes">
+                <attribute
+                    name="attrs"
+                >{'invisible': [('invoice_id', '=', False)]}</attribute>
+            </field>
+            <field name="invoice_id" position="after">
+                <field
+                    name="pos_order_id"
+                    readonly="1"
+                    attrs="{'invisible': [('pos_order_id', '=', False)]}"
+                />
+            </field>
+        </field>
+    </record>
+</odoo>
