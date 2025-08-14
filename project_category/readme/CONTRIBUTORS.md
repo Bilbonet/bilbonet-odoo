@@ -1,3 +1,3 @@
-* `Bilbonet <https://www.bilbonet.net>`_:
+- `Bilbonet <https://www.bilbonet.net>`\_:
 
-  * Jesus Ramiro <jesus@bilbonet.net>
+  - Jesus Ramiro <jesus@bilbonet.net>

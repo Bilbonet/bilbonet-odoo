@@ -7,7 +7,7 @@
     "category": "Account",
     "license": "AGPL-3",
     "author": "Jesus Ramiro (Bilbonet.NET)",
-    "website": "https://www.bilbonet.net",
+    "website": "https://github.com/OCA/account-financial-reporting",
     "depends": ["account_due_list"],
     "data": [
         "data/report_paperformat_data.xml",

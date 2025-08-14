@@ -1,25 +1,36 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <!-- Copyright 2025 Jesus Ramiro <jesus@bilbonet.net>
      License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl.html).-->
 <odoo>
     <record id="hr_attendance_view_form" model="ir.ui.view">
         <field name="model">hr.attendance</field>
-        <field name="inherit_id" ref="hr_attendance_geolocation.hr_attendance_view_form" />
+        <field
+            name="inherit_id"
+            ref="hr_attendance_geolocation.hr_attendance_view_form"
+        />
         <field name="arch" type="xml">
-            <xpath expr="//form/sheet//group[@name='locations']//field[@name='check_in_longitude_text']" position="after">
-                <field name="check_in_map_link" invisible="1" /><br/>
-                <button name="action_check_in_map_link" 
-                    type="object" 
+            <xpath
+                expr="//form/sheet//group[@name='locations']//field[@name='check_in_longitude_text']"
+                position="after"
+            >
+                <field name="check_in_map_link" invisible="1" /><br />
+                <button
+                    name="action_check_in_map_link"
+                    type="object"
                     string=""
                     icon="fa-map-marker"
                     class="bg-success"
                     attrs="{'invisible': [('check_in_map_link', '=', False)]}"
                 />
             </xpath>
-            <xpath expr="//form/sheet//group[@name='locations']//field[@name='check_out_longitude_text']" position="after">
-                <field name="check_out_map_link" invisible="1" /><br/>
-                <button name="action_check_out_map_link" 
-                    type="object" 
+            <xpath
+                expr="//form/sheet//group[@name='locations']//field[@name='check_out_longitude_text']"
+                position="after"
+            >
+                <field name="check_out_map_link" invisible="1" /><br />
+                <button
+                    name="action_check_out_map_link"
+                    type="object"
                     string=""
                     icon="fa-map-marker"
                     class="bg-warning"
@@ -35,8 +46,9 @@
         <field name="arch" type="xml">
             <field name="check_in_latitude_text" position="before">
                 <field name="check_in_map_link" invisible="1" />
-                <button name="action_check_in_map_link" 
-                    type="object" 
+                <button
+                    name="action_check_in_map_link"
+                    type="object"
                     string=""
                     icon="fa-map-marker"
                     class="bg-success"
@@ -45,8 +57,9 @@
             </field>
             <field name="check_out_latitude_text" position="before">
                 <field name="check_out_map_link" invisible="1" />
-                <button name="action_check_out_map_link" 
-                    type="object" 
+                <button
+                    name="action_check_out_map_link"
+                    type="object"
                     string=""
                     icon="fa-map-marker"
                     class="bg-warning"
@@ -59,8 +72,8 @@
 
     <record id="action_recompute_map_links" model="ir.actions.server">
         <field name="name">Recompute Map Links</field>
-        <field name="model_id" ref="model_hr_attendance"/>
-        <field name="binding_model_id" ref="model_hr_attendance"/>
+        <field name="model_id" ref="model_hr_attendance" />
+        <field name="binding_model_id" ref="model_hr_attendance" />
         <field name="state">code</field>
         <field name="code">
             action = records.action_recompute_map_links()

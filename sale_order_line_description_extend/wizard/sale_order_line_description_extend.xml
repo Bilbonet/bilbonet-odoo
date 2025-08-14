@@ -11,8 +11,13 @@
                     <field name="product_id" readonly="1" />
                 </group>
                 <group string="Extended Description">
-                    <field name="ex_descript" nolabel="1" widget="html" class="oe-bordered-editor" 
-                        options="{'style-inline': true, 'codeview': true, 'safe': True}"/>
+                    <field
+                        name="ex_descript"
+                        nolabel="1"
+                        widget="html"
+                        class="oe-bordered-editor"
+                        options="{'style-inline': true, 'codeview': true, 'safe': True}"
+                    />
                 </group>
                 <footer>
                     <button
@@ -33,7 +38,10 @@
         </field>
     </record>
 
-    <record id="sale_order_line_description_extend_action" model="ir.actions.act_window">
+    <record
+        id="sale_order_line_description_extend_action"
+        model="ir.actions.act_window"
+    >
         <field name="name">Product description extended</field>
         <field name="res_model">sale.order.line.description.extend</field>
         <field name="view_mode">form</field>

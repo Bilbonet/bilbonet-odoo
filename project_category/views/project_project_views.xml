@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <!-- Copyright 2025 Jesus Ramiro <jesus@bilbonet.net>
      License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl.html).-->
 <odoo>
@@ -25,17 +25,17 @@
         <field name="inherit_id" ref="project.edit_project" />
         <field name="arch" type="xml">
             <field name="user_id" position="after">
-                <field name="category_id" widget="selection"/>
+                <field name="category_id" widget="selection" />
             </field>
         </field>
     </record>
 
     <record id="category_view_project" model="ir.ui.view">
         <field name="model">project.project</field>
-        <field name="inherit_id" ref="project.view_project"/>
+        <field name="inherit_id" ref="project.view_project" />
         <field name="arch" type="xml">
             <xpath expr="//field[@name='user_id']" position="after">
-                <field name="category_id" optional="show" string="Category"/>
+                <field name="category_id" optional="show" string="Category" />
             </xpath>
         </field>
     </record>

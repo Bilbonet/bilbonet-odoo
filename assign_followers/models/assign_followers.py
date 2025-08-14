@@ -1,4 +1,4 @@
-from odoo import api, fields, models, _
+from odoo import _, fields, models
 
 
 class assign_followers_settings(models.Model):
@@ -26,7 +26,7 @@ class assign_followers_settings(models.Model):
         action_obj = self.env["ir.actions.act_window"].sudo()
 
         for template in self:
-            src_obj = template.model_id.model
+            template.model_id.model
             model_data_id = self.env["ir.model.data"].check_object_reference(
                 "assign_followers", "view_assign_followers"
             )[1]

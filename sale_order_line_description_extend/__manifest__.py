@@ -5,13 +5,13 @@
     "version": "15.0.1.0.0",
     "category": "Sales Management",
     "author": "Bilbonet",
-    "website": "https://github.com/Bilbonet/bilbonet-odoo/",
+    "website": "https://github.com/OCA/account-financial-reporting",
     "license": "AGPL-3",
     "depends": ["sale"],
     "data": [
         "security/ir.model.access.csv",
         "wizard/sale_order_line_description_extend.xml",
-        "views/sale_view.xml"
+        "views/sale_view.xml",
     ],
     "installable": True,
 }

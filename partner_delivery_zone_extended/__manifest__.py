@@ -6,7 +6,7 @@
     "version": "15.0.1.0.0",
     "development_status": "Alpha",
     "category": "Delivery",
-    "website": "https://github.com/OCA/bilbonet-odoo/tree/15.0/partner_delivery_zone_extended",
+    "website": "https://github.com/OCA/account-financial-reporting",
     "author": "Bilbonet",
     "maintainers": ["bilbonet"],
     "license": "AGPL-3",

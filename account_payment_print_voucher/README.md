@@ -2,5 +2,4 @@
 
 # Account Payment Line Print Voucher
 
-
 For each payment you can print a voucher.

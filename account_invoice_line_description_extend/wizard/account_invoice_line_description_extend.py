@@ -28,14 +28,14 @@ class AccounInvoiceLineDescriptionExtend(models.TransientModel):
         default=_default_product_id,
     )
     ex_descript = fields.Html(
-        string='Extended Description',
+        string="Extended Description",
         default=_default_ex_descript,
     )
 
     def action_save_description(self):
         self.ensure_one()
         self.account_move_line_id.ex_descript = self.ex_descript
-    
+
     def action_delete_description(self):
         self.ensure_one()
-        self.account_move_line_id.ex_descript = ''
+        self.account_move_line_id.ex_descript = ""

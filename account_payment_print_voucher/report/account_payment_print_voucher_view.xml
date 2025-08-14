@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+<?xml version="1.0" ?>
 <!-- Copyright 2023 Jesus Ramiro <jesus@bilbonet.net>
      License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl.html).-->
 <odoo>
@@ -6,20 +6,28 @@
         <field name="name">Print Voucher</field>
         <field name="model">account.move.line</field>
         <field name="report_type">qweb-pdf</field>
-        <field name="report_name">account_payment_print_voucher.account_payment_document</field>
-        <field name="report_file">account_payment_print_voucher.account_payment_document</field>
-        <field name="print_report_name">'(' + object.move_id.name + ')_' + object.partner_id.name.replace(' ', '-')</field>
-        <field name="attachment">'(' + object.move_id.name + ')_' + (object.partner_id.name or '').replace(' ', '-') + '.pdf'</field>
-        <field name="binding_model_id" ref="account.model_account_move_line"/>
+        <field
+            name="report_name"
+        >account_payment_print_voucher.account_payment_document</field>
+        <field
+            name="report_file"
+        >account_payment_print_voucher.account_payment_document</field>
+        <field
+            name="print_report_name"
+        >'(' + object.move_id.name + ')_' + object.partner_id.name.replace(' ', '-')</field>
+        <field
+            name="attachment"
+        >'(' + object.move_id.name + ')_' + (object.partner_id.name or '').replace(' ', '-') + '.pdf'</field>
+        <field name="binding_model_id" ref="account.model_account_move_line" />
         <field name="binding_type">report</field>
         <!-- <field name="paperformat_id" ref="account_payment_print_voucher.paperformat_payment_voucher3"/> -->
-        <field name="groups_id" eval="[(4, ref('account.group_account_invoice'))]"/>
+        <field name="groups_id" eval="[(4, ref('account.group_account_invoice'))]" />
     </record>
 
     <template id="account_payment_document">
         <t t-call="web.html_container">
             <t t-foreach="docs" t-as="o">
-                <t t-set="lang" t-value="o.partner_id.lang"/>
+                <t t-set="lang" t-value="o.partner_id.lang" />
                 <t t-call="account_payment_print_voucher.payment_voucher_layout">
                     <t t-set="o" t-value="o.with_context(lang=lang)" />
                     <div class="container">
@@ -27,38 +35,74 @@
                             <div class="col-6">
                                 <div>
                                     <h5 class="o_company_1_layout">
-                                        <span t-field="o.company_id.name"/>
+                                        <span t-field="o.company_id.name" />
                                     </h5>
-                                    <span t-field="o.company_id.street"/><br/>
+                                    <span t-field="o.company_id.street" /><br />
                                     <t t-if="o.company_id.street2">
-                                        <span t-field="o.company_id.street2" /><br/>
+                                        <span t-field="o.company_id.street2" /><br />
                                     </t>
                                     <span t-field="o.company_id.zip" />
                                     <span t-field="o.company_id.city" /> -
-                                    <span t-field="o.company_id.state_id" /><br/>
-                                    Phone: <span t-field="o.company_id.phone" /><br/>
-                                    VAT: <span t-esc="o.company_id.vat.replace(' ','\N{NO-BREAK SPACE}')"/>
+                                    <span t-field="o.company_id.state_id" /><br />
+                                    Phone: <span t-field="o.company_id.phone" /><br />
+                                    VAT: <span
+                                        t-esc="o.company_id.vat.replace(' ','\N{NO-BREAK SPACE}')"
+                                    />
                                 </div>
                             </div>
-                            <div class="col-1"/>
+                            <div class="col-1" />
                             <div class="col-5">
-                                <div class="p-3 border border-1 border-dark" style="font:15px lucida-console,sans-serif !important;border-radius: 1rem;">
-                                    <span style="color:#3498DB !important;" t-field="o.partner_id.name" /><br/>
-                                    <span style="color:gray !important;" t-field="o.partner_id.street" /><br/>
+                                <div
+                                    class="p-3 border border-1 border-dark"
+                                    style="font:15px lucida-console,sans-serif !important;border-radius: 1rem;"
+                                >
+                                    <span
+                                        style="color:#3498DB !important;"
+                                        t-field="o.partner_id.name"
+                                    /><br />
+                                    <span
+                                        style="color:gray !important;"
+                                        t-field="o.partner_id.street"
+                                    /><br />
                                     <t t-if="o.partner_id.street2">
-                                        <span style="color:gray !important;" t-field="o.partner_id.street2" /><br/>
+                                        <span
+                                            style="color:gray !important;"
+                                            t-field="o.partner_id.street2"
+                                        /><br />
                                     </t>
-                                    <span style="color:gray !important;" t-field="o.partner_id.zip" />
-                                    <span style="color:gray !important;" t-field="o.partner_id.city" /> -
-                                    <span style="color:gray !important;" t-field="o.partner_id.state_id" /><br/>
+                                    <span
+                                        style="color:gray !important;"
+                                        t-field="o.partner_id.zip"
+                                    />
+                                    <span
+                                        style="color:gray !important;"
+                                        t-field="o.partner_id.city"
+                                    /> -
+                                    <span
+                                        style="color:gray !important;"
+                                        t-field="o.partner_id.state_id"
+                                    /><br />
                                     <t t-if="o.partner_id.phone or o.partner_id.mobile">
-                                        <span style="color:gray !important;" t-field="o.partner_id.phone"/>
-                                        <t t-if="o.partner_id.phone and o.partner_id.mobile">
-                                            <span style="color:gray !important;"> / </span>
+                                        <span
+                                            style="color:gray !important;"
+                                            t-field="o.partner_id.phone"
+                                        />
+                                        <t
+                                            t-if="o.partner_id.phone and o.partner_id.mobile"
+                                        >
+                                            <span
+                                                style="color:gray !important;"
+                                            > / </span>
                                         </t>
-                                        <spaun style="color:gray !important;" t-field="o.partner_id.mobile"/><br/>
+                                        <spaun
+                                            style="color:gray !important;"
+                                            t-field="o.partner_id.mobile"
+                                        /><br />
                                     </t>
-                                    <span style="color:gray !important;" t-field="o.partner_id.vat" /><br/>
+                                    <span
+                                        style="color:gray !important;"
+                                        t-field="o.partner_id.vat"
+                                    /><br />
                                 </div>
                             </div>
                         </div>
@@ -67,54 +111,72 @@
                             <div class="col-auto col-3 mw-100 mb-2">
                                 <strong>Document:</strong>
                                 <p class="m-0">
-                                    <span t-field="o.move_id.name"/>
+                                    <span t-field="o.move_id.name" />
                                 </p>
                             </div>
 
                             <div class="col-auto col-3 mw-100 mb-2">
                                 <strong>Expedition Date:</strong>
                                 <p class="m-0">
-                                    <span t-field="o.date" t-options='{"format": "dd/MM/y"}'/>
+                                    <span
+                                        t-field="o.date"
+                                        t-options='{"format": "dd/MM/y"}'
+                                    />
                                 </p>
                             </div>
 
                             <div class="col-auto col-3 mw-100 mb-2">
                                 <strong>Maturity Date:</strong>
                                 <p class="m-0">
-                                    <span t-field="o.date_maturity" t-options='{"format": "dd/MM/y"}'/>
+                                    <span
+                                        t-field="o.date_maturity"
+                                        t-options='{"format": "dd/MM/y"}'
+                                    />
                                 </p>
                             </div>
 
-                            <div class="col-auto col-3 mw-100 mb-2" t-if="o.partner_id.ref">
+                            <div
+                                class="col-auto col-3 mw-100 mb-2"
+                                t-if="o.partner_id.ref"
+                            >
                                 <strong>Partner Ref:</strong>
                                 <p class="m-0">
-                                    <span t-field="o.partner_id.ref"/>
+                                    <span t-field="o.partner_id.ref" />
                                 </p>
                             </div>
 
                         </div>
 
                         <div class="row mt32 mb32" id="amounts_info">
-                            <div class="col-auto col-3 mw-100 mb-2"
-                                t-if="o.debit != 0">
+                            <div class="col-auto col-3 mw-100 mb-2" t-if="o.debit != 0">
                                 <strong>Amount Debit:</strong>
-                                <span style="font-size:1.4em;" 
-                                      t-field="o.debit" 
-                                      t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                                <span
+                                    style="font-size:1.4em;"
+                                    t-field="o.debit"
+                                    t-options='{"widget": "monetary", "display_currency": o.currency_id}'
+                                />
                             </div>
-                            <div class="col-auto col-3 mw-100 mb-2 text-danger"
-                                t-if="o.credit != 0">
+                            <div
+                                class="col-auto col-3 mw-100 mb-2 text-danger"
+                                t-if="o.credit != 0"
+                            >
                                 <strong>Amount Credit: -</strong>
-                                <span style="font-size:1.4em;" 
-                                      t-field="o.credit" 
-                                      t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                                <span
+                                    style="font-size:1.4em;"
+                                    t-field="o.credit"
+                                    t-options='{"widget": "monetary", "display_currency": o.currency_id}'
+                                />
                             </div>
-                            <div t-attf-class="#{'text-danger' if o.amount_residual &lt; 0 else ''} col-auto col-3 mw-100 mb-2" 
-                                t-if="(o.amount_residual != 0 and o.debit != o.amount_residual and o.credit * -1 != o.amount_residual)">
+                            <div
+                                t-attf-class="#{'text-danger' if o.amount_residual &lt; 0 else ''} col-auto col-3 mw-100 mb-2"
+                                t-if="(o.amount_residual != 0 and o.debit != o.amount_residual and o.credit * -1 != o.amount_residual)"
+                            >
                                 <strong>Amount Pending:</strong>
-                                <span style="font-size:1.4em;" 
-                                      t-field="o.amount_residual" 
-                                      t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                                <span
+                                    style="font-size:1.4em;"
+                                    t-field="o.amount_residual"
+                                    t-options='{"widget": "monetary", "display_currency": o.currency_id}'
+                                />
                             </div>
                         </div>
 

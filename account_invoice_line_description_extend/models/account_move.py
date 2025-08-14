@@ -6,5 +6,4 @@ from odoo import fields, models
 class AccountMoveLine(models.Model):
     _inherit = "account.move.line"
 
-    ex_descript = fields.Html(string='Extended Description')
-    
+    ex_descript = fields.Html(string="Extended Description")

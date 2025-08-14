@@ -5,13 +5,12 @@ from odoo import api, fields, models
 
 
 class ProjectProject(models.Model):
-    _inherit = 'project.project'
+    _inherit = "project.project"
     _rec_name = "full_name"
 
-    code = fields.Char(string='Project Code', 
-        required=True, default='/', copy=False)
-    full_name = fields.Char(string="Full Name",
-        compute="_compute_full_name", store=True
+    code = fields.Char(string="Project Code", required=True, default="/", copy=False)
+    full_name = fields.Char(
+        string="Full Name", compute="_compute_full_name", store=True
     )
 
     _sql_constraints = [
@@ -25,13 +24,10 @@ class ProjectProject(models.Model):
     @api.depends("name", "code")
     def _compute_full_name(self):
         for project in self:
-            project.full_name = "{} {}".format(
-                    project.code, project.name
-                )
+            project.full_name = "{} {}".format(project.code, project.name)
 
     @api.model
     def create(self, vals):
-        if 'code' not in vals or vals.get('code', '/') == '/':
-            vals['code'] = self.env['ir.sequence'].next_by_code(
-                'project.sequence')
+        if "code" not in vals or vals.get("code", "/") == "/":
+            vals["code"] = self.env["ir.sequence"].next_by_code("project.sequence")
         return super(ProjectProject, self).create(vals)

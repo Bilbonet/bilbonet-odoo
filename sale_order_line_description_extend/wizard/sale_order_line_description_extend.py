@@ -28,15 +28,14 @@ class SaleOrderLinePriceHistory(models.TransientModel):
         default=_default_product_id,
     )
     ex_descript = fields.Html(
-        string='Extended Description',
+        string="Extended Description",
         default=_default_ex_descript,
     )
 
     def action_save_description(self):
         self.ensure_one()
         self.sale_order_line_id.ex_descript = self.ex_descript
-    
+
     def action_delete_description(self):
         self.ensure_one()
-        self.sale_order_line_id.ex_descript = ''
-    
+        self.sale_order_line_id.ex_descript = ""

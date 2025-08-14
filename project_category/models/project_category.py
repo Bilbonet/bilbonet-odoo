@@ -10,7 +10,9 @@ class ProjectCategory(models.Model):
     _description = "Project Category"
     _rec_name = "complete_name"
 
-    parent_id = fields.Many2one(comodel_name="project.category", string="Parent Category")
+    parent_id = fields.Many2one(
+        comodel_name="project.category", string="Parent Category"
+    )
     child_ids = fields.One2many(
         comodel_name="project.category", inverse_name="parent_id", string="Subtypes"
     )
