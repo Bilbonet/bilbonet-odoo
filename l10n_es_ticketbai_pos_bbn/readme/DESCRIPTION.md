@@ -1,6 +1,6 @@
 Este módulo añade las siguientes mejoras en el módulo Ticketbai del POS:
 
-# Correcciones
+## Correcciones
 
 ### Facturas simplificadas rechazadas pero con estado 'enviadas'
 
@@ -53,7 +53,7 @@ manera corregimos la repetición.
 El propio botón de renumerar, cancela el envío y genera un nuevo envío con la nueva
 numeración.
 
-# Mejoras
+## Mejoras
 
 ### Vista formulario facturas ticketbai
 

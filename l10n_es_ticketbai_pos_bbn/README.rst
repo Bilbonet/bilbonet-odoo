@@ -29,7 +29,7 @@ TicketBAI - POS BBN
 Este módulo añade las siguientes mejoras en el módulo Ticketbai del POS:
 
 Correcciones
-============
+------------
 
 Facturas simplificadas rechazadas pero con estado 'enviadas'
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -88,7 +88,7 @@ El propio botón de renumerar, cancela el envío y genera un nuevo envío
 con la nueva numeración.
 
 Mejoras
-=======
+-------
 
 Vista formulario facturas ticketbai
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -107,6 +107,36 @@ Vista formulario facturas ticketbai
 .. contents::
    :local:
 
+Use Cases / Context
+===================
+
+Working with TicketeBAI
+
+Installation
+============
+
+No additional installation steps are required.
+
+Configuration
+=============
+
+No extra configuration is needed for standard usage.
+
+Usage
+=====
+
+There is no usage aclaration.
+
+Known issues / Roadmap
+======================
+
+There are no future improvments in sight
+
+Changelog
+=========
+
+What's your history
+
 Bug Tracker
 ===========
 
@@ -123,13 +153,19 @@ Credits
 Authors
 -------
 
-* Jesus Ramiro
-* Bilbonet
+* Jesus Ramiro (Bilbonet)
 
 Contributors
 ------------
 
 - Jesus Ramiro jesus@bilbonet.net
+
+Other credits
+-------------
+
+The development of this module has been financially supported by:
+
+- Euskalmushing, S.L.
 
 Maintainers
 -----------
