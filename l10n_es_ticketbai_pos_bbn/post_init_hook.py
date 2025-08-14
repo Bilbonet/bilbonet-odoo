@@ -14,11 +14,11 @@ def post_init_hook(cr, registry):
         """
             UPDATE tbai_invoice AS ti
             SET state = 'error'
-            WHERE ti.state = 'sent' 
+            WHERE ti.state = 'sent'
             and ti.pos_order_id notnull and invoice_id isnull
             AND (
                 select state
-                from tbai_response 
+                from tbai_response
                 where tbai_invoice_id = ti.id
                 ORDER BY id DESC
                 LIMIT 1

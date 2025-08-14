@@ -2,13 +2,12 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 import logging
 
-from odoo import api, models, fields
+from odoo import api, fields, models
 
 from odoo.addons.l10n_es_ticketbai_api.models.ticketbai_invoice import (
     TicketBaiInvoiceState,
 )
 from odoo.addons.l10n_es_ticketbai_api.ticketbai.xml_schema import TicketBaiSchema
-
 
 _logger = logging.getLogger(__name__)
 TBAI_REJECTED_MAX_RETRIES = 5
@@ -22,23 +21,17 @@ class TicketBAIInvoice(models.Model):
         compute="_compute_is_duplicated",
         help="This field is used to mark the POS invoice name as duplicated",
     )
-    
+
     @api.depends("name", "state")
     def _compute_is_duplicated(self):
         for record in self:
             record.is_duplicated = False
             if record.pos_order_id and record.state == "error":
-<<<<<<< HEAD
-                count = self.env['pos.order'].search_count([('l10n_es_unique_id', '=', record.name)])
-                if count > 1:
-                    record.is_duplicated = True
-=======
                 # Get the last response and check if the response code is "005"
-                last_response = record.tbai_response_ids.sorted('id', reverse=True)[:1]
+                last_response = record.tbai_response_ids.sorted("id", reverse=True)[:1]
                 record.is_duplicated = any(
                     msg.code == "005" for msg in last_response.tbai_response_message_ids
                 )
->>>>>>> 87359a2 ([FIX] Refactorizamos la solución en el caso de duplicados en las ventas del POS)
 
     def renumber_pos_invoice(self):
         """
@@ -49,12 +42,8 @@ class TicketBAIInvoice(models.Model):
             pos_order = self.name + "R"
             self.pos_order_id.write({"l10n_es_unique_id": pos_order})
             self.name = pos_order
-<<<<<<< HEAD
-            
-=======
             self.cancel_and_recreate()
 
->>>>>>> 87359a2 ([FIX] Refactorizamos la solución en el caso de duplicados en las ventas del POS)
     def cancel_and_recreate(self):
         """
         Cancel and recreates invoices that are in an error state and have a POS order ID.
