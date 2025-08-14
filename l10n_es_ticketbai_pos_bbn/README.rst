@@ -1,3 +1,7 @@
+.. image:: https://odoo-community.org/readme-banner-image
+   :target: https://odoo-community.org/get-involved?utm_source=readme
+   :alt: Odoo Community Association
+
 ===================
 TicketBAI - POS BBN
 ===================
@@ -13,11 +17,11 @@ TicketBAI - POS BBN
 .. |badge1| image:: https://img.shields.io/badge/maturity-Alpha-red.png
     :target: https://odoo-community.org/page/development-status
     :alt: Alpha
-.. |badge2| image:: https://img.shields.io/badge/licence-AGPL--3-blue.png
+.. |badge2| image:: https://img.shields.io/badge/license-AGPL--3-blue.png
     :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
     :alt: License: AGPL-3
 .. |badge3| image:: https://img.shields.io/badge/github-Bilbonet%2Fbilbonet--odoo-lightgray.png?logo=github
-    :target: https://github.com/Bilbonet/bilbonet-odoo/tree/15.0/l10n_es_ticketbai_pos_bbn
+    :target: https://github.com/Bilbonet/bilbonet-odoo/tree/16.0/l10n_es_ticketbai_pos_bbn
     :alt: Bilbonet/bilbonet-odoo
 
 |badge1| |badge2| |badge3|
@@ -61,7 +65,7 @@ la función para subsanar este problema.
 
 Se añaden dos nuevos botones:
 
-- **Establecer Enviada:** La fctura está en estado error y no es
+- **Establecer Enviada:** La factura está en estado error y no es
   necesario enviarla por alguna razón.
 - **Establecer Cancelada:** La fctura está en estado error y se prefiere
   marcar su estado como cancelada por alguna razón.
@@ -69,11 +73,19 @@ Se añaden dos nuevos botones:
 Renumerar Facturas Duplicadas
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Cuando tenemos un numero de factura duplicada, en el formulario de
-factutra Ticketbai disponemos de un nuevo botón **Renumerar Factura**.
-Este boton cambia el número de factura, añadiendo una **R** al final. De
-esta manera corregimos la repetición y podemos retramitar en envío de la
-factura.
+En ocasiones las ventas de TPV enumeran mal las facturas Ticketbai o
+incluso numeran bien las factura pero numeran mal la factura en el
+envío. Por esta razon en ocasiones se dan numeros de factura duplicados.
+
+Cuando tenemos un numero de factura duplicada, en el envío obtenemos la
+respuesta [005 - Registro duplicado].
+
+En el formulario de factutra Ticketbai disponemos de un nuevo botón
+**Renumerar Factura**. Este boton cambia el número de factura, añadiendo
+una **R** al final. De esta manera corregimos la repetición.
+
+El propio botón de renumerar, cancela el envío y genera un nuevo envío
+con la nueva numeración.
 
 Mejoras
 =======
@@ -81,6 +93,7 @@ Mejoras
 Vista formulario facturas ticketbai
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+- Mostramos el campo **nombre**.
 - Al acceder a la vista formulario de la Factura Ticketbai ahora
   muestrar la orden del POS enlazada con la factura Ticketbai.
 
@@ -100,7 +113,7 @@ Bug Tracker
 Bugs are tracked on `GitHub Issues <https://github.com/Bilbonet/bilbonet-odoo/issues>`_.
 In case of trouble, please check there if your issue has already been reported.
 If you spotted it first, help us to smash it by providing a detailed and welcomed
-`feedback <https://github.com/Bilbonet/bilbonet-odoo/issues/new?body=module:%20l10n_es_ticketbai_pos_bbn%0Aversion:%2015.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
+`feedback <https://github.com/Bilbonet/bilbonet-odoo/issues/new?body=module:%20l10n_es_ticketbai_pos_bbn%0Aversion:%2016.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
 
 Do not contact contributors directly about support or help with technical issues.
 
@@ -129,6 +142,6 @@ Current maintainer:
 
 |maintainer-bilbonet| 
 
-This module is part of the `Bilbonet/bilbonet-odoo <https://github.com/Bilbonet/bilbonet-odoo/tree/15.0/l10n_es_ticketbai_pos_bbn>`_ project on GitHub.
+This module is part of the `Bilbonet/bilbonet-odoo <https://github.com/Bilbonet/bilbonet-odoo/tree/16.0/l10n_es_ticketbai_pos_bbn>`_ project on GitHub.
 
 You are welcome to contribute.

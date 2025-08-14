@@ -6,7 +6,7 @@
     "version": "15.0.1.0.0",
     "development_status": "Alpha",
     "category": "Accounting & Finance",
-    "website": "https://github.com/OCA/account-financial-reporting",
+    "website": "https://github.com/Bilbonet/bilbonet-odoo",
     "author": "Jesus Ramiro, Bilbonet",
     "maintainers": ["bilbonet"],
     "license": "AGPL-3",
