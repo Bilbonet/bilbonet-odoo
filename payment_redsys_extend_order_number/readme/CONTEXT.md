@@ -1,0 +1,1 @@
+The https://github.com/OCA/l10n-spain/tree/14.0/payment_redsys module truncates the order number **(Ds_Merchant_Order)** to 12 characters by default. Redsys allows this number to be extended to 20 characters.
