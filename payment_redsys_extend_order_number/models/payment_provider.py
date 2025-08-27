@@ -6,24 +6,18 @@ import json
 from odoo import models
 
 
-class AcquirerRedsys(models.Model):
-    _inherit = "payment.acquirer"
+class PaymentProvider(models.Model):
+    _inherit = "payment.provider"
 
     def _prepare_merchant_parameters(self, tx_values):
-        mo = tx_values.get("reference")
-        if mo and len(mo) <= 12:
-            return super()._prepare_merchant_parameters(tx_values)
-
         # Check multi-website
         base_url = self._get_website_url()
         callback_url = self._get_website_callback_url()
-        if self.redsys_percent_partial > 0:
-            amount = tx_values["amount"]
-            tx_values["amount"] = amount - (amount * self.redsys_percent_partial / 100)
         values = {
             "Ds_Sermepa_Url": self.redsys_get_form_action_url(),
             "Ds_Merchant_Amount": str(int(round(tx_values["amount"] * 100))),
             "Ds_Merchant_Currency": self.redsys_currency or "978",
+            # Extends the character limit from 12 to to 20.
             "Ds_Merchant_Order": (
                 tx_values["reference"] and tx_values["reference"][-20:] or False
             ),
@@ -52,4 +46,4 @@ class AcquirerRedsys(models.Model):
             "Ds_Merchant_UrlKo": "%s/payment/redsys/result/redsys_result_ko" % base_url,
             "Ds_Merchant_Paymethods": self.redsys_pay_method or "T",
         }
-        return self._url_encode64(json.dumps(values))
+        return self._url_encode64(json.dumps(values)).decode("utf-8")

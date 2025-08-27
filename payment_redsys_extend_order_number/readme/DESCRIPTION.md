@@ -1,3 +1,3 @@
-Este módulo extienda a 20 la catidad de caracteres permitidos en el campo **(Ds_Order)**.
+This module extends the character limit allowed in the **(Ds_Merchant_Order)** field to 20.
 
-- Por defecto el número de caracteres máximo permitido por Redsys es de 12. Se debe solicitar a Redsys la extensión a 20 caracteres
+- By default, the maximum number of characters allowed by Redsys is 12. You must request an extension to 20 characters from Redsys.

@@ -375,11 +375,11 @@ ul.auto-toc {
 !! source digest: sha256:bd479439529f6076ee680d6b44f871dbde020a701c230b44a25c84947ec2ede9
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
 <p><a class="reference external image-reference" href="https://odoo-community.org/page/development-status"><img alt="Alpha" src="https://img.shields.io/badge/maturity-Alpha-red.png" /></a> <a class="reference external image-reference" href="http://www.gnu.org/licenses/agpl-3.0-standalone.html"><img alt="License: AGPL-3" src="https://img.shields.io/badge/license-AGPL--3-blue.png" /></a> <a class="reference external image-reference" href="https://github.com/Bilbonet/bilbonet-odoo/tree/16.0/payment_redsys_extend_order_number"><img alt="Bilbonet/bilbonet-odoo" src="https://img.shields.io/badge/github-Bilbonet%2Fbilbonet--odoo-lightgray.png?logo=github" /></a></p>
-<p>Este módulo extienda a 20 la catidad de caracteres permitidos en el
-campo <strong>(Ds_Order)</strong>.</p>
+<p>This module extends the character limit allowed in the
+<strong>(Ds_Merchant_Order)</strong> field to 20.</p>
 <ul class="simple">
-<li>Por defecto el número de caracteres máximo permitido por Redsys es de
-12. Se debe solicitar a Redsys la extensión a 20 caracteres</li>
+<li>By default, the maximum number of characters allowed by Redsys is 12.
+You must request an extension to 20 characters from Redsys.</li>
 </ul>
 <div class="admonition important">
 <p class="first admonition-title">Important</p>
@@ -391,23 +391,49 @@ Only for development or testing purpose, do not use in production.
 <div class="contents local topic" id="contents">
 <ul class="simple">
 <li><a class="reference internal" href="#use-cases-context" id="toc-entry-1">Use Cases / Context</a></li>
-<li><a class="reference internal" href="#bug-tracker" id="toc-entry-2">Bug Tracker</a></li>
-<li><a class="reference internal" href="#credits" id="toc-entry-3">Credits</a><ul>
-<li><a class="reference internal" href="#authors" id="toc-entry-4">Authors</a></li>
-<li><a class="reference internal" href="#contributors" id="toc-entry-5">Contributors</a></li>
-<li><a class="reference internal" href="#maintainers" id="toc-entry-6">Maintainers</a></li>
+<li><a class="reference internal" href="#installation" id="toc-entry-2">Installation</a></li>
+<li><a class="reference internal" href="#configuration" id="toc-entry-3">Configuration</a></li>
+<li><a class="reference internal" href="#usage" id="toc-entry-4">Usage</a></li>
+<li><a class="reference internal" href="#known-issues-roadmap" id="toc-entry-5">Known issues / Roadmap</a></li>
+<li><a class="reference internal" href="#changelog" id="toc-entry-6">Changelog</a></li>
+<li><a class="reference internal" href="#bug-tracker" id="toc-entry-7">Bug Tracker</a></li>
+<li><a class="reference internal" href="#credits" id="toc-entry-8">Credits</a><ul>
+<li><a class="reference internal" href="#authors" id="toc-entry-9">Authors</a></li>
+<li><a class="reference internal" href="#contributors" id="toc-entry-10">Contributors</a></li>
+<li><a class="reference internal" href="#other-credits" id="toc-entry-11">Other credits</a></li>
+<li><a class="reference internal" href="#maintainers" id="toc-entry-12">Maintainers</a></li>
 </ul>
 </li>
 </ul>
 </div>
 <div class="section" id="use-cases-context">
 <h2><a class="toc-backref" href="#toc-entry-1">Use Cases / Context</a></h2>
-<p>El módulo <a class="reference external" href="https://github.com/OCA/l10n-spain/tree/14.0/payment_redsys">https://github.com/OCA/l10n-spain/tree/14.0/payment_redsys</a> por
-defecto trunca el numero de pedido <strong>(Ds_Order)</strong> a 12 caracteres.
-Redsys permite exender este número a 20 caracteres.</p>
+<p>The <a class="reference external" href="https://github.com/OCA/l10n-spain/tree/14.0/payment_redsys">https://github.com/OCA/l10n-spain/tree/14.0/payment_redsys</a> module
+truncates the order number <strong>(Ds_Merchant_Order)</strong> to 12 characters by
+default. Redsys allows this number to be extended to 20 characters.</p>
+</div>
+<div class="section" id="installation">
+<h2><a class="toc-backref" href="#toc-entry-2">Installation</a></h2>
+<p>No additional installation steps are required.</p>
+</div>
+<div class="section" id="configuration">
+<h2><a class="toc-backref" href="#toc-entry-3">Configuration</a></h2>
+<p>No extra configuration is needed for standard usage.</p>
+</div>
+<div class="section" id="usage">
+<h2><a class="toc-backref" href="#toc-entry-4">Usage</a></h2>
+<p>There is no usage aclaration.</p>
+</div>
+<div class="section" id="known-issues-roadmap">
+<h2><a class="toc-backref" href="#toc-entry-5">Known issues / Roadmap</a></h2>
+<p>There are no future improvments in sight</p>
+</div>
+<div class="section" id="changelog">
+<h2><a class="toc-backref" href="#toc-entry-6">Changelog</a></h2>
+<p>What’s your history</p>
 </div>
 <div class="section" id="bug-tracker">
-<h2><a class="toc-backref" href="#toc-entry-2">Bug Tracker</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-7">Bug Tracker</a></h2>
 <p>Bugs are tracked on <a class="reference external" href="https://github.com/Bilbonet/bilbonet-odoo/issues">GitHub Issues</a>.
 In case of trouble, please check there if your issue has already been reported.
 If you spotted it first, help us to smash it by providing a detailed and welcomed
@@ -415,22 +441,28 @@ If you spotted it first, help us to smash it by providing a detailed and welcome
 <p>Do not contact contributors directly about support or help with technical issues.</p>
 </div>
 <div class="section" id="credits">
-<h2><a class="toc-backref" href="#toc-entry-3">Credits</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-8">Credits</a></h2>
 <div class="section" id="authors">
-<h3><a class="toc-backref" href="#toc-entry-4">Authors</a></h3>
+<h3><a class="toc-backref" href="#toc-entry-9">Authors</a></h3>
 <ul class="simple">
-<li>Jesus Ramiro</li>
-<li>Bilbonet</li>
+<li>Jesus Ramiro (Bilbonet)</li>
 </ul>
 </div>
 <div class="section" id="contributors">
-<h3><a class="toc-backref" href="#toc-entry-5">Contributors</a></h3>
+<h3><a class="toc-backref" href="#toc-entry-10">Contributors</a></h3>
 <ul class="simple">
 <li>Jesus Ramiro <a class="reference external" href="mailto:jesus&#64;bilbonet.net">jesus&#64;bilbonet.net</a></li>
 </ul>
 </div>
+<div class="section" id="other-credits">
+<h3><a class="toc-backref" href="#toc-entry-11">Other credits</a></h3>
+<p>The development of this module has been financially supported by:</p>
+<ul class="simple">
+<li>Euskalmushing, S.L.</li>
+</ul>
+</div>
 <div class="section" id="maintainers">
-<h3><a class="toc-backref" href="#toc-entry-6">Maintainers</a></h3>
+<h3><a class="toc-backref" href="#toc-entry-12">Maintainers</a></h3>
 <p>Current maintainer:</p>
 <p><a class="reference external image-reference" href="https://github.com/bilbonet"><img alt="bilbonet" src="https://github.com/bilbonet.png?size=40px" /></a></p>
 <p>This module is part of the <a class="reference external" href="https://github.com/Bilbonet/bilbonet-odoo/tree/16.0/payment_redsys_extend_order_number">Bilbonet/bilbonet-odoo</a> project on GitHub.</p>

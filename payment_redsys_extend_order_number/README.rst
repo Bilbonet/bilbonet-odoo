@@ -26,11 +26,11 @@ Redsys Extend Order Number
 
 |badge1| |badge2| |badge3|
 
-Este módulo extienda a 20 la catidad de caracteres permitidos en el
-campo **(Ds_Order)**.
+This module extends the character limit allowed in the
+**(Ds_Merchant_Order)** field to 20.
 
-- Por defecto el número de caracteres máximo permitido por Redsys es de
-  12. Se debe solicitar a Redsys la extensión a 20 caracteres
+- By default, the maximum number of characters allowed by Redsys is 12.
+  You must request an extension to 20 characters from Redsys.
 
 .. IMPORTANT::
    This is an alpha version, the data model and design can change at any time without warning.
@@ -45,9 +45,34 @@ campo **(Ds_Order)**.
 Use Cases / Context
 ===================
 
-El módulo https://github.com/OCA/l10n-spain/tree/14.0/payment_redsys por
-defecto trunca el numero de pedido **(Ds_Order)** a 12 caracteres.
-Redsys permite exender este número a 20 caracteres.
+The https://github.com/OCA/l10n-spain/tree/14.0/payment_redsys module
+truncates the order number **(Ds_Merchant_Order)** to 12 characters by
+default. Redsys allows this number to be extended to 20 characters.
+
+Installation
+============
+
+No additional installation steps are required.
+
+Configuration
+=============
+
+No extra configuration is needed for standard usage.
+
+Usage
+=====
+
+There is no usage aclaration.
+
+Known issues / Roadmap
+======================
+
+There are no future improvments in sight
+
+Changelog
+=========
+
+What's your history
 
 Bug Tracker
 ===========
@@ -65,13 +90,19 @@ Credits
 Authors
 -------
 
-* Jesus Ramiro
-* Bilbonet
+* Jesus Ramiro (Bilbonet)
 
 Contributors
 ------------
 
 - Jesus Ramiro jesus@bilbonet.net
+
+Other credits
+-------------
+
+The development of this module has been financially supported by:
+
+- Euskalmushing, S.L.
 
 Maintainers
 -----------
