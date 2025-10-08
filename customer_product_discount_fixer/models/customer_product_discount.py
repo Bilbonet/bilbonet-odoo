@@ -25,7 +25,6 @@ class CustomerProductDiscount(models.Model):
         index=1,
     )
     sequence = fields.Integer(
-        string="Sequence",
         default=1,
         help="Assigns the priority to the list of customer product discount.",
     )

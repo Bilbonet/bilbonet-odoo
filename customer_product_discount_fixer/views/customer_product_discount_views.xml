@@ -7,7 +7,7 @@
         <field name="name">customer.product.discount.tree.view</field>
         <field name="model">customer.product.discount</field>
         <field name="arch" type="xml">
-            <tree string="Fixed Discounts" multi_edit="1" editable="bottom">
+            <tree multi_edit="1" editable="bottom">
                 <field name="sequence" widget="handle" />
                 <field
                     name="product_id"
@@ -19,7 +19,6 @@
                 />
                 <field name="product_tmpl_id" string="Product" />
                 <field name="min_qty" />
-                <!-- <field name="product_uom" groups="uom.group_uom"/> -->
                 <field name="date_start" />
                 <field name="date_end" />
                 <field name="discount" />
