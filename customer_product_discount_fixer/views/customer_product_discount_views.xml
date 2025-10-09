@@ -25,6 +25,7 @@
                 <field name="discount2" />
                 <field name="discount3" optional="hide" />
                 <field name="discounting_type" optional="hide" />
+                <field name="company_id" invisible="1" readonly="1" />
                 <field
                     name="company_id"
                     readonly="1"

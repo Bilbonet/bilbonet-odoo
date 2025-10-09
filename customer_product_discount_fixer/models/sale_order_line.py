@@ -6,26 +6,20 @@ from odoo import api, models
 class SaleOrderLine(models.Model):
     _inherit = "sale.order.line"
 
-    @api.onchange("product_id")
-    def product_id_change(self):
+    @api.depends("product_id", "product_uom", "product_uom_qty", "order_id.partner_id")
+    def _compute_discount(self):
         """
-        Inherit this method to bring
-        more discount fields to the saleorder lines
+        Override Odoo's discount computation to include custom discount logic
         """
-        res = super(SaleOrderLine, self).product_id_change()
-        if res is not None and self.product_id and self.order_id.partner_id:
-            self._get_product_discounts()
-        return res
+        # First, call the parent computation for standard discount logic
+        result = super()._compute_discount()
 
-    @api.onchange("product_uom", "product_uom_qty")
-    def product_uom_change(self):
-        """
-        Inherit this method to bring
-        more discount fields to the saleorder lines
-        """
-        if self.product_uom_qty and self.product_id:
-            self._get_product_discounts()
-        return super(SaleOrderLine, self).product_uom_change()
+        # Then apply our custom discount logic
+        for line in self:
+            if line.product_id and line.product_uom_qty and line.order_id.partner_id:
+                line._get_product_discounts()
+
+        return result
 
     def _get_product_discounts(self):
         partner_id = self.order_id.partner_id

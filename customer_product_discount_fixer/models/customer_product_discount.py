@@ -42,12 +42,6 @@ class CustomerProductDiscount(models.Model):
         index=True,
         ondelete="cascade",
     )
-    # product_uom = fields.Many2one(
-    #     comodel_name="uom.uom",
-    #     string="Unit of Measure",
-    #     related="product_tmpl_id.uom_id",
-    #     help="This comes from the product form.",
-    # )
     min_qty = fields.Float(
         string="Min. Quantity",
         default=0.0,
