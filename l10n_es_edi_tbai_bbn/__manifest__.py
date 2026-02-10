@@ -10,10 +10,7 @@
     "author": "Jesus Ramiro (Bilbonet)",
     "maintainers": ["bilbonet"],
     "license": "AGPL-3",
-    "application": False,
-    "installable": True,
     "depends": [
         "l10n_es_edi_tbai",
     ],
-    "data": [],
 }
