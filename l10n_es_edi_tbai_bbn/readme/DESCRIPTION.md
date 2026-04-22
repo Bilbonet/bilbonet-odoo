@@ -1,7 +1,5 @@
-# Odoo TicketBAI Customizations (Bilbonet)
+This module extends the official ``l10n_es_edi_tbai`` module with two TicketBAI-specific adjustments.
 
-This module extends Odoo's official TicketBAI EDI with targeted corrections and custom behaviors
-needed by Bilbonet, while keeping the standard TicketBAI flow intact.
+When the TicketBAI invoice payload contains a ``NoSujeta`` section with ``ImportePorArticulos7_14_Otros``, the module forces the ``nosujeto_causa`` value to ``OT`` instead of the default code inherited from the base implementation.
 
-Current scope includes:
-- Choosing the correct "No Sujeta" cause code (OT vs RL) when operations fall under articles 7/14.
+It also prevents TicketBAI XML EDI documents (format ``es_tbai``) from being added automatically as attachments in the ``Send & Print`` email wizard.

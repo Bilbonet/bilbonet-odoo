@@ -1,1 +1,1 @@
-There are no future improvments in sight.
+The module currently has no automated tests. Adding regression tests for the ``nosujeto_causa`` override and for the TicketBAI XML exclusion in ``Send & Print`` would reduce the risk of behavior changes during upgrades.

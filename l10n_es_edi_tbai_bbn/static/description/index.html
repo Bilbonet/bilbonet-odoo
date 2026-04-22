@@ -370,16 +370,15 @@ ul.auto-toc {
 !! source digest: sha256:d35c46b6c3ebd9a57a4f90709deeb6f1cef374439f3f98977121c37135d6e18f
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
 <p><a class="reference external image-reference" href="https://odoo-community.org/page/development-status"><img alt="Alpha" src="https://img.shields.io/badge/maturity-Alpha-red.png" /></a> <a class="reference external image-reference" href="http://www.gnu.org/licenses/agpl-3.0-standalone.html"><img alt="License: AGPL-3" src="https://img.shields.io/badge/licence-AGPL--3-blue.png" /></a> <a class="reference external image-reference" href="https://github.com/Bilbonet/ranzari-custom/tree/16.0/l10n_es_edi_tbai_bbn"><img alt="Bilbonet/ranzari-custom" src="https://img.shields.io/badge/github-Bilbonet%2Franzari--custom-lightgray.png?logo=github" /></a></p>
-<div class="section" id="odoo-ticketbai-customizations-bilbonet">
-<h1>Odoo TicketBAI Customizations (Bilbonet)</h1>
-<p>This module extends Odoo’s official TicketBAI EDI with targeted
-corrections and custom behaviors needed by Bilbonet, while keeping the
-standard TicketBAI flow intact.</p>
-<p>Current scope includes:</p>
-<ul class="simple">
-<li>Choosing the correct “No Sujeta” cause code (OT vs RL) when operations
-fall under articles 7/14.</li>
-</ul>
+<p>This module extends the official <tt class="docutils literal">l10n_es_edi_tbai</tt> module with two
+TicketBAI-specific adjustments.</p>
+<p>When the TicketBAI invoice payload contains a <tt class="docutils literal">NoSujeta</tt> section with
+<tt class="docutils literal">ImportePorArticulos7_14_Otros</tt>, the module forces the
+<tt class="docutils literal">nosujeto_causa</tt> value to <tt class="docutils literal">OT</tt> instead of the default code inherited
+from the base implementation.</p>
+<p>It also prevents TicketBAI XML EDI documents (format <tt class="docutils literal">es_tbai</tt>) from
+being added automatically as attachments in the <tt class="docutils literal">Send &amp; Print</tt> email
+wizard.</p>
 <div class="admonition important">
 <p class="first admonition-title">Important</p>
 <p class="last">This is an alpha version, the data model and design can change at any time without warning.
@@ -387,52 +386,69 @@ Only for development or testing purpose, do not use in production.
 <a class="reference external" href="https://odoo-community.org/page/development-status">More details on development status</a></p>
 </div>
 <p><strong>Table of contents</strong></p>
-</div>
-<div class="section" id="use-cases-context">
-<h1>Use Cases / Context</h1>
-<p>It should explain the “why” of the module.</p>
-</div>
-<div class="section" id="installation">
-<h1>Installation</h1>
-<p>No additional installation steps are required.</p>
-</div>
-<div class="section" id="configuration">
-<h1>Configuration</h1>
-<p>No extra configuration is needed for standard usage.</p>
-</div>
-<div class="section" id="usage">
-<h1>Usage</h1>
-<p>[ This file is required and contains the instructions on <strong>“how”</strong> to
-use the module for end-users.</p>
-<p>If the module does not have a visible impact on the user interface, just
-add the following sentence:</p>
-<blockquote>
-This module does not impact the user interface.</blockquote>
-<p>If that’s not the case, please make sure that every usage step is
-covered and remember that images speak more than words!]</p>
-<p>To use this module, you need to:</p>
-<ul>
-<li><p class="first">Go to <em>App</em> &gt; Menu &gt; Menu item</p>
-<p><em>insert screenshot!</em></p>
-</li>
-<li><p class="first">In “Contact” form, add a value to field <em>xyz</em> &gt; save</p>
-<p><em>insert screenshot!</em></p>
-</li>
-<li><p class="first">The value of <em>xyz</em> is now displayed in the list view.</p>
-<p><em>insert screenshot!</em></p>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><a class="reference internal" href="#use-cases-context" id="toc-entry-1">Use Cases / Context</a></li>
+<li><a class="reference internal" href="#installation" id="toc-entry-2">Installation</a></li>
+<li><a class="reference internal" href="#configuration" id="toc-entry-3">Configuration</a></li>
+<li><a class="reference internal" href="#usage" id="toc-entry-4">Usage</a></li>
+<li><a class="reference internal" href="#known-issues-roadmap" id="toc-entry-5">Known issues / Roadmap</a></li>
+<li><a class="reference internal" href="#changelog" id="toc-entry-6">Changelog</a></li>
+<li><a class="reference internal" href="#bug-tracker" id="toc-entry-7">Bug Tracker</a></li>
+<li><a class="reference internal" href="#credits" id="toc-entry-8">Credits</a><ul>
+<li><a class="reference internal" href="#authors" id="toc-entry-9">Authors</a></li>
+<li><a class="reference internal" href="#contributors" id="toc-entry-10">Contributors</a></li>
+<li><a class="reference internal" href="#other-credits" id="toc-entry-11">Other credits</a></li>
+<li><a class="reference internal" href="#maintainers" id="toc-entry-12">Maintainers</a></li>
+</ul>
 </li>
 </ul>
 </div>
+<div class="section" id="use-cases-context">
+<h1><a class="toc-backref" href="#toc-entry-1">Use Cases / Context</a></h1>
+<p>The module centralizes Bilbonet-specific adjustments on top of the
+official TicketBAI implementation without forking the upstream module.
+The current customizations correct the exported <tt class="docutils literal">NoSujeta</tt> cause in a
+specific TicketBAI scenario and avoid attaching the generated TicketBAI
+XML in outgoing invoice emails.</p>
+</div>
+<div class="section" id="installation">
+<h1><a class="toc-backref" href="#toc-entry-2">Installation</a></h1>
+<p>No additional installation steps are required.</p>
+</div>
+<div class="section" id="configuration">
+<h1><a class="toc-backref" href="#toc-entry-3">Configuration</a></h1>
+<p>No extra configuration is needed for standard usage.</p>
+</div>
+<div class="section" id="usage">
+<h1><a class="toc-backref" href="#toc-entry-4">Usage</a></h1>
+<p>To use the <tt class="docutils literal">NoSujeta</tt> cause adjustment, post a TicketBAI invoice whose
+generated values include <tt class="docutils literal">ImportePorArticulos7_14_Otros</tt> in the
+<tt class="docutils literal">NoSujeta</tt> section. The module changes the exported TicketBAI cause
+code to <tt class="docutils literal">OT</tt> automatically during XML generation.</p>
+<p>To use the email attachment adjustment, open <tt class="docutils literal">Send &amp; Print</tt> from a
+TicketBAI invoice. The TicketBAI XML file is no longer added
+automatically to the email attachments.</p>
+</div>
 <div class="section" id="known-issues-roadmap">
-<h1>Known issues / Roadmap</h1>
-<p>There are no future improvments in sight.</p>
+<h1><a class="toc-backref" href="#toc-entry-5">Known issues / Roadmap</a></h1>
+<p>The module currently has no automated tests. Adding regression tests for
+the <tt class="docutils literal">nosujeto_causa</tt> override and for the TicketBAI XML exclusion in
+<tt class="docutils literal">Send &amp; Print</tt> would reduce the risk of behavior changes during
+upgrades.</p>
 </div>
 <div class="section" id="changelog">
-<h1>Changelog</h1>
-<p>What’s your history.</p>
+<h1><a class="toc-backref" href="#toc-entry-6">Changelog</a></h1>
+<p>Version <tt class="docutils literal">16.0.1.0.0</tt></p>
+<ul class="simple">
+<li>Overrides the TicketBAI invoice value generation to set
+<tt class="docutils literal">nosujeto_causa</tt> to <tt class="docutils literal">OT</tt> when <tt class="docutils literal">ImportePorArticulos7_14_Otros</tt> is
+present.</li>
+<li>Excludes TicketBAI XML attachments from the <tt class="docutils literal">Send &amp; Print</tt> wizard.</li>
+</ul>
 </div>
 <div class="section" id="bug-tracker">
-<h1>Bug Tracker</h1>
+<h1><a class="toc-backref" href="#toc-entry-7">Bug Tracker</a></h1>
 <p>Bugs are tracked on <a class="reference external" href="https://github.com/Bilbonet/ranzari-custom/issues">GitHub Issues</a>.
 In case of trouble, please check there if your issue has already been reported.
 If you spotted it first, help us to smash it by providing a detailed and welcomed
@@ -440,28 +456,28 @@ If you spotted it first, help us to smash it by providing a detailed and welcome
 <p>Do not contact contributors directly about support or help with technical issues.</p>
 </div>
 <div class="section" id="credits">
-<h1>Credits</h1>
+<h1><a class="toc-backref" href="#toc-entry-8">Credits</a></h1>
 <div class="section" id="authors">
-<h2>Authors</h2>
+<h2><a class="toc-backref" href="#toc-entry-9">Authors</a></h2>
 <ul class="simple">
 <li>Jesus Ramiro (Bilbonet)</li>
 </ul>
 </div>
 <div class="section" id="contributors">
-<h2>Contributors</h2>
+<h2><a class="toc-backref" href="#toc-entry-10">Contributors</a></h2>
 <ul class="simple">
 <li>Jesus Ramiro <a class="reference external" href="mailto:jesus&#64;bilbonet.net">jesus&#64;bilbonet.net</a></li>
 </ul>
 </div>
 <div class="section" id="other-credits">
-<h2>Other credits</h2>
+<h2><a class="toc-backref" href="#toc-entry-11">Other credits</a></h2>
 <p>The development of this module has been financially supported by:</p>
 <ul class="simple">
 <li>Bilbonet</li>
 </ul>
 </div>
 <div class="section" id="maintainers">
-<h2>Maintainers</h2>
+<h2><a class="toc-backref" href="#toc-entry-12">Maintainers</a></h2>
 <p>Current maintainer:</p>
 <p><a class="reference external image-reference" href="https://github.com/bilbonet"><img alt="bilbonet" src="https://github.com/bilbonet.png?size=40px" /></a></p>
 <p>This module is part of the <a class="reference external" href="https://github.com/Bilbonet/ranzari-custom/tree/16.0/l10n_es_edi_tbai_bbn">Bilbonet/ranzari-custom</a> project on GitHub.</p>

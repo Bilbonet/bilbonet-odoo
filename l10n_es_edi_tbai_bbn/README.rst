@@ -22,17 +22,17 @@ Odoo TicketBAI Customizations
 
 |badge1| |badge2| |badge3|
 
-Odoo TicketBAI Customizations (Bilbonet)
-========================================
+This module extends the official ``l10n_es_edi_tbai`` module with two
+TicketBAI-specific adjustments.
 
-This module extends Odoo's official TicketBAI EDI with targeted
-corrections and custom behaviors needed by Bilbonet, while keeping the
-standard TicketBAI flow intact.
+When the TicketBAI invoice payload contains a ``NoSujeta`` section with
+``ImportePorArticulos7_14_Otros``, the module forces the
+``nosujeto_causa`` value to ``OT`` instead of the default code inherited
+from the base implementation.
 
-Current scope includes:
-
-- Choosing the correct "No Sujeta" cause code (OT vs RL) when operations
-  fall under articles 7/14.
+It also prevents TicketBAI XML EDI documents (format ``es_tbai``) from
+being added automatically as attachments in the ``Send & Print`` email
+wizard.
 
 .. IMPORTANT::
    This is an alpha version, the data model and design can change at any time without warning.
@@ -47,7 +47,11 @@ Current scope includes:
 Use Cases / Context
 ===================
 
-It should explain the “why” of the module.
+The module centralizes Bilbonet-specific adjustments on top of the
+official TicketBAI implementation without forking the upstream module.
+The current customizations correct the exported ``NoSujeta`` cause in a
+specific TicketBAI scenario and avoid attaching the generated TicketBAI
+XML in outgoing invoice emails.
 
 Installation
 ============
@@ -62,40 +66,32 @@ No extra configuration is needed for standard usage.
 Usage
 =====
 
-[ This file is required and contains the instructions on **“how”** to
-use the module for end-users.
+To use the ``NoSujeta`` cause adjustment, post a TicketBAI invoice whose
+generated values include ``ImportePorArticulos7_14_Otros`` in the
+``NoSujeta`` section. The module changes the exported TicketBAI cause
+code to ``OT`` automatically during XML generation.
 
-If the module does not have a visible impact on the user interface, just
-add the following sentence:
-
-   This module does not impact the user interface.
-
-If that’s not the case, please make sure that every usage step is
-covered and remember that images speak more than words!]
-
-To use this module, you need to:
-
-- Go to *App* > Menu > Menu item
-
-  *insert screenshot!*
-
-- In “Contact” form, add a value to field *xyz* > save
-
-  *insert screenshot!*
-
-- The value of *xyz* is now displayed in the list view.
-
-  *insert screenshot!*
+To use the email attachment adjustment, open ``Send & Print`` from a
+TicketBAI invoice. The TicketBAI XML file is no longer added
+automatically to the email attachments.
 
 Known issues / Roadmap
 ======================
 
-There are no future improvments in sight.
+The module currently has no automated tests. Adding regression tests for
+the ``nosujeto_causa`` override and for the TicketBAI XML exclusion in
+``Send & Print`` would reduce the risk of behavior changes during
+upgrades.
 
 Changelog
 =========
 
-What's your history.
+Version ``16.0.1.0.0``
+
+- Overrides the TicketBAI invoice value generation to set
+  ``nosujeto_causa`` to ``OT`` when ``ImportePorArticulos7_14_Otros`` is
+  present.
+- Excludes TicketBAI XML attachments from the ``Send & Print`` wizard.
 
 Bug Tracker
 ===========

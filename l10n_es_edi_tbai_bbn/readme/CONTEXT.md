@@ -1,1 +1,1 @@
-It should explain the “why” of the module.
+The module centralizes Bilbonet-specific adjustments on top of the official TicketBAI implementation without forking the upstream module. The current customizations correct the exported ``NoSujeta`` cause in a specific TicketBAI scenario and avoid attaching the generated TicketBAI XML in outgoing invoice emails.

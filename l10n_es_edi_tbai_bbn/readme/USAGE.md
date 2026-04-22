@@ -1,21 +1,3 @@
-[ This file is required and contains the instructions on **“how”** to use the module for end-users. 
+To use the ``NoSujeta`` cause adjustment, post a TicketBAI invoice whose generated values include ``ImportePorArticulos7_14_Otros`` in the ``NoSujeta`` section. The module changes the exported TicketBAI cause code to ``OT`` automatically during XML generation.
 
-If the module does not have a visible impact on the user interface, just add the following sentence: 
-
-> This module does not impact the user interface.
-
-If that’s not the case, please make sure that every usage step is covered and remember that images speak more than words!]
-
-To use this module, you need to:
-
-- Go to *App* > Menu > Menu item
-
-  *insert screenshot!*
-
-- In “Contact” form, add a value to field *xyz* > save
-
-  *insert screenshot!*
-
-- The value of *xyz* is now displayed in the list view.
-
-  *insert screenshot!*
+To use the email attachment adjustment, open ``Send & Print`` from a TicketBAI invoice. The TicketBAI XML file is no longer added automatically to the email attachments.
