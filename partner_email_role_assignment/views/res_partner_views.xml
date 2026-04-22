@@ -1,0 +1,51 @@
+<?xml version="1.0" ?>
+<!-- Copyright 2026 Jesus Ramiro <jesus@bilbonet.net>
+     License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl.html).-->
+<odoo>
+    <!-- res.partner -->
+    <record id="view_partner_form" model="ir.ui.view">
+        <field name="name">res.partner.form</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='contact_addresses']" position="after">
+                <page string="Mail Addresses" name="mail_addresses">
+                    <group>
+                        <group string="Sales" name="sales" priority="1">
+                            <field
+                                name="mail_addresses_sale"
+                                widget="many2many_tags"
+                                readonly="True"
+                                options="{'no_create': True}"
+                            />
+                        </group>
+                        <group string="Invoicing" name="invoicing" priority="2">
+                            <field
+                                name="mail_addresses_invoice"
+                                widget="many2many_tags"
+                                readonly="True"
+                                options="{'no_create': True}"
+                            />
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+            <xpath
+                expr="//page[@name='contact_addresses']//field[@name='child_ids']/form//field[@name='name']/../.."
+                position="before"
+            >
+                <div class="row">
+                    <div class="col-6">
+                        <label for="used_address_sale" />
+                        <field name="used_address_sale" widget="boolean_toggle" />
+                    </div>
+                    <div class="col-6">
+                        <label for="used_address_invoice" />
+                        <field name="used_address_invoice" widget="boolean_toggle" />
+                    </div>
+                </div>
+                <hr />
+            </xpath>
+        </field>
+    </record>
+</odoo>

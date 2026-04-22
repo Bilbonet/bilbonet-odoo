@@ -1,0 +1,73 @@
+<?xml version="1.0" ?>
+<!-- Copyright 2026 Jesus Ramiro <jesus@bilbonet.net>
+     License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl.html).-->
+<odoo noupdate="1">
+    <!--
+    Extend email templates to include partner role-based email recipients.
+    -->
+    <function name="write" model="ir.model.data">
+        <function name="search" model="ir.model.data">
+            <value
+                eval="[('module', '=', 'sale'), ('name', '=', 'email_template_edi_sale')]"
+            />
+        </function>
+        <value eval="{'noupdate': False}" />
+    </function>
+    <record id="sale.email_template_edi_sale" model="mail.template">
+        <field
+            name="partner_to"
+        >{{ object.partner_id.id }}, {{ ','.join(map(str, object.partner_id.mail_addresses_sale.ids)) }}</field>
+    </record>
+    <function name="write" model="ir.model.data">
+        <function name="search" model="ir.model.data">
+            <value
+                eval="[('module', '=', 'sale'), ('name', '=', 'email_template_edi_sale')]"
+            />
+        </function>
+        <value eval="{'noupdate': True}" />
+    </function>
+
+    <function name="write" model="ir.model.data">
+        <function name="search" model="ir.model.data">
+            <value
+                eval="[('module', '=', 'sale'), ('name', '=', 'mail_template_sale_confirmation')]"
+            />
+        </function>
+        <value eval="{'noupdate': False}" />
+    </function>
+    <record id="sale.mail_template_sale_confirmation" model="mail.template">
+        <field
+            name="partner_to"
+        >{{ object.partner_id.id }}, {{ ','.join(map(str, object.partner_id.mail_addresses_sale.ids)) }}</field>
+    </record>
+    <function name="write" model="ir.model.data">
+        <function name="search" model="ir.model.data">
+            <value
+                eval="[('module', '=', 'sale'), ('name', '=', 'mail_template_sale_confirmation')]"
+            />
+        </function>
+        <value eval="{'noupdate': True}" />
+    </function>
+
+    <function name="write" model="ir.model.data">
+        <function name="search" model="ir.model.data">
+            <value
+                eval="[('module', '=', 'account'), ('name', '=', 'email_template_edi_invoice')]"
+            />
+        </function>
+        <value eval="{'noupdate': False}" />
+    </function>
+    <record id="account.email_template_edi_invoice" model="mail.template">
+        <field
+            name="partner_to"
+        >{{ object.partner_id.id }}, {{ ','.join(map(str, object.partner_id.mail_addresses_invoice.ids)) }}</field>
+    </record>
+    <function name="write" model="ir.model.data">
+        <function name="search" model="ir.model.data">
+            <value
+                eval="[('module', '=', 'account'), ('name', '=', 'email_template_edi_invoice')]"
+            />
+        </function>
+        <value eval="{'noupdate': True}" />
+    </function>
+</odoo>

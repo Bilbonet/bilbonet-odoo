@@ -1,0 +1,1 @@
+Multiple email accounts for sending sales and invoices, configurable from the client.
