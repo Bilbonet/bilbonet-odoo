@@ -1,0 +1,40 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* partner_email_role_assignment_stock
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-04-22 16:15+0000\n"
+"PO-Revision-Date: 2026-04-22 18:19+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.9\n"
+
+#. module: partner_email_role_assignment_stock
+#: model:ir.model,name:partner_email_role_assignment_stock.model_res_partner
+msgid "Contact"
+msgstr "Contacto"
+
+#. module: partner_email_role_assignment_stock
+#: model:ir.model.fields,field_description:partner_email_role_assignment_stock.field_res_partner__mail_addresses_picking
+#: model:ir.model.fields,field_description:partner_email_role_assignment_stock.field_res_users__mail_addresses_picking
+msgid "Mails for pickings"
+msgstr "Email para albaran"
+
+#. module: partner_email_role_assignment_stock
+#: model_terms:ir.ui.view,arch_db:partner_email_role_assignment_stock.view_partner_form
+msgid "Pickings"
+msgstr "Albaranes"
+
+#. module: partner_email_role_assignment_stock
+#: model:ir.model.fields,field_description:partner_email_role_assignment_stock.field_res_partner__used_address_picking
+#: model:ir.model.fields,field_description:partner_email_role_assignment_stock.field_res_users__used_address_picking
+msgid "Used like mail for picking"
+msgstr "Email para albaranes"

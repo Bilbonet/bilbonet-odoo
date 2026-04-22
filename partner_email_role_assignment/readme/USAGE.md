@@ -5,4 +5,19 @@ When creating or editing a contact in a Partner form, two checkboxes let you mar
 
 Marked contacts are automatically listed under the **Email Addresses** tab in their respective sections and are included by default when sending sales or invoice-related emails.
 
+To use these role-based recipients in a mail template, add the corresponding
+expression to the `partner_to` field of the template.
+
+For sales templates, use:
+
+`{{ ','.join(map(str, object.partner_id.mail_addresses_sale.ids)) }}`
+
+For invoice templates, use:
+
+`{{ ','.join(map(str, object.partner_id.mail_addresses_invoice.ids)) }}`
+
+This module already applies that change to the default templates
+`sale.email_template_edi_sale`, `sale.mail_template_sale_confirmation`, and
+`account.email_template_edi_invoice`.
+
 ![Multi Mail Partner Fomr](static/description/partner_form.png)

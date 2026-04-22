@@ -34,14 +34,39 @@
                 expr="//page[@name='contact_addresses']//field[@name='child_ids']/form//field[@name='name']/../.."
                 position="before"
             >
-                <div class="row">
-                    <div class="col-6">
-                        <label for="used_address_sale" />
-                        <field name="used_address_sale" widget="boolean_toggle" />
+                <div
+                    name="email_role_assignment_roles"
+                    class="row g-3 align-items-stretch mb-3"
+                >
+                    <div
+                        name="email_role_assignment_sale"
+                        class="col-lg-4 col-md-6 col-12"
+                    >
+                        <div
+                            class="d-flex justify-content-between align-items-center border rounded px-3 py-2 h-100"
+                        >
+                            <label for="used_address_sale" class="mb-0" />
+                            <field
+                                name="used_address_sale"
+                                widget="boolean_toggle"
+                                class="oe_inline"
+                            />
+                        </div>
                     </div>
-                    <div class="col-6">
-                        <label for="used_address_invoice" />
-                        <field name="used_address_invoice" widget="boolean_toggle" />
+                    <div
+                        name="email_role_assignment_invoice"
+                        class="col-lg-4 col-md-6 col-12"
+                    >
+                        <div
+                            class="d-flex justify-content-between align-items-center border rounded px-3 py-2 h-100"
+                        >
+                            <label for="used_address_invoice" class="mb-0" />
+                            <field
+                                name="used_address_invoice"
+                                widget="boolean_toggle"
+                                class="oe_inline"
+                            />
+                        </div>
                     </div>
                 </div>
                 <hr />

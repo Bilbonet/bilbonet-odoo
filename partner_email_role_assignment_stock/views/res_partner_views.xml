@@ -1,0 +1,48 @@
+<?xml version="1.0" ?>
+<!-- Copyright 2026 Jesus Ramiro <jesus@bilbonet.net>
+     License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl.html).-->
+<odoo>
+    <record id="view_partner_form" model="ir.ui.view">
+        <field name="name">res.partner.form.stock</field>
+        <field name="model">res.partner</field>
+        <field
+            name="inherit_id"
+            ref="partner_email_role_assignment.view_partner_form"
+        />
+        <field name="arch" type="xml">
+            <xpath
+                expr="//page[@name='mail_addresses']//group[@name='invoicing']"
+                position="after"
+            >
+                <group string="Pickings" name="pickings" priority="3">
+                    <field
+                        name="mail_addresses_picking"
+                        widget="many2many_tags"
+                        readonly="True"
+                        options="{'no_create': True}"
+                    />
+                </group>
+            </xpath>
+            <xpath
+                expr="//div[@name='email_role_assignment_roles']//div[@name='email_role_assignment_invoice']"
+                position="after"
+            >
+                <div
+                    name="email_role_assignment_picking"
+                    class="col-lg-4 col-md-6 col-12"
+                >
+                    <div
+                        class="d-flex justify-content-between align-items-center border rounded px-3 py-2 h-100"
+                    >
+                        <label for="used_address_picking" class="mb-0" />
+                        <field
+                            name="used_address_picking"
+                            widget="boolean_toggle"
+                            class="oe_inline"
+                        />
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>

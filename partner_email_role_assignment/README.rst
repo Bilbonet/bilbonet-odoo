@@ -22,8 +22,10 @@ Partner Email Role Assignment
 
 |badge1| |badge2| |badge3|
 
-Multiple email accounts for sending sales and invoices, configurable
-from the client.
+Multiple email accounts for sales and invoice communications,
+configurable from the customer form. The module also updates the default
+sales and invoice email templates to include role-based recipient
+addresses.
 
 **Table of contents**
 
@@ -58,6 +60,22 @@ form, two checkboxes let you mark the email as used for **sales** or
 Marked contacts are automatically listed under the **Email Addresses**
 tab in their respective sections and are included by default when
 sending sales or invoice-related emails.
+
+To use these role-based recipients in a mail template, add the
+corresponding expression to the ``partner_to`` field of the template.
+
+For sales templates, use:
+
+``{{ ','.join(map(str, object.partner_id.mail_addresses_sale.ids)) }}``
+
+For invoice templates, use:
+
+``{{ ','.join(map(str, object.partner_id.mail_addresses_invoice.ids)) }}``
+
+This module already applies that change to the default templates
+``sale.email_template_edi_sale``,
+``sale.mail_template_sale_confirmation``, and
+``account.email_template_edi_invoice``.
 
 |Multi Mail Partner Fomr|
 

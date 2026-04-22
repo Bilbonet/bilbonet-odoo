@@ -15,7 +15,7 @@
         "sale",
     ],
     "data": [
-        "data/multi_mail.xml",
+        "data/mail_template_data.xml",
         "views/res_partner_views.xml",
     ],
 }
