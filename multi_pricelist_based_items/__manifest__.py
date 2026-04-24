@@ -6,7 +6,7 @@
     "version": "16.0.1.0.0",
     "development_status": "Beta",
     "category": "Sales",
-    "website": "https://github.com/Bilbonet/ranzari-custom",
+    "website": "https://github.com/Bilbonet/bilbonet-odoo",
     "author": "Jesus Ramiro (Bilbonet)",
     "maintainers": ["bilbonet"],
     "license": "AGPL-3",
