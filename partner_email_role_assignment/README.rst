@@ -66,11 +66,14 @@ corresponding expression to the ``partner_to`` field of the template.
 
 For sales templates, use:
 
-``{{ ','.join(map(str, object.partner_id.mail_addresses_sale.ids)) }}``
+``{{ ','.join(map(str, object.partner_id.mail_addresses_sale.ids)) or object.partner_id.id }}``
 
 For invoice templates, use:
 
-``{{ ','.join(map(str, object.partner_id.mail_addresses_invoice.ids)) }}``
+``{{ ','.join(map(str, object.partner_id.mail_addresses_invoice.ids)) or object.partner_id.id }}``
+
+If no role-based recipients are configured, the template falls back to
+the main partner.
 
 This module already applies that change to the default templates
 ``sale.email_template_edi_sale``,

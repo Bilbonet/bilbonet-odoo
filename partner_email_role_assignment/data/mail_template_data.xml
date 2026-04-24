@@ -16,7 +16,7 @@
     <record id="sale.email_template_edi_sale" model="mail.template">
         <field
             name="partner_to"
-        >{{ object.partner_id.id }}, {{ ','.join(map(str, object.partner_id.mail_addresses_sale.ids)) }}</field>
+        >{{ ','.join(map(str, object.partner_id.mail_addresses_sale.ids)) or object.partner_id.id }}</field>
     </record>
     <function name="write" model="ir.model.data">
         <function name="search" model="ir.model.data">
@@ -38,7 +38,7 @@
     <record id="sale.mail_template_sale_confirmation" model="mail.template">
         <field
             name="partner_to"
-        >{{ object.partner_id.id }}, {{ ','.join(map(str, object.partner_id.mail_addresses_sale.ids)) }}</field>
+        >{{ ','.join(map(str, object.partner_id.mail_addresses_sale.ids)) or object.partner_id.id }}</field>
     </record>
     <function name="write" model="ir.model.data">
         <function name="search" model="ir.model.data">
@@ -60,7 +60,7 @@
     <record id="account.email_template_edi_invoice" model="mail.template">
         <field
             name="partner_to"
-        >{{ object.partner_id.id }}, {{ ','.join(map(str, object.partner_id.mail_addresses_invoice.ids)) }}</field>
+        >{{ ','.join(map(str, object.partner_id.mail_addresses_invoice.ids)) or object.partner_id.id }}</field>
     </record>
     <function name="write" model="ir.model.data">
         <function name="search" model="ir.model.data">

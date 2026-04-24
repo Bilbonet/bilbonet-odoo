@@ -418,9 +418,11 @@ sending sales or invoice-related emails.</p>
 <p>To use these role-based recipients in a mail template, add the
 corresponding expression to the <tt class="docutils literal">partner_to</tt> field of the template.</p>
 <p>For sales templates, use:</p>
-<p><tt class="docutils literal">{{ <span class="pre">','.join(map(str,</span> object.partner_id.mail_addresses_sale.ids)) }}</tt></p>
+<p><tt class="docutils literal">{{ <span class="pre">','.join(map(str,</span> object.partner_id.mail_addresses_sale.ids)) or object.partner_id.id }}</tt></p>
 <p>For invoice templates, use:</p>
-<p><tt class="docutils literal">{{ <span class="pre">','.join(map(str,</span> object.partner_id.mail_addresses_invoice.ids)) }}</tt></p>
+<p><tt class="docutils literal">{{ <span class="pre">','.join(map(str,</span> object.partner_id.mail_addresses_invoice.ids)) or object.partner_id.id }}</tt></p>
+<p>If no role-based recipients are configured, the template falls back to
+the main partner.</p>
 <p>This module already applies that change to the default templates
 <tt class="docutils literal">sale.email_template_edi_sale</tt>,
 <tt class="docutils literal">sale.mail_template_sale_confirmation</tt>, and

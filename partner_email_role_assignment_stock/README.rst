@@ -68,6 +68,10 @@ To use this module, you need to:
   action. The stock delivery template will include the marked picking
   contacts in ``partner_to``.
 
+If no picking recipients are configured, the template falls back to the
+picking partner when it has an email address, or to its parent partner
+otherwise.
+
 Known issues / Roadmap
 ======================
 
