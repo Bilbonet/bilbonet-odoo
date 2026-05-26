@@ -10,26 +10,27 @@ msgstr ""
 "PO-Revision-Date: 2026-05-26 14:46+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
+"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Plural-Forms: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: comercial_zone_commission_oca
 #: model:ir.model.fields,field_description:comercial_zone_commission_oca.field_commercial_zone__active
 msgid "Active"
-msgstr ""
+msgstr "Activo"
 
 #. module: comercial_zone_commission_oca
 #: model:ir.model.fields,field_description:comercial_zone_commission_oca.field_commercial_zone_agent__agent_id
 msgid "Agent"
-msgstr ""
+msgstr "Agente"
 
 #. module: comercial_zone_commission_oca
 #: model_terms:ir.ui.view,arch_db:comercial_zone_commission_oca.commercial_zone_view_form
 #: model_terms:ir.ui.view,arch_db:comercial_zone_commission_oca.commercial_zone_view_search
 msgid "Archived"
-msgstr ""
+msgstr "Archivado"
 
 #. module: comercial_zone_commission_oca
 #: model:ir.model,name:comercial_zone_commission_oca.model_commercial_zone
@@ -39,23 +40,23 @@ msgstr ""
 #: model:ir.model.fields,field_description:comercial_zone_commission_oca.field_res_users__commercial_zone_id
 #: model_terms:ir.ui.view,arch_db:comercial_zone_commission_oca.view_country_state_search_inherit_commercial_zone
 msgid "Commercial Zone"
-msgstr ""
+msgstr "Zona comercial"
 
 #. module: comercial_zone_commission_oca
 #: model:ir.model,name:comercial_zone_commission_oca.model_commercial_zone_agent
 msgid "Commercial Zone Agent"
-msgstr ""
+msgstr "Agente de zona comercial"
 
 #. module: comercial_zone_commission_oca
 #: model:ir.actions.act_window,name:comercial_zone_commission_oca.commercial_zone_action
 #: model:ir.ui.menu,name:comercial_zone_commission_oca.commercial_zone_menu
 msgid "Commercial Zones"
-msgstr ""
+msgstr "Zonas comerciales"
 
 #. module: comercial_zone_commission_oca
 #: model:ir.model.fields,field_description:comercial_zone_commission_oca.field_commercial_zone_agent__commission_id
 msgid "Commission"
-msgstr ""
+msgstr "Comisión"
 
 #. module: comercial_zone_commission_oca
 #: model:ir.model,name:comercial_zone_commission_oca.model_res_partner
@@ -71,42 +72,42 @@ msgstr "Provincia del país"
 #: model:ir.model.fields,field_description:comercial_zone_commission_oca.field_commercial_zone__create_uid
 #: model:ir.model.fields,field_description:comercial_zone_commission_oca.field_commercial_zone_agent__create_uid
 msgid "Created by"
-msgstr ""
+msgstr "Creado por"
 
 #. module: comercial_zone_commission_oca
 #: model:ir.model.fields,field_description:comercial_zone_commission_oca.field_commercial_zone__create_date
 #: model:ir.model.fields,field_description:comercial_zone_commission_oca.field_commercial_zone_agent__create_date
 msgid "Created on"
-msgstr ""
+msgstr "Creado el"
 
 #. module: comercial_zone_commission_oca
 #: model:ir.model.fields,field_description:comercial_zone_commission_oca.field_commercial_zone__display_name
 #: model:ir.model.fields,field_description:comercial_zone_commission_oca.field_commercial_zone_agent__display_name
 msgid "Display Name"
-msgstr ""
+msgstr "Nombre mostrado"
 
 #. module: comercial_zone_commission_oca
 #: model:ir.model.fields,field_description:comercial_zone_commission_oca.field_commercial_zone__id
 #: model:ir.model.fields,field_description:comercial_zone_commission_oca.field_commercial_zone_agent__id
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #. module: comercial_zone_commission_oca
 #: model:ir.model.fields,field_description:comercial_zone_commission_oca.field_commercial_zone__write_uid
 #: model:ir.model.fields,field_description:comercial_zone_commission_oca.field_commercial_zone_agent__write_uid
 msgid "Last Updated by"
-msgstr ""
+msgstr "Última actualización por"
 
 #. module: comercial_zone_commission_oca
 #: model:ir.model.fields,field_description:comercial_zone_commission_oca.field_commercial_zone__write_date
 #: model:ir.model.fields,field_description:comercial_zone_commission_oca.field_commercial_zone_agent__write_date
 msgid "Last Updated on"
-msgstr ""
+msgstr "Última actualización el"
 
 #. module: comercial_zone_commission_oca
 #: model:ir.model.fields,field_description:comercial_zone_commission_oca.field_commercial_zone__name
 msgid "Name"
-msgstr ""
+msgstr "Nombre"
 
 #. module: comercial_zone_commission_oca
 #: model:ir.model,name:comercial_zone_commission_oca.model_sale_order_line
@@ -116,15 +117,15 @@ msgstr "Línea de pedido de venta"
 #. module: comercial_zone_commission_oca
 #: model:ir.model.constraint,message:comercial_zone_commission_oca.constraint_commercial_zone_agent_unique_zone_agent
 msgid "The same agent can only be assigned once per commercial zone."
-msgstr ""
+msgstr "El mismo agente solo puede asignarse una vez por zona comercial."
 
 #. module: comercial_zone_commission_oca
 #: model:ir.model.fields,field_description:comercial_zone_commission_oca.field_commercial_zone_agent__zone_id
 msgid "Zone"
-msgstr ""
+msgstr "Zona"
 
 #. module: comercial_zone_commission_oca
 #: model:ir.model.fields,field_description:comercial_zone_commission_oca.field_commercial_zone__agent_ids
 #: model_terms:ir.ui.view,arch_db:comercial_zone_commission_oca.commercial_zone_view_form
 msgid "Zone Agents"
-msgstr ""
+msgstr "Agentes de zona"
