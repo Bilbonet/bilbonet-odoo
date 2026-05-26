@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="commercial_zone_view_tree" model="ir.ui.view">
+        <field name="name">commercial.zone.list</field>
+        <field name="model">commercial.zone</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name" />
+                <field name="active" column_invisible="1" />
+            </list>
+        </field>
+    </record>
+
+    <record id="commercial_zone_view_form" model="ir.ui.view">
+        <field name="name">commercial.zone.form</field>
+        <field name="model">commercial.zone</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <widget
+                        name="web_ribbon"
+                        title="Archived"
+                        bg_color="text-bg-danger"
+                        invisible="active"
+                    />
+                    <div class="oe_title">
+                        <label for="name" />
+                        <h1>
+                            <field name="name" />
+                        </h1>
+                    </div>
+                    <group>
+                        <field name="active" invisible="1" />
+                    </group>
+                    <notebook>
+                        <page name="zone_agents" string="Zone Agents">
+                            <field name="agent_ids">
+                                <list editable="bottom">
+                                    <field
+                                        name="agent_id"
+                                        context="{'default_agent': True, 'default_customer': False, 'default_supplier': True}"
+                                    />
+                                    <field
+                                        name="commission_id"
+                                        domain="['|', ('settlement_type', '=', 'sale_invoice'), ('settlement_type', '=', False)]"
+                                    />
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="commercial_zone_view_search" model="ir.ui.view">
+        <field name="name">commercial.zone.search</field>
+        <field name="model">commercial.zone</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name" />
+                <filter
+                    name="inactive"
+                    string="Archived"
+                    domain="[('active', '=', False)]"
+                />
+            </search>
+        </field>
+    </record>
+
+    <record id="commercial_zone_action" model="ir.actions.act_window">
+        <field name="name">Commercial Zones</field>
+        <field name="res_model">commercial.zone</field>
+        <field name="view_mode">list,form</field>
+        <field name="search_view_id" ref="commercial_zone_view_search" />
+    </record>
+
+    <menuitem
+        id="commercial_zone_menu"
+        name="Commercial Zones"
+        parent="commission_oca.menu_commission_management"
+        action="commercial_zone_action"
+        groups="commission_oca.group_commission_manager"
+        sequence="30"
+    />
+</odoo>

@@ -2,16 +2,20 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 {
     "name": "Comercial Zone Commission OCA",
-    "summary": "Create zones and assign sales representatives",
+    "summary": "Create commercial zones and assign zone agents",
     "version": "18.0.1.0.0",
     "development_status": "Alpha",
     "category": "--",
-    "website": "https://github.com/Bilbonet/bilbonet-odoo",
+    "website": "https://github.com/bilbonet/bilbonet-odoo",
     "author": "Jesus Ramiro (Bilbonet)",
     "maintainers": ["bilbonet"],
     "license": "AGPL-3",
     "depends": [
         "sale_commission_oca",
     ],
-    "data": [],
+    "data": [
+        "security/ir.model.access.csv",
+        "views/commercial_zone_views.xml",
+        "views/res_partner_views.xml",
+    ],
 }

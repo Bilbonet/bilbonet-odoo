@@ -1,7 +1,6 @@
-[ This file must be max 2-3 paragraphs, and is required.
+This module extends sales commissions to support commercial zones.
 
-The goal of this document is to explain quickly the features of this module: “what” this module does and “what” it is for. ]
-
-Example:
-
-This module extends the functionality of ... to support ... and to allow users to ...
+Commercial zones can be configured with one or more zone agents. When a sales
+order is created for a customer assigned to a commercial zone, the agents of
+that zone are added to the sales order line commissions together with the
+standard agents provided by `sale_commission_oca`.

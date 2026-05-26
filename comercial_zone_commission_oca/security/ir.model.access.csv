@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_commercial_zone_manager,commercial.zone.manager,model_commercial_zone,commission_oca.group_commission_manager,1,1,1,1
+access_commercial_zone_user,commercial.zone.user,model_commercial_zone,commission_oca.group_commission_user,1,0,0,0
+access_commercial_zone_agent_manager,commercial.zone.agent.manager,model_commercial_zone_agent,commission_oca.group_commission_manager,1,1,1,1
+access_commercial_zone_agent_user,commercial.zone.agent.user,model_commercial_zone_agent,commission_oca.group_commission_user,1,0,0,0
