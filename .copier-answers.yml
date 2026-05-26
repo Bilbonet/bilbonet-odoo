@@ -15,7 +15,7 @@ include_wkhtmltopdf: false
 odoo_test_flavor: Both
 odoo_version: 18.0
 org_name: Jesus Ramiro (Bilbonet)
-org_slug: bilbonet-odoo
+org_slug: bilbonet
 rebel_module_groups: []
 repo_description: Odoo modules by Bilbonet
 repo_name: Odoo modules by Bilbonet
