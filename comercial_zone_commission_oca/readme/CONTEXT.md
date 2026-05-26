@@ -3,4 +3,5 @@ configured directly on the customer, but also to the agents responsible for the
 customer's commercial zone.
 
 This module provides that additional assignment layer while keeping the
-standard OCA commission workflow.
+standard OCA commission workflow. It also helps keep customer commercial zones
+aligned with geographical state or province configuration.

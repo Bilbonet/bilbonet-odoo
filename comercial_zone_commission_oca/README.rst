@@ -24,10 +24,15 @@ Comercial Zone Commission OCA
 
 This module extends sales commissions to support commercial zones.
 
-Commercial zones can be configured with one or more zone agents. When a
-sales order is created for a customer assigned to a commercial zone, the
-agents of that zone are added to the sales order line commissions
-together with the standard agents provided by ``sale_commission_oca``.
+Commercial zones can be configured with one or more zone agents and
+assigned to countries' states or provinces. When a state or province is
+selected on a contact, the contact's commercial zone is filled from that
+state or province unless a zone is explicitly set.
+
+When a sales order is created for a customer assigned to a commercial
+zone, the agents of that zone are added to the sales order line
+commissions together with the standard agents provided by
+``sale_commission_oca``.
 
 .. IMPORTANT::
    This is an alpha version, the data model and design can change at any time without warning.
@@ -47,7 +52,8 @@ agents configured directly on the customer, but also to the agents
 responsible for the customer's commercial zone.
 
 This module provides that additional assignment layer while keeping the
-standard OCA commission workflow.
+standard OCA commission workflow. It also helps keep customer commercial
+zones aligned with geographical state or province configuration.
 
 Installation
 ============
@@ -63,10 +69,15 @@ To configure commercial zone commissions:
 - Go to *Commissions > Configuration > Commercial Zones*.
 - Create a commercial zone.
 - Add the agents responsible for that zone in the *Zone Agents* tab.
-- Assign the commercial zone to the relevant customers from the contact
-  form.
+- Assign commercial zones to the relevant states or provinces.
+- Review or manually adjust the commercial zone on customer contact
+  forms when needed.
 
 Zone agents must be valid commission agents.
+
+Commercial zones can only be created from the commercial zone
+maintenance menu. Many2one fields that select commercial zones do not
+allow creating new zones directly.
 
 Usage
 =====
@@ -74,8 +85,14 @@ Usage
 To use this module:
 
 - Configure commercial zones and their zone agents.
-- Assign a commercial zone to a customer.
+- Assign commercial zones to states or provinces.
+- Set or update the state or province on a customer contact.
 - Create a sales order for that customer.
+
+When the state or province is set on a contact, the commercial zone is
+automatically filled from the state or province configuration. Users can
+still manually change the commercial zone on the contact when an
+exception is needed.
 
 The agents configured on the customer's commercial zone are added to the
 sales order line commission agents when the commission agents are

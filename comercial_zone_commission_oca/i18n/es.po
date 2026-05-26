@@ -1,0 +1,130 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* comercial_zone_commission_oca
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-05-26 14:46+0000\n"
+"PO-Revision-Date: 2026-05-26 14:46+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: comercial_zone_commission_oca
+#: model:ir.model.fields,field_description:comercial_zone_commission_oca.field_commercial_zone__active
+msgid "Active"
+msgstr ""
+
+#. module: comercial_zone_commission_oca
+#: model:ir.model.fields,field_description:comercial_zone_commission_oca.field_commercial_zone_agent__agent_id
+msgid "Agent"
+msgstr ""
+
+#. module: comercial_zone_commission_oca
+#: model_terms:ir.ui.view,arch_db:comercial_zone_commission_oca.commercial_zone_view_form
+#: model_terms:ir.ui.view,arch_db:comercial_zone_commission_oca.commercial_zone_view_search
+msgid "Archived"
+msgstr ""
+
+#. module: comercial_zone_commission_oca
+#: model:ir.model,name:comercial_zone_commission_oca.model_commercial_zone
+#: model:ir.model.fields,field_description:comercial_zone_commission_oca.field_dimoni_res_partner__commercial_zone_id
+#: model:ir.model.fields,field_description:comercial_zone_commission_oca.field_res_country_state__commercial_zone_id
+#: model:ir.model.fields,field_description:comercial_zone_commission_oca.field_res_partner__commercial_zone_id
+#: model:ir.model.fields,field_description:comercial_zone_commission_oca.field_res_users__commercial_zone_id
+#: model_terms:ir.ui.view,arch_db:comercial_zone_commission_oca.view_country_state_search_inherit_commercial_zone
+msgid "Commercial Zone"
+msgstr ""
+
+#. module: comercial_zone_commission_oca
+#: model:ir.model,name:comercial_zone_commission_oca.model_commercial_zone_agent
+msgid "Commercial Zone Agent"
+msgstr ""
+
+#. module: comercial_zone_commission_oca
+#: model:ir.actions.act_window,name:comercial_zone_commission_oca.commercial_zone_action
+#: model:ir.ui.menu,name:comercial_zone_commission_oca.commercial_zone_menu
+msgid "Commercial Zones"
+msgstr ""
+
+#. module: comercial_zone_commission_oca
+#: model:ir.model.fields,field_description:comercial_zone_commission_oca.field_commercial_zone_agent__commission_id
+msgid "Commission"
+msgstr ""
+
+#. module: comercial_zone_commission_oca
+#: model:ir.model,name:comercial_zone_commission_oca.model_res_partner
+msgid "Contact"
+msgstr "Contacto"
+
+#. module: comercial_zone_commission_oca
+#: model:ir.model,name:comercial_zone_commission_oca.model_res_country_state
+msgid "Country state"
+msgstr "Provincia del país"
+
+#. module: comercial_zone_commission_oca
+#: model:ir.model.fields,field_description:comercial_zone_commission_oca.field_commercial_zone__create_uid
+#: model:ir.model.fields,field_description:comercial_zone_commission_oca.field_commercial_zone_agent__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: comercial_zone_commission_oca
+#: model:ir.model.fields,field_description:comercial_zone_commission_oca.field_commercial_zone__create_date
+#: model:ir.model.fields,field_description:comercial_zone_commission_oca.field_commercial_zone_agent__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: comercial_zone_commission_oca
+#: model:ir.model.fields,field_description:comercial_zone_commission_oca.field_commercial_zone__display_name
+#: model:ir.model.fields,field_description:comercial_zone_commission_oca.field_commercial_zone_agent__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: comercial_zone_commission_oca
+#: model:ir.model.fields,field_description:comercial_zone_commission_oca.field_commercial_zone__id
+#: model:ir.model.fields,field_description:comercial_zone_commission_oca.field_commercial_zone_agent__id
+msgid "ID"
+msgstr ""
+
+#. module: comercial_zone_commission_oca
+#: model:ir.model.fields,field_description:comercial_zone_commission_oca.field_commercial_zone__write_uid
+#: model:ir.model.fields,field_description:comercial_zone_commission_oca.field_commercial_zone_agent__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: comercial_zone_commission_oca
+#: model:ir.model.fields,field_description:comercial_zone_commission_oca.field_commercial_zone__write_date
+#: model:ir.model.fields,field_description:comercial_zone_commission_oca.field_commercial_zone_agent__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: comercial_zone_commission_oca
+#: model:ir.model.fields,field_description:comercial_zone_commission_oca.field_commercial_zone__name
+msgid "Name"
+msgstr ""
+
+#. module: comercial_zone_commission_oca
+#: model:ir.model,name:comercial_zone_commission_oca.model_sale_order_line
+msgid "Sales Order Line"
+msgstr "Línea de pedido de venta"
+
+#. module: comercial_zone_commission_oca
+#: model:ir.model.constraint,message:comercial_zone_commission_oca.constraint_commercial_zone_agent_unique_zone_agent
+msgid "The same agent can only be assigned once per commercial zone."
+msgstr ""
+
+#. module: comercial_zone_commission_oca
+#: model:ir.model.fields,field_description:comercial_zone_commission_oca.field_commercial_zone_agent__zone_id
+msgid "Zone"
+msgstr ""
+
+#. module: comercial_zone_commission_oca
+#: model:ir.model.fields,field_description:comercial_zone_commission_oca.field_commercial_zone__agent_ids
+#: model_terms:ir.ui.view,arch_db:comercial_zone_commission_oca.commercial_zone_view_form
+msgid "Zone Agents"
+msgstr ""

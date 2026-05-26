@@ -6,7 +6,10 @@
         <field name="inherit_id" ref="commission_oca.view_partner_form_agent" />
         <field name="arch" type="xml">
             <field name="agent_ids" position="after">
-                <field name="commercial_zone_id" />
+                <field
+                    name="commercial_zone_id"
+                    options="{'no_create': True, 'no_create_edit': True}"
+                />
             </field>
         </field>
     </record>

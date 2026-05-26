@@ -16,6 +16,7 @@
     "data": [
         "security/ir.model.access.csv",
         "views/commercial_zone_views.xml",
+        "views/res_country_state_views.xml",
         "views/res_partner_views.xml",
     ],
 }

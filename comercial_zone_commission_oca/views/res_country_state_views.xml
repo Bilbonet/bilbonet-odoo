@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="view_country_state_tree_inherit_commercial_zone" model="ir.ui.view">
+        <field name="name">res.country.state.list.inherit.commercial.zone</field>
+        <field name="model">res.country.state</field>
+        <field name="inherit_id" ref="base.view_country_state_tree" />
+        <field name="arch" type="xml">
+            <field name="country_id" position="after">
+                <field
+                    name="commercial_zone_id"
+                    optional="show"
+                    options="{'no_create': True, 'no_create_edit': True}"
+                />
+            </field>
+        </field>
+    </record>
+
+    <record id="view_country_state_form_inherit_commercial_zone" model="ir.ui.view">
+        <field name="name">res.country.state.form.inherit.commercial.zone</field>
+        <field name="model">res.country.state</field>
+        <field name="inherit_id" ref="base.view_country_state_form" />
+        <field name="arch" type="xml">
+            <field name="country_id" position="after">
+                <field
+                    name="commercial_zone_id"
+                    options="{'no_create': True, 'no_create_edit': True}"
+                />
+            </field>
+        </field>
+    </record>
+
+    <record id="view_country_state_search_inherit_commercial_zone" model="ir.ui.view">
+        <field name="name">res.country.state.search.inherit.commercial.zone</field>
+        <field name="model">res.country.state</field>
+        <field name="inherit_id" ref="base.view_country_state_search" />
+        <field name="arch" type="xml">
+            <field name="country_id" position="after">
+                <field
+                    name="commercial_zone_id"
+                    options="{'no_create': True, 'no_create_edit': True}"
+                />
+            </field>
+            <filter name="groupby_country" position="after">
+                <filter
+                    name="groupby_commercial_zone"
+                    string="Commercial Zone"
+                    context="{'group_by': 'commercial_zone_id'}"
+                />
+            </filter>
+        </field>
+    </record>
+</odoo>

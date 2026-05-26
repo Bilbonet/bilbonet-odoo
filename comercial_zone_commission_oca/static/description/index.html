@@ -371,10 +371,14 @@ ul.auto-toc {
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
 <p><a class="reference external image-reference" href="https://odoo-community.org/page/development-status"><img alt="Alpha" src="https://img.shields.io/badge/maturity-Alpha-red.png" /></a> <a class="reference external image-reference" href="http://www.gnu.org/licenses/agpl-3.0-standalone.html"><img alt="License: AGPL-3" src="https://img.shields.io/badge/licence-AGPL--3-blue.png" /></a> <a class="reference external image-reference" href="https://github.com/bilbonet-odoo/bilbonet-odoo/tree/18.0/comercial_zone_commission_oca"><img alt="bilbonet-odoo/bilbonet-odoo" src="https://img.shields.io/badge/github-bilbonet--odoo%2Fbilbonet--odoo-lightgray.png?logo=github" /></a></p>
 <p>This module extends sales commissions to support commercial zones.</p>
-<p>Commercial zones can be configured with one or more zone agents. When a
-sales order is created for a customer assigned to a commercial zone, the
-agents of that zone are added to the sales order line commissions
-together with the standard agents provided by <tt class="docutils literal">sale_commission_oca</tt>.</p>
+<p>Commercial zones can be configured with one or more zone agents and
+assigned to countries’ states or provinces. When a state or province is
+selected on a contact, the contact’s commercial zone is filled from that
+state or province unless a zone is explicitly set.</p>
+<p>When a sales order is created for a customer assigned to a commercial
+zone, the agents of that zone are added to the sales order line
+commissions together with the standard agents provided by
+<tt class="docutils literal">sale_commission_oca</tt>.</p>
 <div class="admonition important">
 <p class="first admonition-title">Important</p>
 <p class="last">This is an alpha version, the data model and design can change at any time without warning.
@@ -406,7 +410,8 @@ Only for development or testing purpose, do not use in production.
 agents configured directly on the customer, but also to the agents
 responsible for the customer’s commercial zone.</p>
 <p>This module provides that additional assignment layer while keeping the
-standard OCA commission workflow.</p>
+standard OCA commission workflow. It also helps keep customer commercial
+zones aligned with geographical state or province configuration.</p>
 </div>
 <div class="section" id="installation">
 <h1><a class="toc-backref" href="#toc-entry-2">Installation</a></h1>
@@ -420,19 +425,28 @@ module and its dependencies.</p>
 <li>Go to <em>Commissions &gt; Configuration &gt; Commercial Zones</em>.</li>
 <li>Create a commercial zone.</li>
 <li>Add the agents responsible for that zone in the <em>Zone Agents</em> tab.</li>
-<li>Assign the commercial zone to the relevant customers from the contact
-form.</li>
+<li>Assign commercial zones to the relevant states or provinces.</li>
+<li>Review or manually adjust the commercial zone on customer contact
+forms when needed.</li>
 </ul>
 <p>Zone agents must be valid commission agents.</p>
+<p>Commercial zones can only be created from the commercial zone
+maintenance menu. Many2one fields that select commercial zones do not
+allow creating new zones directly.</p>
 </div>
 <div class="section" id="usage">
 <h1><a class="toc-backref" href="#toc-entry-4">Usage</a></h1>
 <p>To use this module:</p>
 <ul class="simple">
 <li>Configure commercial zones and their zone agents.</li>
-<li>Assign a commercial zone to a customer.</li>
+<li>Assign commercial zones to states or provinces.</li>
+<li>Set or update the state or province on a customer contact.</li>
 <li>Create a sales order for that customer.</li>
 </ul>
+<p>When the state or province is set on a contact, the commercial zone is
+automatically filled from the state or province configuration. Users can
+still manually change the commercial zone on the contact when an
+exception is needed.</p>
 <p>The agents configured on the customer’s commercial zone are added to the
 sales order line commission agents when the commission agents are
 computed.</p>
