@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_product_category_agent_manager,product.category.agent.manager,model_product_category_agent,commission_oca.group_commission_manager,1,1,1,1
+access_product_category_agent_user,product.category.agent.user,model_product_category_agent,commission_oca.group_commission_user,1,0,0,0

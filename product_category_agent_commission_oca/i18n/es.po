@@ -1,0 +1,58 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* product_category_agent_commission_oca
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-03 10:12+0000\n"
+"PO-Revision-Date: 2026-06-03 10:12+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: product_category_agent_commission_oca
+#: model:ir.model.fields,field_description:product_category_agent_commission_oca.field_product_category_agent__agent_id
+msgid "Agent"
+msgstr "Agente"
+
+#. module: product_category_agent_commission_oca
+#: model:ir.model.fields,field_description:product_category_agent_commission_oca.field_product_category_agent__category_id
+msgid "Category"
+msgstr "Categoría"
+
+#. module: product_category_agent_commission_oca
+#: model:ir.model.fields,field_description:product_category_agent_commission_oca.field_product_category_agent__commission_id
+msgid "Commission"
+msgstr "Comisión"
+
+#. module: product_category_agent_commission_oca
+#: model:ir.model,name:product_category_agent_commission_oca.model_product_category_agent
+msgid "Product Category Agent"
+msgstr "Agente de categoría de producto"
+
+#. module: product_category_agent_commission_oca
+#: model:ir.model.fields,field_description:product_category_agent_commission_oca.field_product_category__product_manager_agent_ids
+#: model_terms:ir.ui.view,arch_db:product_category_agent_commission_oca.product_category_form_view_inherit_commission_agents
+msgid "Product Manager Agents"
+msgstr "Jefes de producto"
+
+#. module: product_category_agent_commission_oca
+#: model:ir.model.constraint,message:product_category_agent_commission_oca.constraint_product_category_agent_unique_category_agent
+msgid "The same agent can only be assigned once per product category."
+msgstr "El mismo agente solo puede asignarse una vez por categoría de producto."
+
+#. module: product_category_agent_commission_oca
+#: model:ir.module.module,shortdesc:product_category_agent_commission_oca.module_product_category_agent_commission_oca
+msgid "Product Category Agent Commission OCA"
+msgstr "Comisiones de agentes por categoría de producto OCA"
+
+#. module: product_category_agent_commission_oca
+#: model:ir.module.module,summary:product_category_agent_commission_oca.module_product_category_agent_commission_oca
+msgid "Assign sale commission agents from product categories"
+msgstr "Asigna agentes de comisión de venta desde las categorías de producto"

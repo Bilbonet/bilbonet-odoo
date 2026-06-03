@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record
+        id="product_category_form_view_inherit_commission_agents"
+        model="ir.ui.view"
+    >
+        <field name="name">product.category.form.inherit.commission.agents</field>
+        <field name="model">product.category</field>
+        <field name="inherit_id" ref="product.product_category_form_view" />
+        <field name="priority">90</field>
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='first']" position="after">
+                <group
+                    name="product_manager_agents"
+                    string="Product Manager Agents"
+                    groups="commission_oca.group_commission_manager,commission_oca.group_commission_user"
+                >
+                    <field name="product_manager_agent_ids" nolabel="1" colspan="2">
+                        <list editable="bottom">
+                            <field
+                                name="agent_id"
+                                context="{'default_agent': True, 'default_customer': False, 'default_supplier': True}"
+                            />
+                            <field
+                                name="commission_id"
+                                domain="['|', ('settlement_type', '=', 'sale_invoice'), ('settlement_type', '=', False)]"
+                            />
+                        </list>
+                    </field>
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>
