@@ -1,4 +1,6 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" ?>
+<!-- Copyright 2026 Jesus Ramiro <jesus@bilbonet.net>
+     License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl.html).-->
 <odoo>
     <record id="view_country_state_tree_inherit_commercial_zone" model="ir.ui.view">
         <field name="name">res.country.state.list.inherit.commercial.zone</field>

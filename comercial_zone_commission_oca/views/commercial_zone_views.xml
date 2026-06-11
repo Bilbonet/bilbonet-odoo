@@ -1,4 +1,6 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" ?>
+<!-- Copyright 2026 Jesus Ramiro <jesus@bilbonet.net>
+     License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl.html).-->
 <odoo>
     <record id="commercial_zone_view_tree" model="ir.ui.view">
         <field name="name">commercial.zone.list</field>
