@@ -5,7 +5,7 @@
     "summary": "Create commercial zones and assign zone agents",
     "version": "18.0.1.0.0",
     "development_status": "Alpha",
-    "category": "--",
+    "category": "Sales",
     "website": "https://github.com/bilbonet/bilbonet-odoo",
     "author": "Jesus Ramiro (Bilbonet)",
     "maintainers": ["bilbonet"],
